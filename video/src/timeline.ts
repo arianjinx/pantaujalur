@@ -17,8 +17,8 @@ export type Timeline = {
 };
 
 /** The video plays at this speed, and waits on the network at WAIT_SPEED. */
-export const PLAY_SPEED = 1.5;
-export const WAIT_SPEED = 12;
+export const PLAY_SPEED = 2.5;
+export const WAIT_SPEED = 40;
 
 export type Part = { start: number; end: number; speed: number };
 
@@ -53,4 +53,10 @@ export function outputTime(cut: Part[], t: number): number {
     out += (Math.min(t, p.end) - p.start) / p.speed;
   }
   return out;
+}
+
+/** The opening card stands in for the recording's first caption, so the edit starts at the second. */
+export function edited(timeline: Timeline): Timeline {
+  const start = timeline.captions[1]?.at ?? 0;
+  return { ...timeline, cuts: [...timeline.cuts, [0, start]] };
 }

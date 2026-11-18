@@ -220,7 +220,7 @@ function wallPage(page: Page) {
 }
 
 async function walkthrough(page: Page) {
-  caption("PantauJalur", "See the traffic on your route before you leave");
+  caption("PantauJalur", "Check the traffic on your route before you leave");
   await focus();
   await fast(async () => {
     await page.goto(BASE_URL, { waitUntil: "networkidle" });

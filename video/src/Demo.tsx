@@ -1,5 +1,6 @@
 import {
   AbsoluteFill,
+  Freeze,
   interpolate,
   OffthreadVideo,
   Sequence,
@@ -10,6 +11,7 @@ import {
 
 import {
   type Box,
+  edited,
   outputTime,
   type Part,
   parts,
@@ -19,7 +21,7 @@ import {
 
 export const FPS = 30;
 export const FRAME = 1080;
-const BAND = 200;
+const BAND = 240;
 const APP = { width: FRAME, height: FRAME - BAND };
 const MAX_ZOOM = 2.2;
 /** Room around a focused area, as a fraction of its size. */
@@ -130,15 +132,28 @@ function CaptionBand({
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        gap: 12,
+        gap: 10,
         fontFamily: FONT,
       }}
     >
+      {title !== "PantauJalur" && (
+        <div
+          style={{
+            color: ORANGE,
+            fontWeight: 800,
+            fontSize: 26,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+          }}
+        >
+          PantauJalur · live traffic cams on your route
+        </div>
+      )}
       <div
         style={{
           color: "white",
           fontWeight: 800,
-          fontSize: 62,
+          fontSize: 60,
           lineHeight: 1.05,
           letterSpacing: "-0.01em",
           opacity: p,
@@ -199,10 +214,9 @@ function CaptionBand({
   );
 }
 
-export function Demo({ timeline }: { timeline: Timeline | null }) {
+function Main({ timeline }: { timeline: Timeline }) {
   const frame = useCurrentFrame();
-  if (!timeline) return <AbsoluteFill style={{ background: INK }} />;
-  const cut = parts(timeline);
+  const cut = parts(edited(timeline));
   const toFrame = (t: number) => Math.round(outputTime(cut, t) * FPS);
   const total = toFrame(timeline.totalS);
 
@@ -273,6 +287,101 @@ export function Demo({ timeline }: { timeline: Timeline | null }) {
           fastForward={fastForward}
         />
       )}
+    </AbsoluteFill>
+  );
+}
+
+/** The opening card, and the video's first frame: the thumbnail people see before they play it. */
+export const INTRO = 42;
+export const INTRO_FADE = 10;
+/** The footage on the card: the recording's last moments, a wall page of live photos. */
+const POSTER_BEFORE_END_S = 1.5;
+
+function Poster({ timeline }: { timeline: Timeline }) {
+  const frame = useCurrentFrame();
+  const width = 1240;
+  const height = (width * timeline.viewport.height) / timeline.viewport.width;
+  const zoom = interpolate(frame, [0, INTRO], [1, 1.05]);
+  const fade = interpolate(frame, [INTRO - INTRO_FADE, INTRO], [1, 0], {
+    extrapolateLeft: "clamp",
+  });
+  return (
+    <AbsoluteFill style={{ background: INK, opacity: fade, fontFamily: FONT }}>
+      <div
+        style={{
+          position: "absolute",
+          left: (FRAME - width) / 2,
+          top: 170,
+          width,
+          height,
+          transform: `scale(${zoom})`,
+        }}
+      >
+        <Freeze frame={0}>
+          <OffthreadVideo
+            src={staticFile("raw.mp4")}
+            trimBefore={Math.round(
+              (timeline.totalS - POSTER_BEFORE_END_S) * FPS,
+            )}
+            muted
+            style={{ width, height }}
+          />
+        </Freeze>
+      </div>
+      <AbsoluteFill
+        style={{
+          background: `linear-gradient(${INK} 0px, ${INK} 340px, rgba(15,23,42,0) 520px)`,
+        }}
+      />
+      <div style={{ position: "absolute", left: 64, top: 64, right: 64 }}>
+        <div
+          style={{
+            color: ORANGE,
+            fontWeight: 800,
+            fontSize: 30,
+            letterSpacing: "0.1em",
+          }}
+        >
+          MALANG · LIVE CITY CCTV
+        </div>
+        <div
+          style={{
+            color: "white",
+            fontWeight: 900,
+            fontSize: 132,
+            lineHeight: 1,
+            letterSpacing: "-0.03em",
+            marginTop: 12,
+          }}
+        >
+          PantauJalur
+        </div>
+        <div
+          style={{
+            color: "#cbd5e1",
+            fontWeight: 600,
+            fontSize: 44,
+            lineHeight: 1.2,
+            marginTop: 18,
+          }}
+        >
+          See the traffic on your route before you leave
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+}
+
+export function Demo({ timeline }: { timeline: Timeline | null }) {
+  if (!timeline) return <AbsoluteFill style={{ background: INK }} />;
+  return (
+    <AbsoluteFill style={{ background: INK }}>
+      <Sequence from={INTRO - INTRO_FADE}>
+        <Main timeline={timeline} />
+      </Sequence>
+      <Sequence durationInFrames={INTRO}>
+        <Poster timeline={timeline} />
+      </Sequence>
     </AbsoluteFill>
   );
 }
