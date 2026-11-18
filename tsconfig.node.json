@@ -1,0 +1,15 @@
+{
+  "include": ["alchemy.run.ts", "vite.config.ts", "scripts", "relay"],
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM"],
+    "types": ["node", "bun"],
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  }
+}

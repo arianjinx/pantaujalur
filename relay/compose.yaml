@@ -1,0 +1,29 @@
+# Run by scripts/deploy-relay.ts on the relay machine. It writes .env next to this file with CCTV_RELAY_SECRET,
+# RELAY_VERSION and, once the pantaujalur-relay tunnel exists, TUNNEL_TOKEN and COMPOSE_PROFILES=tunnel, which starts
+# cloudflared.
+name: pantaujalur-relay
+
+services:
+  relay:
+    build: .
+    # Compose builds only a tag it lacks. Every build gets a new image id here, even from cached layers, so a content
+    # tag keeps a rerun from recreating an unchanged relay.
+    image: pantaujalur-relay:${RELAY_VERSION:?RELAY_VERSION is missing from .env}
+    restart: unless-stopped
+    environment:
+      CCTV_RELAY_SECRET: ${CCTV_RELAY_SECRET:?CCTV_RELAY_SECRET is missing from .env}
+    # Only the host itself can reach it there. The tunnel reaches it as http://relay:8080.
+    ports:
+      - "127.0.0.1:8787:8080"
+    mem_limit: 128m
+
+  cloudflared:
+    image: cloudflare/cloudflared:2026.11.0@sha256:b94b96edf2c9c4360f8879c8580cfaa99077f19c849ec595ca2f711b27d4f344
+    profiles: [tunnel]
+    command: tunnel --no-autoupdate run
+    restart: unless-stopped
+    environment:
+      TUNNEL_TOKEN: ${TUNNEL_TOKEN:-}
+    depends_on:
+      - relay
+    mem_limit: 128m

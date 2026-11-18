@@ -1,0 +1,11 @@
+[fmt]
+sortImports = true
+
+[fmt.sortTailwindcss]
+stylesheet = "./src/styles.css"
+
+[lint]
+ignorePatterns = ["src/routeTree.gen.ts"]
+
+[lint.rules]
+"@typescript-eslint/no-non-null-assertion" = "error"

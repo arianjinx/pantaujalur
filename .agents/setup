@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+# Readies a checkout for an agent in any harness: Amp runs it for a fresh orb, Cursor as its cloud install, and
+# Claude Code cloud from the SessionStart hook. Each may run it over disk a previous run prepared, so every step is
+# idempotent. It reads no secrets.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+step() {
+  local name=$1 start=$SECONDS
+  shift
+  echo "==> $name"
+  "$@"
+  echo "<== $name ($((SECONDS - start))s)"
+}
+
+can_sudo() { command -v sudo >/dev/null 2>&1 && sudo -n true >/dev/null 2>&1; }
+
+version=$(sed -n 's/^[[:space:]]*"packageManager":[[:space:]]*"bun@\([^"]*\)".*/\1/p' package.json | head -n 1)
+if [ -z "$version" ]; then
+  echo 'setup: package.json has no "packageManager": "bun@<version>"' >&2
+  exit 1
+fi
+
+pinned_bun() {
+  local bin
+  for bin in /usr/local/bin/bun "$(command -v bun || true)" "${BUN_INSTALL:-$HOME/.bun}/bin/bun"; do
+    if [ -x "$bin" ] && [ "$("$bin" --version)" = "$version" ]; then
+      echo "$bin"
+      return
+    fi
+  done
+  return 1
+}
+
+install_bun() {
+  command -v unzip >/dev/null || { echo "setup: unzip is required to install Bun $version" >&2 && return 1; }
+  if can_sudo; then
+    curl -fsSL https://bun.sh/install | sudo env BUN_INSTALL=/usr/local bash -s "bun-v$version"
+  else
+    curl -fsSL https://bun.sh/install | bash -s "bun-v$version"
+  fi
+}
+
+# Login shells on a cloud image skip ~/.bashrc, so Bun goes into /usr/local/bin, which is on the default PATH.
+dependencies() {
+  local bin
+  bin=$(pinned_bun) || { install_bun && bin=$(pinned_bun); } || {
+    echo "setup: expected Bun $version" >&2
+    return 1
+  }
+  if [ "$bin" != /usr/local/bin/bun ] && can_sudo; then
+    sudo ln -sfn "$bin" /usr/local/bin/bun
+    bin=/usr/local/bin/bun
+  fi
+  export PATH="$(dirname "$bin"):$PATH"
+  hash -r
+  bun install --frozen-lockfile
+}
+
+step "bun $version and dependencies" dependencies
