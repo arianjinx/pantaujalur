@@ -58,7 +58,6 @@ export function isSamePlace(a: Place, b: Place) {
   return distanceM(a.position, b.position) < SAME_PLACE_M;
 }
 
-/** A GPS end means "wherever I am", so it matches any other GPS end. */
 function isSameTripEnd(a: Place, b: Place) {
   if (a.source === "gps" || b.source === "gps") return a.source === b.source;
   return isSamePlace(a, b);
@@ -71,7 +70,6 @@ function isSameTrip(trip: RecentTrip, origin: Place, destination: Place) {
   );
 }
 
-/** The live GPS fix changes every time, so it never becomes a recent place. */
 export function recordPlace(
   state: PlacesState,
   place: Place,
@@ -85,7 +83,6 @@ export function recordPlace(
   };
 }
 
-/** Records a trip whose route was shown, and both of its ends as recent places. */
 export function recordTrip(
   state: PlacesState,
   origin: Place,
@@ -109,10 +106,6 @@ export function recordTrip(
   return recordPlace(recordPlace(withTrip, origin, now), destination, now);
 }
 
-/**
- * Names a place. One name points at one place and one place has one name, so
- * saving replaces any saved place with the same name or at the same spot.
- */
 export function savePlace(
   state: PlacesState,
   name: string,
@@ -121,7 +114,7 @@ export function savePlace(
 ): PlacesState {
   const trimmed = name.trim();
   if (!trimmed) return state;
-  // A saved GPS fix is a fixed spot from now on, not "wherever I am".
+
   const fixed: Place =
     place.source === "gps"
       ? {
@@ -179,7 +172,6 @@ export function savedPlaceAt(
   return state.saved.find((s) => isSamePlace(s.place, place));
 }
 
-/** "Stasiun Malang, Jalan Trunojoyo, Klojen" becomes "Stasiun Malang". */
 export function shortLabel(label: string) {
   return label.split(",")[0].trim();
 }
@@ -195,7 +187,6 @@ export function tripName(state: PlacesState, trip: RecentTrip) {
 
 export type PlaceSuggestion = { place: Place; name: string | null };
 
-/** Saved places first, then recent ones that are not also saved, filtered by `text`. */
 export function placeSuggestions(
   state: PlacesState,
   text: string,
@@ -212,7 +203,6 @@ export function placeSuggestions(
   return [...saved, ...recent].filter(matches);
 }
 
-/** Corrupt, foreign or older-version data starts over empty. */
 export function parsePlaces(raw: string | null): PlacesState {
   if (raw === null) return EMPTY_PLACES;
   try {
@@ -258,7 +248,6 @@ function subscribe(listener: () => void) {
   };
 }
 
-/** Applies a reducer to the stored places. A failed write (private mode, full quota) is dropped. */
 export function updatePlaces(update: (state: PlacesState) => PlacesState) {
   const next = update(snapshot());
   try {
@@ -269,7 +258,6 @@ export function updatePlaces(update: (state: PlacesState) => PlacesState) {
   for (const listener of listeners) listener();
 }
 
-/** Empty during SSR and hydration, then this device's places; tabs stay in sync. */
 export function usePlaces(): PlacesState {
   return useSyncExternalStore(subscribe, snapshot, () => EMPTY_PLACES);
 }

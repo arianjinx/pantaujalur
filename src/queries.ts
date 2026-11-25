@@ -14,7 +14,6 @@ export const camerasQuery = queryOptions({
   staleTime: 30 * 60 * 1000,
 });
 
-/** Idle until both ends are known. */
 export const routeQuery = (
   origin: LatLng | undefined,
   destination: LatLng | undefined,

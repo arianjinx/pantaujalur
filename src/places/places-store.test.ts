@@ -30,7 +30,6 @@ const myLocation: Place = {
   source: "gps",
 };
 
-/** About `meters` north of `place`. */
 function nudged(place: Place, meters: number, label = place.label): Place {
   return {
     ...place,

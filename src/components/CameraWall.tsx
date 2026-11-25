@@ -23,7 +23,6 @@ import {
 
 type Layout = { cols: number; rows: number };
 
-/** The first matching media query wins. */
 const LAYOUTS: { query: string; layout: Layout }[] = [
   { query: "(min-width: 1024px)", layout: { cols: 3, rows: 2 } },
   { query: "(min-width: 640px)", layout: { cols: 2, rows: 2 } },
@@ -38,23 +37,16 @@ const CLOCK_TICK_MS = 15_000;
 type WallEntry = CameraOnRoute & { order: number };
 
 type CameraWallProps = {
-  /** Ordered by distance along the route, nearest the origin first. */
   camerasOnRoute: CameraOnRoute[];
   origin: Place;
   destination: Place;
   route: Route;
-  /** False while a single camera is open over the wall, so the wall ignores keys. */
+
   interactive: boolean;
   onWatchLive: (camera: Camera) => void;
   onClose: () => void;
 };
 
-/**
- * Every camera on the route as a full-screen wall of still snapshots, paged
- * left to right from the origin to the destination. Each tile shows one frame
- * captured when the wall opened; clicking it captures a fresh one, and its Live
- * button opens the camera's live player.
- */
 export function CameraWall(props: CameraWallProps) {
   const {
     camerasOnRoute,
@@ -78,7 +70,6 @@ export function CameraWall(props: CameraWallProps) {
     return result;
   }, [camerasOnRoute, pageSize]);
 
-  // The first camera of the active page, so a resize that changes the page size keeps the user's place.
   const [firstIndex, setFirstIndex] = useState(0);
   const activePage = Math.min(
     Math.floor(firstIndex / pageSize),
@@ -133,7 +124,6 @@ export function CameraWall(props: CameraWallProps) {
   };
   useEffect(() => () => clearTimeout(settleTimer.current), []);
 
-  // A page-size change moves the page boundaries under the scroll position.
   const scrolledPageSize = useRef(pageSize);
   useLayoutEffect(() => {
     const scroller = scrollerRef.current;
@@ -250,7 +240,7 @@ export function CameraWall(props: CameraWallProps) {
               style={{
                 gap: GAP_PX,
                 gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-                // Largest 16:9 grid that fits the page in both directions.
+
                 width: `min(100cqw, calc((100cqh - ${(rows - 1) * GAP_PX}px) * 16 / 9 * ${cols} / ${rows} + ${(cols - 1) * GAP_PX}px))`,
               }}
             >
@@ -316,7 +306,6 @@ const BADGES: Record<Snapshot["kind"], { text: string; className: string }> = {
   offline: { text: "No signal", className: "bg-slate-600 text-slate-100" },
 };
 
-/** Clicking the tile captures a fresh frame; the old one stays on screen until it lands. */
 function SnapshotTile(props: {
   entry: WallEntry;
   snapshot: Snapshot;
@@ -425,11 +414,6 @@ function SnapshotTile(props: {
   );
 }
 
-/**
- * Opens a snapshot queue for the wall's cameras, seeded with the frames the
- * browser kept from earlier, and closes it, aborting captures, when the wall
- * closes.
- */
 function useSnapshots(cameras: Camera[]) {
   const [queue, setQueue] = useState<SnapshotQueue | null>(null);
   useEffect(() => {
@@ -464,7 +448,6 @@ const NO_SNAPSHOTS: ReadonlyMap<string, Snapshot> = new Map();
 const noSnapshots = () => NO_SNAPSHOTS;
 const subscribeNothing = () => () => {};
 
-/** The current time, refreshed every `intervalMs`, for relative timestamps. */
 function useNow(intervalMs: number) {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
@@ -474,7 +457,6 @@ function useNow(intervalMs: number) {
   return now;
 }
 
-/** "11:42:07 · 2 min ago", from when the camera took the picture. */
 function frameTime({ capturedAt, endedAt }: Frame, now: number) {
   const takenAt = endedAt ?? capturedAt;
   const clock = [takenAt.getHours(), takenAt.getMinutes(), takenAt.getSeconds()]
@@ -577,7 +559,6 @@ function kmNumber(meters: number) {
   return (meters / 1000).toFixed(1);
 }
 
-/** Nominatim labels run to a full address; the first part names the place. */
 function shortLabel(place: Place) {
   return place.label.split(",")[0];
 }

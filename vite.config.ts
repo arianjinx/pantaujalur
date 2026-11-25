@@ -10,8 +10,7 @@ export default defineConfig({
     tailwindcss(),
     tanstackStart(),
     viteReact(),
-    // `alchemy deploy` and `alchemy dev` add this plugin with the Worker's settings. A plain `vite build` adds it here,
-    // so dist/ holds the same Worker that production runs.
+
     process.env.ALCHEMY_CLOUDFLARE_VITE_INJECTED === "1"
       ? null
       : cloudflare({

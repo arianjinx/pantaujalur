@@ -14,7 +14,6 @@ import {
 } from "#/places/places-store";
 import { placesQuery, pointLabelQuery } from "#/queries";
 
-// Nominatim allows one request per second; wait for typing to pause.
 const SEARCH_DEBOUNCE_MS = 450;
 const MIN_SEARCH_LENGTH = 3;
 
@@ -22,7 +21,7 @@ type PlaceInputProps = {
   field: PlaceField;
   title: string;
   place: Place | null;
-  /** Shown instead of the place while it is not set, e.g. "Locating you". */
+
   status?: ReactNode;
   picking: boolean;
   extraAction?: ReactNode;
@@ -117,7 +116,7 @@ export function PlaceInput(props: PlaceInputProps) {
         {(suggestions.length > 0 || showResults) && (
           <div
             className="absolute inset-x-0 top-full z-[1000] mt-1 overflow-hidden rounded-md border border-slate-200 bg-white shadow-lg"
-            // Keeps the input focused, so the list stays open until a choice lands.
+
             onMouseDown={(e) => e.preventDefault()}
           >
             {suggestions.length > 0 && (
@@ -196,7 +195,6 @@ export function PlaceInput(props: PlaceInputProps) {
   );
 }
 
-/** GPS and map points get a street name from reverse geocoding when one is available. */
 function PlaceLabel({
   place,
   savedName,
@@ -233,7 +231,6 @@ function PlaceLabel({
   );
 }
 
-/** Names the chosen place ("Home"), so it comes back first in both fields and in trip names. */
 function SavePlace({
   field,
   place,

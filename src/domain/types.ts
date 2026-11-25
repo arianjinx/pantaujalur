@@ -19,9 +19,9 @@ export type Route = { path: LatLng[]; distanceM: number; durationS: number };
 
 export type CameraOnRoute = {
   camera: Camera;
-  /** Perpendicular distance from the camera to the route, in meters. */
+
   offsetM: number;
-  /** Distance from the origin along the route to the camera's projection, in meters. */
+
   alongM: number;
 };
 

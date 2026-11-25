@@ -5,11 +5,6 @@ const M_PER_DEG_LAT = (Math.PI / 180) * EARTH_RADIUS_M;
 
 type Point = { x: number; y: number };
 
-/**
- * Cameras within `bufferM` of the route, ordered by distance along the route.
- * Uses an equirectangular projection around the route's mean latitude, which is
- * accurate to well under a meter across a city.
- */
 export function camerasAlongRoute(
   route: Route,
   cameras: readonly Camera[],

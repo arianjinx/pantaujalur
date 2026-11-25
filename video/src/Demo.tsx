@@ -24,14 +24,13 @@ export const FRAME = 1080;
 const BAND = 240;
 const APP = { width: FRAME, height: FRAME - BAND };
 const MAX_ZOOM = 2.2;
-/** Room around a focused area, as a fraction of its size. */
+
 const MARGIN = 0.12;
 const FONT =
   '"SF Pro Display", -apple-system, "Helvetica Neue", Arial, sans-serif';
 const INK = "#0f172a";
 const ORANGE = "#f97316";
 
-/** Where the camera looks: zoom, and the point of the window at the frame's centre. */
 type Camera = { zoom: number; cx: number; cy: number };
 const WHOLE: Camera = { zoom: 1, cx: 0.5, cy: 0.5 };
 
@@ -57,7 +56,6 @@ function mix(a: Camera, b: Camera, p: number): Camera {
   };
 }
 
-/** The camera at `frame`: each focus eases from wherever the camera was when it began. */
 function cameraAt(
   frame: number,
   keys: { frame: number; target: Camera }[],
@@ -237,7 +235,7 @@ function Main({ timeline }: { timeline: Timeline }) {
     captions.findLastIndex((c) => c.frame <= frame),
   );
   const current = captions[index];
-  // A caption that only changes its detail keeps its title still.
+
   let enteredAt = current?.frame ?? 0;
   for (let i = index; i > 0 && captions[i - 1].title === current?.title; i--)
     enteredAt = captions[i - 1].frame;
@@ -291,10 +289,9 @@ function Main({ timeline }: { timeline: Timeline }) {
   );
 }
 
-/** The opening card, and the video's first frame: the thumbnail people see before they play it. */
 export const INTRO = 42;
 export const INTRO_FADE = 10;
-/** The footage on the card: the recording's last moments, a wall page of live photos. */
+
 const POSTER_BEFORE_END_S = 1.5;
 
 function Poster({ timeline }: { timeline: Timeline }) {

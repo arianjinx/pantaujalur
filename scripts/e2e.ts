@@ -1,16 +1,5 @@
 import { join } from "node:path";
 
-/**
- * Drives the running app end to end in a headless browser:
- * search an origin and a destination, wait for the route and the camera list,
- * then open cameras along the route until one plays live video.
- *
- *   bun dev                       # in another terminal (alchemy dev, workerd)
- *   bun run e2e                   # BASE_URL defaults to http://localhost:1337
- *
- * Uses the installed Google Chrome by default; set BROWSER_CHANNEL=chromium to
- * use Playwright's bundled browser instead (`bunx playwright install chromium`).
- */
 import { chromium, type Page } from "playwright";
 
 const BASE_URL = process.env.BASE_URL ?? "http://localhost:1337";
@@ -32,7 +21,7 @@ async function choosePlace(
   text: string,
 ) {
   await page.getByLabel(`Search ${field}`).fill(text);
-  // Nominatim can rank a street that merely contains the words first ("Jalan Stasiun ...").
+
   const startsWithQuery = new RegExp(
     `^${text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`,
     "i",
@@ -48,7 +37,6 @@ async function choosePlace(
   console.log(`   ${field}: ${label}`);
 }
 
-/** Resolves with playback evidence once the video has decoded frames and its clock moves. */
 async function waitForLiveVideo(page: Page, timeoutMs: number) {
   const video = page.getByTestId("camera-video");
   const deadline = Date.now() + timeoutMs;

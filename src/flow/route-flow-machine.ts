@@ -12,9 +12,9 @@ export type PlaceField = "origin" | "destination";
 type RouteFlowContext = {
   origin: Place | null;
   destination: Place | null;
-  /** Why the last geolocation attempt failed; meaningful in `origin.auto.locateFailed`. */
+
   locateError: string | null;
-  /** The camera in the single-camera player; set exactly while `viewer.single` or `viewer.wall.single`. */
+
   selectedCamera: Camera | null;
 };
 
@@ -54,12 +54,6 @@ const locateWithBrowser = fromPromise<LatLng>(
     }),
 );
 
-/**
- * The user's input flow: where the origin comes from, which field a map click
- * fills, and what the viewer shows (nothing, one camera, or the wall of every
- * camera on the route, optionally with one camera opened over it). Server data (routes, cameras, search
- * results) lives in TanStack Query, not here.
- */
 export const routeFlowMachine = setup({
   types: { context: {} as RouteFlowContext, events: {} as RouteFlowEvent },
   actors: { locate: locateWithBrowser },
@@ -106,7 +100,7 @@ export const routeFlowMachine = setup({
           target: ".manual",
           actions: assign({ origin: null }),
         },
-        // A trip from "My location" starts from where the user is now, not where they were.
+
         TRIP_CHOSEN: [
           {
             guard: ({ event }) => event.origin.source === "gps",

@@ -33,7 +33,6 @@ type Call = {
   failOffline: () => void;
 };
 
-/** A capture function the test settles by hand, recording every call and how many ran at once. */
 function fakeCapture(clock: () => number) {
   const calls: Call[] = [];
   let running = 0;
@@ -80,13 +79,13 @@ function fakeCapture(clock: () => number) {
     calls,
     ids: () => calls.map((c) => c.id),
     maxRunning: () => maxRunning,
-    /** The latest call for a camera. */
+
     call(id: string): Call {
       const call = calls.filter((c) => c.id === id).pop();
       if (!call) throw new Error(`${id} was never captured`);
       return call;
     },
-    /** The oldest call still running. */
+
     open: () => calls.find((c) => !c.done),
   };
 }
@@ -119,7 +118,7 @@ function setup(
     },
   });
   const snapshot = (id: string) => queue.getSnapshots().get(id);
-  /** The frame a tile would show: the captured one, or the one kept while waiting or after a failure. */
+
   const shown = (id: string) => {
     const s = snapshot(id);
     return s?.kind === "captured" ? s.frame : s?.previous;

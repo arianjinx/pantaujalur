@@ -2,19 +2,9 @@ import type { Camera } from "#/domain/types";
 
 import type { StoredFrame } from "./frameStore";
 
-/**
- * One still picture of a camera on screen. `url` is an object URL of the JPEG,
- * owned by the queue. `endedAt` is set when the picture is the last one of a
- * stream that has stopped.
- */
 export type Frame = { url: string; capturedAt: Date; endedAt?: Date };
 
-/**
- * Where one camera's picture stands. `previous` is the last good frame, kept on
- * screen while a new one is on its way or after a capture failed.
- */
 export type Snapshot =
-  /** Waiting for a free capture slot. */
   | { kind: "pending"; previous?: Frame }
   | { kind: "capturing"; previous?: Frame }
   | { kind: "captured"; frame: Frame }
@@ -27,23 +17,18 @@ export type CaptureFn = (
 
 export type SnapshotQueue = ReturnType<typeof createSnapshotQueue>;
 
-/**
- * The city answered that this camera has nothing to show (404, an ended or an
- * empty stream). Unlike a timeout or a server error, it is worth remembering.
- */
 export class CameraOffline extends Error {}
 
 export const MAX_CONCURRENT_CAPTURES = 3;
-/** A live camera's frame older than this is captured again. */
+
 export const STALE_AFTER_MS = 15 * 60_000;
-/** A camera that was offline, or whose stream had ended, is asked again this soon, since city streams come back. */
+
 export const RECHECK_AFTER_MS = 5 * 60_000;
 
 export function isStale(at: Date, now: number) {
   return now - at.getTime() > STALE_AFTER_MS;
 }
 
-/** Whether a frame is due to be captured again. */
 function frameIsDue(frame: Pick<Frame, "capturedAt" | "endedAt">, now: number) {
   const age = now - frame.capturedAt.getTime();
   return age > (frame.endedAt ? RECHECK_AFTER_MS : STALE_AFTER_MS);
@@ -53,19 +38,6 @@ function failureIsDue(at: Date, now: number) {
   return now - at.getTime() > RECHECK_AFTER_MS;
 }
 
-/**
- * One snapshot per camera, captured at most three at a time. A camera starts
- * from its `cached` frame: a fresh one shows and costs nothing, a stale or
- * missing one is queued, in the order given. A camera that was offline or whose
- * stream had ended is asked again after 5 minutes, a live frame after 15.
- * `refreshStale` queues the cameras that have come due since; nothing else
- * repeats on its own.
- * `refresh` asks for one camera ahead of the rest whatever its age,
- * `refreshAll` asks for all of them, and `prioritize` reorders the cameras still
- * waiting. A camera is never captured twice at once. Each new frame goes to
- * `persist`. `dispose` aborts the captures in flight and revokes every frame's
- * object URL.
- */
 export function createSnapshotQueue({
   cameras,
   cached = new Map(),
@@ -78,7 +50,7 @@ export function createSnapshotQueue({
 }: {
   cameras: Camera[];
   cached?: ReadonlyMap<string, StoredFrame>;
-  /** When each camera last failed to give a frame, kept between wall opens. */
+
   failures?: ReadonlyMap<string, Date>;
   capture: CaptureFn;
   persist?: (cameraId: string, frame: StoredFrame) => void;
@@ -106,7 +78,7 @@ export function createSnapshotQueue({
     }),
   );
   let rank = new Map(cameras.map((camera, index) => [camera.id, index]));
-  /** Cameras the user asked for, most recent first; they jump the queue. */
+
   let urgent: string[] = [];
   const inFlight = new Map<string, AbortController>();
   const listeners = new Set<() => void>();
@@ -186,7 +158,7 @@ export function createSnapshotQueue({
       listeners.add(listener);
       return () => listeners.delete(listener);
     },
-    /** Captures the cameras still waiting in this order; cameras left out go last. */
+
     prioritize(order: string[]) {
       rank = new Map(order.map((id, index) => [id, index]));
       for (const id of byId.keys()) if (!rank.has(id)) rank.set(id, rank.size);
@@ -225,10 +197,6 @@ export function createSnapshotQueue({
   };
 }
 
-/**
- * The order to capture a wall's cameras while it shows `activePage`: that page,
- * then onward along the route, then the earlier pages, nearest first.
- */
 export function capturePriority(
   ids: string[],
   pageSize: number,

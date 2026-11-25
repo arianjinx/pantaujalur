@@ -10,7 +10,6 @@ const STATUS_MESSAGE: Record<Exclude<StreamStatus, "playing">, string> = {
   failed: "The stream could not be loaded.",
 };
 
-/** Plays one camera's HLS stream through the app's proxy. Remount (key by camera id) to switch cameras. */
 export function CameraPlayer({
   camera,
   onClose,

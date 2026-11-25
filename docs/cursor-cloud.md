@@ -4,7 +4,7 @@ Cursor cloud runs the `install` command in `.cursor/environment.json`:
 `bash .agents/setup`. The script is idempotent. It installs the Bun version
 pinned in `package.json` onto `/usr/local/bin` when that pin is missing, then
 runs `bun install --frozen-lockfile`. It reads no secrets.
-`scripts/harness.test.ts` requires `install` to stay `bash .agents/setup`.
+`scripts/rules.ts` requires `install` to stay `bash .agents/setup`.
 
 The default VM runs that install and the checks below, so the environment file
 sets only `install`. `bun test` and `bun run build` need no running service.
@@ -42,8 +42,8 @@ Deploy and `bun run relay:deploy` need `CLOUDFLARE_API_TOKEN`,
 `CLOUDFLARE_ACCOUNT_ID`, `CCTV_RELAY_SECRET`, `RELAY_HOSTNAME` and
 `RELAY_ZONE`. `APP_DOMAIN` is optional. `bun run relay:deploy` also needs
 `RELAY_SSH_HOST`. [README.md](../README.md) ("Hosting on Cloudflare") lists
-what each one is. Leave deploy to a person. A push to `main` deploys when
-those secrets exist.
+what each one is. Leave deploy to a person. They start
+`.github/workflows/deploy.yml` by hand when those secrets exist.
 
 `video/` has its own install, and only `bun run demo:record` needs it.
 `relay/Dockerfile` belongs on the relay machine.

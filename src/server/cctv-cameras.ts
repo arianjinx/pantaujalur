@@ -74,11 +74,8 @@ async function fetchCameras(): Promise<Camera[]> {
   return cameras;
 }
 
-// Holds resolved data only: on Workers a promise owned by one request cannot be
-// awaited safely by another.
 let cache: { cameras: Camera[]; fetchedAt: number } | null = null;
 
-/** All public city cameras, cached in memory for a few minutes. */
 export async function getCameras(): Promise<Camera[]> {
   if (cache !== null && Date.now() - cache.fetchedAt < CACHE_TTL_MS)
     return cache.cameras;

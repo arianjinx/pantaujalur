@@ -11,7 +11,6 @@ import {
   usePlaces,
 } from "#/places/places-store";
 
-/** One tap from a past trip to its route: "Home → Work". */
 export function YourTrips({
   onChoose,
 }: {

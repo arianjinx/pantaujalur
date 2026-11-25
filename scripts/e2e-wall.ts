@@ -1,18 +1,5 @@
 import { join } from "node:path";
 
-/**
- * Drives the camera wall end to end in a headless browser, at desktop and phone
- * sizes: plan a route, open the wall, check that it captures one snapshot per
- * camera through the throttle without mounting a player, refresh a tile, open a
- * camera live, page through, and close. Reports the stream requests and bytes
- * one wall open costs.
- *
- *   bun dev                       # in another terminal
- *   bun run e2e:wall              # BASE_URL defaults to http://localhost:1337
- *
- * Uses the installed Google Chrome by default; set BROWSER_CHANNEL=chromium to
- * use Playwright's bundled browser instead.
- */
 import {
   type Browser,
   type BrowserContext,
@@ -28,7 +15,7 @@ const DESTINATION_QUERY =
   process.env.DESTINATION_QUERY ?? "Universitas Brawijaya";
 const ROOT = join(import.meta.dir, "..");
 const MAX_CAPTURES = 3;
-/** A capture fetches its playlist once per attempt, and tries at most three times. */
+
 const MAX_ATTEMPTS = 3;
 const SNAPSHOT_TIMEOUT_MS = 60_000;
 
@@ -43,7 +30,7 @@ async function choosePlace(
   text: string,
 ) {
   await page.getByLabel(`Search ${field}`).fill(text);
-  // Nominatim can rank a street that merely contains the words first ("Jalan Stasiun ...").
+
   const startsWithQuery = new RegExp(
     `^${text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`,
     "i",
@@ -78,11 +65,10 @@ type StreamRequest = {
   end?: number;
   bytes: number;
   status?: number;
-  /** A 200 playlist carrying `#EXT-X-ENDLIST`: the stream stopped and never advances. */
+
   ended?: boolean;
 };
 
-/** Records every request through `/api/stream/` with its timing, status and body size. */
 function watchStreams(page: Page) {
   const log: StreamRequest[] = [];
   const byRequest = new Map<Request, StreamRequest>();
@@ -124,12 +110,12 @@ function watchStreams(page: Page) {
         segments: entries.filter((e) => !e.playlist).length,
         bytes: entries.reduce((n, e) => n + e.bytes, 0),
         streams: new Set(entries.map((e) => e.stream)).size,
-        /** Most streams with requests under way at once, each stream spanning its first request to its last response. */
+
         peak: peakOverlap(entries),
       };
     },
     mark: () => log.length,
-    /** "live", or why the stream has no current picture, judged from its latest playlist response. */
+
     verdict(stream: string) {
       const last = log.filter((e) => e.playlist && e.stream === stream).pop();
       if (!last || last.status === undefined) return "unrequested";
@@ -139,7 +125,6 @@ function watchStreams(page: Page) {
   };
 }
 
-/** The most streams with requests under way at once, and the spans of the streams open at that moment. */
 function peakOverlap(entries: StreamRequest[]) {
   const spans = new Map<string, { start: number; end: number }>();
   for (const e of entries) {
@@ -150,9 +135,7 @@ function peakOverlap(entries: StreamRequest[]) {
       span.end = Math.max(span.end, end);
     } else spans.set(e.stream, { start: e.start, end });
   }
-  // Playwright reports request events tens of milliseconds after the browser
-  // acts, so one capture's last response and the next capture's first request
-  // can look slightly overlapped. Spans closer than this count as a handoff.
+
   const handoffMs = 100;
   const edges = [...spans]
     .flatMap(([stream, s]) => [
@@ -181,7 +164,6 @@ function peakOverlap(entries: StreamRequest[]) {
   };
 }
 
-/** Records the highest `data-captures-in-flight` the wall ever shows, on every change. */
 async function watchInFlight(page: Page) {
   await page.evaluate(() => {
     const w = window as unknown as { maxInFlight: number };
@@ -216,7 +198,6 @@ type TileInfo = {
   image: { src: string; width: number } | null;
 };
 
-/** Every tile on the wall, in DOM order, with the page it sits on and its snapshot. */
 function readTiles(page: Page): Promise<TileInfo[]> {
   return page.getByTestId("wall-page").evaluateAll((pages) =>
     pages.flatMap((p, pageIndex) =>
@@ -254,7 +235,6 @@ async function waitForActivePage(page: Page, index: number) {
   );
 }
 
-/** Waits until every tile on the active page has a snapshot or has given up. */
 async function waitForActivePageSettled(page: Page) {
   await page.waitForFunction(
     () =>
@@ -277,7 +257,6 @@ async function waitForAllSettled(page: Page, total: number) {
     .waitFor({ timeout: SNAPSHOT_TIMEOUT_MS * 3 });
 }
 
-/** Waits until a smooth scroll has come to rest on page `index`, so a screenshot shows whole tiles. */
 async function waitForScrolledTo(page: Page, index: number) {
   await page.getByTestId("wall-scroller").evaluate(
     (el, i) =>
@@ -300,7 +279,6 @@ async function activePageIndex(page: Page) {
     );
 }
 
-/** The page with the most captured tiles, for a screenshot that shows pictures. */
 function mostCaptured(tiles: TileInfo[]) {
   const counts = new Map<number, number>();
   for (const t of tiles)
@@ -317,7 +295,6 @@ function kb(bytes: number) {
   return `${(bytes / 1024).toFixed(0)} KiB`;
 }
 
-/** Resolves with playback evidence once the live player has decoded frames and its clock moves. */
 async function waitForLiveVideo(page: Page, timeoutMs: number) {
   const video = page.getByTestId("camera-video");
   const deadline = Date.now() + timeoutMs;
@@ -750,7 +727,7 @@ async function phone(browser: Browser) {
     .getByRole("button");
   const jumpTo = Math.min(5, Math.floor((tiles.length - 1) / phonePageSize));
   const jumpMark = streams.mark();
-  // Read which cameras already started and jump in one tick, so no capture can start in between.
+
   const startedBefore = new Set(
     await page.evaluate((index) => {
       const started = [

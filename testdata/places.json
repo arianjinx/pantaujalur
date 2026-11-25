@@ -1,0 +1,481 @@
+{
+  "recorded": "2026-11-25",
+  "source": "https://nominatim.openstreetmap.org/search",
+  "params": {
+    "format": "jsonv2",
+    "accept-language": "id,en",
+    "limit": "5",
+    "countrycodes": "id",
+    "viewbox": "112.55,-7.90,112.72,-8.05",
+    "bounded": "0"
+  },
+  "queries": [
+    {
+      "q": "Stasiun Malang",
+      "place": "Stasiun Malang on Jalan Trunojoyo, not Jalan Stasiun",
+      "anchor": {
+        "lat": -7.9775053,
+        "lng": 112.6370284
+      },
+      "radius_m": 600,
+      "label_has": "Stasiun Malang",
+      "response": [
+        {
+          "display_name": "Jalan Stasiun Blimbing, Purwodadi, Kota Malang, Blimbing, Jawa Timur, 65125, Indonesia",
+          "lat": "-7.9405717",
+          "lon": "112.6448414"
+        },
+        {
+          "display_name": "Parkir Stasiun Malang Pintu Timur, Jalan Panglima Besar Sudirman, RW 07 KEL. KESATRIAN, KOTA MALANG, Kiduldalem, Klojen, Jawa Timur, 65111, Indonesia",
+          "lat": "-7.9783651",
+          "lon": "112.6382504"
+        },
+        {
+          "display_name": "Stasiun Malang Bangunan Baru, Jalan Panglima Besar Sudirman, RW 07 KEL. KESATRIAN, KOTA MALANG, Kiduldalem, Kota Malang, Klojen, Jawa Timur, 65111, Indonesia",
+          "lat": "-7.9784763",
+          "lon": "112.6379259"
+        },
+        {
+          "display_name": "Stasiun Malang Kotalama, Jalan Kolonel Sugiono, RW 03 Kel. Kotalama Kec. Kedung Kandang, Kota Malang, Ciptomulyo, Kota Malang, Kedungkandang, Jawa Timur, 65134, Indonesia",
+          "lat": "-7.9949100",
+          "lon": "112.6325670"
+        },
+        {
+          "display_name": "Stasiun Malang Bangunan Lama, Jalan Trunojoyo, RW. 08, KEL. KIDUL DALEM, KOTA MALANG, Kiduldalem, Klojen, Jawa Timur, 65111, Indonesia",
+          "lat": "-7.9775053",
+          "lon": "112.6370284"
+        }
+      ]
+    },
+    {
+      "q": "Stasiun Kota",
+      "place": "the city station, Stasiun Malang",
+      "anchor": {
+        "lat": -7.9775053,
+        "lng": 112.6370284
+      },
+      "radius_m": 600,
+      "label_has": "Stasiun Malang",
+      "response": [
+        {
+          "display_name": "Jalan Stasiun Blimbing, Purwodadi, Kota Malang, Blimbing, Jawa Timur, 65125, Indonesia",
+          "lat": "-7.9405717",
+          "lon": "112.6448414"
+        },
+        {
+          "display_name": "Parkir Stasiun Malang Pintu Timur, Jalan Panglima Besar Sudirman, RW 07 KEL. KESATRIAN, KOTA MALANG, Kiduldalem, Klojen, Jawa Timur, 65111, Indonesia",
+          "lat": "-7.9783651",
+          "lon": "112.6382504"
+        },
+        {
+          "display_name": "Stasiun Malang Bangunan Baru, Jalan Panglima Besar Sudirman, RW 07 KEL. KESATRIAN, KOTA MALANG, Kiduldalem, Kota Malang, Klojen, Jawa Timur, 65111, Indonesia",
+          "lat": "-7.9784763",
+          "lon": "112.6379259"
+        },
+        {
+          "display_name": "Stasiun Malang Kotalama, Jalan Kolonel Sugiono, RW 03 Kel. Kotalama Kec. Kedung Kandang, Kota Malang, Ciptomulyo, Kota Malang, Kedungkandang, Jawa Timur, 65134, Indonesia",
+          "lat": "-7.9949100",
+          "lon": "112.6325670"
+        },
+        {
+          "display_name": "Stasiun Malang Bangunan Lama, Jalan Trunojoyo, RW. 08, KEL. KIDUL DALEM, KOTA MALANG, Kiduldalem, Klojen, Jawa Timur, 65111, Indonesia",
+          "lat": "-7.9775053",
+          "lon": "112.6370284"
+        }
+      ]
+    },
+    {
+      "q": "Tugu Malang",
+      "place": "Jalan Tugu in the city, not the street in the kabupaten",
+      "anchor": {
+        "lat": -7.97675,
+        "lng": 112.63449
+      },
+      "radius_m": 500,
+      "response": [
+        {
+          "display_name": "Jalan Tugu, Pandanlandung Kidul, Pandanlandung, Kabupaten Malang, Jawa Timur, 65146, Indonesia",
+          "lat": "-7.9771217",
+          "lon": "112.5913319"
+        },
+        {
+          "display_name": "Jalan Tugu, RW. 08, KEL. KIDUL DALEM, KOTA MALANG, Klojen, Kota Malang, Klojen, Jawa Timur, 65111, Indonesia",
+          "lat": "-7.9767473",
+          "lon": "112.6344936"
+        },
+        {
+          "display_name": "Jalan Tugu, RW. 08, KEL. KIDUL DALEM, KOTA MALANG, Kauman, Kota Malang, Klojen, Jawa Timur, 65119, Indonesia",
+          "lat": "-7.9773588",
+          "lon": "112.6334678"
+        },
+        {
+          "display_name": "Jalan Tugu, RW. 08, KEL. KIDUL DALEM, KOTA MALANG, Kiduldalem, Klojen, Jawa Timur, 65111, Indonesia",
+          "lat": "-7.9775801",
+          "lon": "112.6344625"
+        },
+        {
+          "display_name": "Jalan Tugu, RW. 08, KEL. KIDUL DALEM, KOTA MALANG, Kiduldalem, Klojen, Jawa Timur, 65119, Indonesia",
+          "lat": "-7.9777479",
+          "lon": "112.6339595"
+        }
+      ]
+    },
+    {
+      "q": "Kampus UB",
+      "place": "Universitas Brawijaya's main campus",
+      "anchor": {
+        "lat": -7.9517994,
+        "lng": 112.6138388
+      },
+      "radius_m": 800,
+      "label_has": "Universitas Brawijaya",
+      "response": [
+        {
+          "display_name": "Stadion UB, Jalan Komplek Universitas Brawijaya Kampus 2 Malang, Kunci, Kalisongo, Kabupaten Malang, Jawa Timur, 65146, Indonesia",
+          "lat": "-7.9690898",
+          "lon": "112.5915723"
+        },
+        {
+          "display_name": "Rumah Sakit Hewan Pendidikan Universitas Brawijaya (RSHP UB), Jalan Komplek Universitas Brawijaya Kampus 2 Malang, Kunci, Kalisongo, Kabupaten Malang, Jawa Timur, 65146, Indonesia",
+          "lat": "-7.9699606",
+          "lon": "112.5931300"
+        },
+        {
+          "display_name": "Dept. Kreatif dan Industri FV UB Dieng, Jalan Komplek Universitas Brawijaya Kampus 2 Malang, Kunci, Kalisongo, Kabupaten Malang, Jawa Timur, 65146, Indonesia",
+          "lat": "-7.9684158",
+          "lon": "112.5924820"
+        },
+        {
+          "display_name": "Lapangan Futsal UB Dieng, Jalan Komplek Universitas Brawijaya Kampus 2 Malang, Kunci, Kalisongo, Kabupaten Malang, Jawa Timur, 65146, Indonesia",
+          "lat": "-7.9678249",
+          "lon": "112.5923604"
+        },
+        {
+          "display_name": "Klinik UB, Jalan Komplek Universitas Brawijaya Kampus 2 Malang, Kunci, Kalisongo, Kabupaten Malang, Jawa Timur, 65146, Indonesia",
+          "lat": "-7.9675216",
+          "lon": "112.5927660"
+        }
+      ]
+    },
+    {
+      "q": "Universitas Brawijaya",
+      "place": "Universitas Brawijaya",
+      "anchor": {
+        "lat": -7.9517994,
+        "lng": 112.6138388
+      },
+      "radius_m": 400,
+      "response": [
+        {
+          "display_name": "Universitas Brawijaya, Jalan Bunga Andong Barat, Jatimulyo, Kota Malang, Lowokwaru, Jawa Timur, 65145, Indonesia",
+          "lat": "-7.9517994",
+          "lon": "112.6138388"
+        }
+      ]
+    },
+    {
+      "q": "Jl. Kayutangan",
+      "place": "Jl. Kayutangan",
+      "anchor": {
+        "lat": -7.9815813,
+        "lng": 112.6304997
+      },
+      "radius_m": 200,
+      "response": [
+        {
+          "display_name": "Jl. Kayutangan, RW. 02, KEL. KIDUL DALEM, KOTA MALANG, Kiduldalem, Kota Malang, Klojen, Jawa Timur, 65119, Indonesia",
+          "lat": "-7.9815813",
+          "lon": "112.6304997"
+        }
+      ]
+    },
+    {
+      "q": "Alun-Alun Malang",
+      "place": "Alun-Alun Merdeka",
+      "anchor": {
+        "lat": -7.9826131,
+        "lng": 112.63082
+      },
+      "radius_m": 300,
+      "response": [
+        {
+          "display_name": "Alun-Alun Merdeka, Kiduldalem, Kota Malang, Klojen, Jawa Timur, Indonesia",
+          "lat": "-7.9826131",
+          "lon": "112.6308200"
+        }
+      ]
+    },
+    {
+      "q": "Terminal Arjosari",
+      "place": "Terminal Arjosari",
+      "anchor": {
+        "lat": -7.934596,
+        "lng": 112.6584738
+      },
+      "radius_m": 300,
+      "response": [
+        {
+          "display_name": "Terminal Arjosari, Jalan Terusan Raden Intan, RW. 03, KEL. ARJOSARI, Arjosari, Kota Malang, Blimbing, Jawa Timur, 65102, Indonesia",
+          "lat": "-7.9345960",
+          "lon": "112.6584738"
+        }
+      ]
+    },
+    {
+      "q": "Olympic Garden",
+      "place": "Malang Olympic Garden",
+      "anchor": {
+        "lat": -7.9769571,
+        "lng": 112.6237802
+      },
+      "radius_m": 300,
+      "response": [
+        {
+          "display_name": "Malang Olympic Garden, 07, Kel Kauman, Kec Klojen, Kota Malang, Kauman, Kota Malang, Klojen, Jawa Timur, Indonesia",
+          "lat": "-7.9769571",
+          "lon": "112.6237802"
+        },
+        {
+          "display_name": "Malang Olympic Garden, Jalan Kawi, 07, Kel Kauman, Kec Klojen, Kota Malang, Kauman, Kota Malang, Klojen, Jawa Timur, 65116, Indonesia",
+          "lat": "-7.9769597",
+          "lon": "112.6238701"
+        }
+      ]
+    },
+    {
+      "q": "Jalan Ijen",
+      "place": "Jalan Ijen in Klojen",
+      "anchor": {
+        "lat": -7.96721,
+        "lng": 112.62418
+      },
+      "radius_m": 400,
+      "response": [
+        {
+          "display_name": "Jalan Ijen, Oro-Oro Dowo, Kota Malang, Klojen, Jawa Timur, 65115, Indonesia",
+          "lat": "-7.9672061",
+          "lon": "112.6241757"
+        },
+        {
+          "display_name": "Jalan Ijen, Penanggungan, Kota Malang, Klojen, Jawa Timur, 65115, Indonesia",
+          "lat": "-7.9630514",
+          "lon": "112.6255101"
+        },
+        {
+          "display_name": "Jalan Ijen, 07, Kel Penanggungan, Kec Klojen, Kota Malang, Penanggungan, Kota Malang, Klojen, Jawa Timur, 65115, Indonesia",
+          "lat": "-7.9624620",
+          "lon": "112.6257394"
+        }
+      ]
+    },
+    {
+      "q": "Universitas Negeri Malang",
+      "place": "Universitas Negeri Malang",
+      "anchor": {
+        "lat": -7.96147,
+        "lng": 112.61787
+      },
+      "radius_m": 400,
+      "response": [
+        {
+          "display_name": "Universitas Negeri Malang, 5, Jalan Ciamis, 04, Kel Penanggungan, Kec Klojen, Kota Malang, Penanggungan, Kota Malang, Lowokwaru, Jawa Timur, 65113, Indonesia",
+          "lat": "-7.9614738",
+          "lon": "112.6178723"
+        }
+      ]
+    },
+    {
+      "q": "Universitas Muhammadiyah Malang",
+      "place": "Universitas Muhammadiyah Malang",
+      "anchor": {
+        "lat": -7.92086,
+        "lng": 112.59716
+      },
+      "radius_m": 500,
+      "response": [
+        {
+          "display_name": "Universitas Muhammadiyah Malang, Gang 15B, RW 07, Kel Tlogomas, Kec Lowokwaru, Kota Malang, Tlogomas, Kota Malang, Lowokwaru, Jawa Timur, 65144, Indonesia",
+          "lat": "-7.9208595",
+          "lon": "112.5971615"
+        }
+      ]
+    },
+    {
+      "q": "Politeknik Negeri Malang",
+      "place": "Politeknik Negeri Malang",
+      "anchor": {
+        "lat": -7.94542,
+        "lng": 112.6149
+      },
+      "radius_m": 400,
+      "response": [
+        {
+          "display_name": "Politeknik Negeri Malang, 9, Jalan Soekarno-Hatta, Jatimulyo, Kota Malang, Lowokwaru, Jawa Timur, 65141, Indonesia",
+          "lat": "-7.9454193",
+          "lon": "112.6148980"
+        }
+      ]
+    },
+    {
+      "q": "Pasar Besar Malang",
+      "place": "Pasar Besar Malang",
+      "anchor": {
+        "lat": -7.98718,
+        "lng": 112.63307
+      },
+      "radius_m": 300,
+      "response": [
+        {
+          "display_name": "Pasar Besar Malang, Jalan Kopral KKO. Usman, Sukoharjo, Kota Malang, Klojen, Jawa Timur, 65118, Indonesia",
+          "lat": "-7.9871822",
+          "lon": "112.6330660"
+        }
+      ]
+    },
+    {
+      "q": "Rumah Sakit Saiful Anwar",
+      "place": "RSUD dr. Saiful Anwar",
+      "anchor": {
+        "lat": -7.97327,
+        "lng": 112.63204
+      },
+      "radius_m": 400,
+      "response": [
+        {
+          "display_name": "RSUD dr. Saiful Anwar, 2, Jalan Jaksa Agung Suprapto, Klojen, Kota Malang, Klojen, Jawa Timur, 65111, Indonesia",
+          "lat": "-7.9732675",
+          "lon": "112.6320399"
+        }
+      ]
+    },
+    {
+      "q": "Balai Kota Malang",
+      "place": "Kantor Wali Kota Malang",
+      "anchor": {
+        "lat": -7.97813,
+        "lng": 112.6339
+      },
+      "radius_m": 400,
+      "response": [
+        {
+          "display_name": "Kantor Wali Kota Malang, Jalan Majapahit, RW. 08, KEL. KIDUL DALEM, KOTA MALANG, Kiduldalem, Klojen, Jawa Timur, 65119, Indonesia",
+          "lat": "-7.9781344",
+          "lon": "112.6339005"
+        }
+      ]
+    },
+    {
+      "q": "Stadion Gajayana",
+      "place": "Stadion Gajayana",
+      "anchor": {
+        "lat": -7.97566,
+        "lng": 112.62507
+      },
+      "radius_m": 300,
+      "response": [
+        {
+          "display_name": "Stadion Gajayana, Jalan Semeru, Kauman, Kota Malang, Klojen, Jawa Timur, 65119, Indonesia",
+          "lat": "-7.9756586",
+          "lon": "112.6250687"
+        }
+      ]
+    },
+    {
+      "q": "Matos",
+      "place": "Malang Town Square",
+      "anchor": {
+        "lat": -7.95683,
+        "lng": 112.61881
+      },
+      "radius_m": 400,
+      "response": [
+        {
+          "display_name": "Malang Town Square, 2, Jalan Veteran, Sumbersari, Kota Malang, Lowokwaru, Jawa Timur, 60135, Indonesia",
+          "lat": "-7.9568275",
+          "lon": "112.6188069"
+        }
+      ]
+    },
+    {
+      "q": "Suhat",
+      "place": "Jalan Soekarno-Hatta",
+      "anchor": {
+        "lat": -7.93831,
+        "lng": 112.62901
+      },
+      "radius_m": 3000,
+      "label_has": "Soekarno-Hatta",
+      "response": [
+        {
+          "display_name": "Jalan Soekarno-Hatta, Mojolangu, Kota Malang, Lowokwaru, Jawa Timur, 65142, Indonesia",
+          "lat": "-7.9383069",
+          "lon": "112.6290087"
+        },
+        {
+          "display_name": "Jalan Soekarno-Hatta, Jatimulyo, Kota Malang, Lowokwaru, Jawa Timur, 65113, Indonesia",
+          "lat": "-7.9452958",
+          "lon": "112.6187515"
+        },
+        {
+          "display_name": "Jalan Soekarno-Hatta, Jatimulyo, Kota Malang, Lowokwaru, Jawa Timur, 65145, Indonesia",
+          "lat": "-7.9481405",
+          "lon": "112.6168037"
+        },
+        {
+          "display_name": "Jalan Soekarno-Hatta, 05, Kel Penanggungan, Kec Klojen, Kota Malang, Ketawanggede, Kota Malang, Lowokwaru, Jawa Timur, 65145, Indonesia",
+          "lat": "-7.9498851",
+          "lon": "112.6155528"
+        }
+      ]
+    },
+    {
+      "q": "Mall Dinoyo",
+      "place": "Mall Dinoyo City",
+      "anchor": {
+        "lat": -7.93782,
+        "lng": 112.60741
+      },
+      "radius_m": 400,
+      "response": [
+        {
+          "display_name": "Mall Dinoyo City, Jalan M.T. Haryono Gang XIV, Tlogomas, Kota Malang, Lowokwaru, Jawa Timur, 65144, Indonesia",
+          "lat": "-7.9378206",
+          "lon": "112.6074079"
+        }
+      ]
+    },
+    {
+      "q": "Bandara Abdul Rachman Saleh",
+      "place": "Bandar Udara Abdul Rachman Saleh",
+      "anchor": {
+        "lat": -7.930325,
+        "lng": 112.7132741
+      },
+      "radius_m": 1500,
+      "label_has": "Abdul Rachman Saleh",
+      "response": [
+        {
+          "display_name": "Bandar Udara Abdul Rachman Saleh, Jalan Akses Bandara Abdurahmansaleh Malang, Sekaran, Pakis, Kabupaten Malang, Jawa Timur, 65102, Indonesia",
+          "lat": "-7.9303250",
+          "lon": "112.7132741"
+        }
+      ]
+    },
+    {
+      "q": "Landungsari",
+      "place": "Landungsari",
+      "anchor": {
+        "lat": -7.92776,
+        "lng": 112.59406
+      },
+      "radius_m": 500,
+      "response": [
+        {
+          "display_name": "Landungsari, Kabupaten Malang, Jawa Timur, 65144, Indonesia",
+          "lat": "-7.9277593",
+          "lon": "112.5940557"
+        }
+      ]
+    }
+  ]
+}

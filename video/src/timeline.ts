@@ -1,28 +1,20 @@
-/** Part of the app's window, as fractions of its width and height. */
 export type Box = { x: number; y: number; w: number; h: number };
 
-/**
- * What the recorder noted while it drove the app, in seconds of recording:
- * when each caption starts, which spans were waits on the network, and what
- * the camera should frame from each moment on (null: the whole window).
- */
 export type Timeline = {
   viewport: { width: number; height: number };
   totalS: number;
   captions: { title: string; detail?: string; at: number }[];
   waits: [number, number][];
-  /** Spans left out of the edit, such as a camera that would not play. */
+
   cuts: [number, number][];
   focus: { at: number; box: Box | null }[];
 };
 
-/** The video plays at this speed, and waits on the network at WAIT_SPEED. */
 export const PLAY_SPEED = 2.5;
 export const WAIT_SPEED = 40;
 
 export type Part = { start: number; end: number; speed: number };
 
-/** The recording cut into spans, in order, each with the speed it plays at. */
 export function parts(timeline: Timeline): Part[] {
   const spans = [
     ...timeline.waits.map(([start, end]) => ({
@@ -45,7 +37,6 @@ export function parts(timeline: Timeline): Part[] {
   return result.filter((p) => p.end - p.start > 0.01);
 }
 
-/** Where a moment of the recording lands in the edited video, in seconds. A moment in a cut lands where the cut is. */
 export function outputTime(cut: Part[], t: number): number {
   let out = 0;
   for (const p of cut) {
@@ -55,7 +46,6 @@ export function outputTime(cut: Part[], t: number): number {
   return out;
 }
 
-/** The opening card stands in for the recording's first caption, so the edit starts at the second. */
 export function edited(timeline: Timeline): Timeline {
   const start = timeline.captions[1]?.at ?? 0;
   return { ...timeline, cuts: [...timeline.cuts, [0, start]] };
