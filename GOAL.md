@@ -49,7 +49,7 @@ An unmeasured rung is not a drop. Do not record one over a real number.
 - **R9** is a person. No score stands in for it.
 - **R5** runs only where the city answers `/api/cameras`, and it is one pass of three live scripts. A stream that stalls on a busy machine fails it once. Replay the failing script alone before working on its `first_fail`.
 - **R8** prints a real number, but its frontier is a product rule that no reference has reached, and it waits on the operator's answer above.
-- **R7** is a median of three runs on one machine. It tells where a page stands, not that a change made it faster. A gain needs the interleaved method in FRONTIER.md.
+- **R7** is a median of three runs on one machine, against `bun run dev`, not the built Worker, so its performance number is lower than what a visitor gets. It tells where a page stands, not that a change made it faster. A gain needs the interleaved method in FRONTIER.md.
 - Map tiles, the live player's picture and the wall's photos are outside R6. R9 judges them.
 
 ## Sources of truth

@@ -2,31 +2,44 @@
 
 The current score for each rung, then the evidence for every step, newest first. FRONTIER.jsonl holds the same steps as one JSON line each, including rejected attempts.
 
-| Rung | Name         | Score                                                 | Frontier           | Commit   |
-| ---- | ------------ | ----------------------------------------------------- | ------------------ | -------- |
-| R0   | Gate         | yes                                                   | yes                | 8ef982e  |
-| R1   | Geometry     | 1881/1881 (max error 0.0116 m offset, 0.0688 m along) | every probe        | 8ef982e  |
-| R2   | Place search | 18/22                                                 | 22/22              | 8ef982e  |
-| R3   | City budget  | 6/6                                                   | 6/6                | 8ef982e  |
-| R4   | States       | 0/12                                                  | 12/12              | scaffold |
-| R5   | Flows        | unmeasured                                            | 3/3                | scaffold |
-| R6   | UI rules     | 58/77                                                 | every check        | scaffold |
-| R7   | Speed        | 48, 100, 92, 91 (1 of 4 at the bar)                   | 90, 100, 100, 100  | scaffold |
-| R8   | Direction    | unmeasured                                            | every such camera  | scaffold |
-| R9   | Taste        | manual                                                | the operator's yes | scaffold |
+| Rung | Name         | Score                                                           | Frontier                                     | Commit  |
+| ---- | ------------ | --------------------------------------------------------------- | -------------------------------------------- | ------- |
+| R0   | Gate         | yes                                                             | yes                                          | 55bd8ac |
+| R1   | Geometry     | 1881/1881 (max error 0.0116 m offset, 0.0688 m along)           | every probe                                  | 55bd8ac |
+| R2   | Place search | 18/22                                                           | 22/22                                        | 55bd8ac |
+| R3   | City budget  | 6/6                                                             | 6/6                                          | 55bd8ac |
+| R4   | States       | 0/12                                                            | 12/12                                        | 55bd8ac |
+| R5   | Flows        | 2/3 (a different script failed in each of two runs, under load) | 3/3                                          | 55bd8ac |
+| R6   | UI rules     | 58/77                                                           | every check                                  | 55bd8ac |
+| R8   | Direction    | 52/166 (every camera kept, the 114 facing away too)             | 166/166, once the operator confirms the rule | 55bd8ac |
+| R7   | Speed        | 50, 100, 92, 91 (1 of 4 at the bar)                             | 90, 100, 100, 100                            | 55bd8ac |
+| R9   | Taste        | manual                                                          | the operator's yes                           | 55bd8ac |
 
-The scaffold commit is the one that adds this file. `scripts/score` printed `3e4a05a+dirty` because the ledger was not committed yet. The measured tree is that commit's tree.
+The scaffold commit is the one that adds this file. `scripts/score` printed `3e4a05a+dirty` because the ledger was not committed yet. The measured tree is that commit's tree. The swarm remeasure at `8ef982e` is on `origin/cursor/swarm-frontier-ac5c`; main squashed it into `fc1d2b9`, whose `src`, `relay` and `testdata` are the same.
 
 ## Speed method
 
 A speed number counts only when measured this way:
 
-- Same machine, idle host. This baseline was Linux 6.12, 4 cores, load 0.66, Chrome, Lighthouse's mobile simulation.
+- Same machine, idle host. The first baseline was Linux 6.12, 4 cores, load 0.66, Chrome, Lighthouse's mobile simulation. The 2026-11-25 review baseline was a 10-core Mac, load 6.06, Chrome 158, `lighthouse@13.6.0`. The meter refuses a run while the 1-minute load is over 80% of the cores.
+- The ceiling is 100 in every category. Lighthouse scores no higher.
 - Baseline and candidate run interleaved (A B, B A, A B, …), at least 6 pairs. A single median of 3, as here, is the baseline, not a claim that a change is faster.
 - Report the median and a paired 95% confidence interval for the change. Accept only if the whole interval is a gain and no other rung drops by more than 3%.
 - Record the exact command, both commits, and the hardware.
 
 ## Evidence
+
+### 2026-11-25 frontier review remeasure
+
+- Commands, on `55bd8ac` with a clean tree and `bun run dev` from the same worktree: `scripts/verify.sh`, then `SCORE_UI=1 SCORE_FLOWS=1 SCORE_SPEED=1 scripts/score --all` (66 s), then `SCORE_SPEED=1 scripts/score --no-gate` once the load fell. Machine: `Peyeks-MacBook-Pro.local darwin 27.2.0`, 10 cores, other sessions running beside it (load 13.3 at the first run, 6.06 at the Lighthouse runs).
+- R0: yes. `bun run lint` clean, `bun check` clean, `bun test` 77 pass and 0 fail (88 at the first baseline, before the swarm pass cut the tests the meter covers), the build finished, `verify: green`.
+- R1: 1881/1881, unchanged. R2: 18/22, the same four misses. R3: 6/6.
+- R4: 0/12, `first-visit: no data-fixture`. R6: 58/77, the same 19 fails as the first baseline: the dark scheme and 18 targets under 44 px.
+- R5: 2/3, measured for the first time. This Mac's dev server got the city's list (`GET /api/cameras` 200, 251 cameras). In the review run `e2e:wall` failed: `page 1 settles in 41.6 s: every camera with a live or ended playlist shows a captured image, every camera still missing after its retries shows no signal`. In an earlier run on the uncommitted tree, `e2e` failed instead, and `bun run e2e` alone then passed in 7.6 s, with 40 cameras on Stasiun Malang to Universitas Brawijaya and one playing live. Both failures came at a load of 10 to 14.
+- R7: performance 50, accessibility 100, best practices 92, SEO 91, the same in all three runs. 1 of 4 at the bar. The first try was refused at a load of 8.51 on 10 cores, as the meter now does.
+- R8: 52/166, measured for the first time from `testdata/cameras.json` (251 cameras, 242 naming a facing). 166 trip and camera pairs lie within 100 m by the sphere reference. The app keeps all of them, and 52 face within 45° of travel. `first_fail`: `stasiun-ub: kept Jl. Semeru Arah Barat, it faces 270° and the route there travels 352°`.
+- R9: manual.
+- Not verified: R8's rule itself, which waits on the operator; R7 on the built Worker; R5 on a quiet machine.
 
 ### 2026-11-25 swarm remeasure
 
