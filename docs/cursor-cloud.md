@@ -4,7 +4,7 @@ Cursor cloud runs the `install` command in `.cursor/environment.json`:
 `bash .agents/setup`. The script is idempotent. It installs the Bun version
 pinned in `package.json` onto `/usr/local/bin` when that pin is missing, then
 runs `bun install --frozen-lockfile`. It reads no secrets.
-`scripts/harness.test.ts` requires `install` to stay `bash .agents/setup`.
+`scripts/rules.ts` requires `install` to stay `bash .agents/setup`.
 
 The default VM runs that install and the checks below, so the environment file
 sets only `install`. `bun test` and `bun run build` need no running service.

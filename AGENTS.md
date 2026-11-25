@@ -113,12 +113,9 @@ A harness folder only points at it.
 | Cloud setup  | `.agents/setup`                  | Amp runs it for each new orb. `.cursor/environment.json` runs it as the Cursor cloud install. The SessionStart hook in `.claude/settings.json` runs it in Claude Code cloud |
 
 `.agents/setup` installs the Bun pinned in `packageManager` and runs
-`bun install --frozen-lockfile`. `scripts/harness.test.ts`, part of
-`bun run test`, fails when a `CLAUDE.md` exists, when a `SKILL.md` sits outside
-`.agents/skills/`, or when the Cursor install or the Claude hook stops running
-`.agents/setup`. Claude Code's `/init` and `#` memory write a `CLAUDE.md`, and
-Cursor's `/create-skill` writes to `.cursor/skills/`. Move what they write into
-`AGENTS.md` or `.agents/skills/` and delete their copy.
+`bun install --frozen-lockfile`. `scripts/rules.ts` fails when a `CLAUDE.md`
+or a `SKILL.md` exists, or when the Cursor install or the Claude hook stops
+running `.agents/setup`.
 
 ## Repeated mistakes
 

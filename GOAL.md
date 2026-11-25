@@ -53,11 +53,11 @@ In order of trust:
 4. What the three e2e scripts do on a network the city accepts.
 5. The code: `src/domain/cameras-along-route.ts`, `src/server/geo.ts`, `src/components/snapshotQueue.ts`.
 
-Read a reference to see what right looks like. Never copy code from another project. Every intended difference goes in `docs/DEVIATIONS.md`, with the reason. Only the operator adds an entry.
+Read a reference to see what right looks like. Never copy code from another project. An intended difference goes in the commit message, with the reason. Only the operator decides one.
 
 ## Out of scope
 
 - Deploying, deleting a Cloudflare resource, and the relay machine. The operator does those. A push to main deploys.
 - Replacing OSRM or Nominatim with a private server.
-- A live player on every wall tile. See `docs/DEVIATIONS.md`.
+- A live player on every wall tile. One live player stays. A player per tile would hold a stream open per camera.
 - Becoming an official client of the city.

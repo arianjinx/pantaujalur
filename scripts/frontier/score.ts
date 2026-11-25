@@ -93,7 +93,7 @@ console.log(
     R8: measured.R8,
     R9: {
       score: "manual",
-      why: "The operator signs off on the route, the wall and the player, at phone and desktop size. Notes go in docs/DEVIATIONS.md only when a difference is on purpose.",
+      why: "The operator signs off on the route, the wall and the player, at phone and desktop size.",
     },
   }),
 );

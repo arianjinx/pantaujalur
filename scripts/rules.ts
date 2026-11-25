@@ -6,6 +6,19 @@ const SKIP = new Set(["alchemy.run.ts", "src/routeTree.gen.ts"]);
 const CODE = /\.(tsx?|jsx?|mjs|css)$/;
 const HASH = /(\.(sh|ya?ml)$)|(^\.githooks\/)/;
 const EM_DASH = "\u2014";
+const ALLOWED_MARKDOWN = new Set([
+  "AGENTS.md",
+  "README.md",
+  "GOAL.md",
+  "LOOP.md",
+  "FRONTIER.md",
+  "docs/cursor-cloud.md",
+]);
+const ALLOWED_DOCS = new Set([
+  "docs/cursor-cloud.md",
+  "docs/route.jpg",
+  "docs/wall.jpg",
+]);
 const DIRECTIVE =
   /^\s*(\/\/\/|\/\/\s*@(?:ts-|vite-|jsx)|\/\/\s*eslint-|\/\/\s*noinspection|\/\*\*?[\s*]*eslint-)/;
 
@@ -35,6 +48,18 @@ const hashComment = (line: string, index: number) => {
 
 const broken: string[] = [];
 for (const file of files) {
+  if (file.startsWith("docs/") && !ALLOWED_DOCS.has(file))
+    broken.push(`${file}: no docs; the commit message is the record`);
+  if (file.endsWith(".md") && !ALLOWED_MARKDOWN.has(file))
+    broken.push(`${file}: no docs; the commit message is the record`);
+  if (/(^|\/)CLAUDE\.md$/.test(file) || /(^|\/)SKILL\.md$/.test(file))
+    broken.push(`${file}: no second instruction file and no skills`);
+  if (
+    file.startsWith(".agents/skills/") ||
+    file.startsWith(".cursor/skills/") ||
+    file.startsWith(".claude/skills/")
+  )
+    broken.push(`${file}: no skills`);
   const code = CODE.test(file);
   const hash = HASH.test(file);
   if (!code && !hash && !file.endsWith(".md")) continue;
@@ -48,6 +73,19 @@ for (const file of files) {
       broken.push(`${file}:${index + 1}: comment; say it with a name`);
   });
 }
+
+const read = (path: string) => readFileSync(join(root, path), "utf8");
+const cursorInstall = JSON.parse(read(".cursor/environment.json")).install;
+if (cursorInstall !== "bash .agents/setup")
+  broken.push(".cursor/environment.json: install must stay bash .agents/setup");
+const sessionStart = JSON.parse(read(".claude/settings.json")).hooks
+  .SessionStart as { hooks: { command: string }[] }[];
+if (
+  !sessionStart.some(({ hooks }) =>
+    hooks.some(({ command }) => command.includes("/.agents/setup")),
+  )
+)
+  broken.push(".claude/settings.json: SessionStart must run .agents/setup");
 
 if (broken.length > 0) {
   console.log(broken.join("\n"));
