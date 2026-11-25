@@ -2,6 +2,7 @@
   "name": "pantaujalur-video",
   "private": true,
   "type": "module",
+  "trustedDependencies": [],
   "scripts": {
     "studio": "remotion studio src/index.ts --public-dir ../recordings",
     "render": "remotion render src/index.ts Demo ../recordings/demo.mp4 --public-dir ../recordings"

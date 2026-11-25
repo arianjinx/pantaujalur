@@ -2,9 +2,9 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const root = join(import.meta.dir, "..");
-const SKIP = new Set(["alchemy.run.ts", "src/routeTree.gen.ts"]);
+const SKIP = new Set(["src/routeTree.gen.ts"]);
 const CODE = /\.(tsx?|jsx?|mjs|css)$/;
-const HASH = /(\.(sh|ya?ml)$)|(^\.githooks\/)/;
+const HASH = /(\.(sh|ya?ml|toml)$)|(^\.githooks\/)|(^\.agents\/setup$)/;
 const EM_DASH = "\u2014";
 const ALLOWED_MARKDOWN = new Set([
   "AGENTS.md",
@@ -12,22 +12,25 @@ const ALLOWED_MARKDOWN = new Set([
   "GOAL.md",
   "LOOP.md",
   "FRONTIER.md",
-  "docs/cursor-cloud.md",
-]);
-const ALLOWED_DOCS = new Set([
-  "docs/cursor-cloud.md",
-  "docs/route.jpg",
-  "docs/wall.jpg",
 ]);
 const DIRECTIVE =
   /^\s*(\/\/\/|\/\/\s*@(?:ts-|vite-|jsx)|\/\/\s*eslint-|\/\/\s*noinspection|\/\*\*?[\s*]*eslint-)/;
+const TEST_FILE = /\.(test|spec)\.(tsx?|jsx?|mjs)$/;
+const ALLOWED_TESTS = new Set([
+  "relay/server.test.ts",
+  "src/components/captureFrame.test.ts",
+  "src/components/snapshotQueue.test.ts",
+  "src/flow/route-flow-machine.test.ts",
+  "src/places/places-store.test.ts",
+  "src/server/cctv-session.test.ts",
+]);
 
 const files = Bun.spawnSync(["git", "ls-files", "-co", "--exclude-standard"], {
   cwd: root,
 })
   .stdout.toString()
   .split("\n")
-  .filter((file) => file && !file.startsWith(".github/") && !SKIP.has(file))
+  .filter((file) => file && !SKIP.has(file))
   .filter((file) => existsSync(join(root, file)));
 
 const codeComment = (line: string) => {
@@ -48,11 +51,11 @@ const hashComment = (line: string, index: number) => {
 
 const broken: string[] = [];
 for (const file of files) {
-  if (/^src\/domain\/.*\.test\.tsx?$/.test(file))
+  if (TEST_FILE.test(file) && !ALLOWED_TESTS.has(file))
     broken.push(
-      `${file}: scripts/frontier/geometry.ts is the check for the route geometry`,
+      `${file}: a new test file; keep it only when it compares to a reference, replays a recording, or pins a found bug`,
     );
-  if (file.startsWith("docs/") && !ALLOWED_DOCS.has(file))
+  if (file.startsWith("docs/"))
     broken.push(`${file}: no docs; the commit message is the record`);
   if (file.endsWith(".md") && !ALLOWED_MARKDOWN.has(file))
     broken.push(`${file}: no docs; the commit message is the record`);
@@ -75,7 +78,47 @@ for (const file of files) {
       broken.push(`${file}:${index + 1}: comment; say it with a name`);
     if (hash && hashComment(line, index))
       broken.push(`${file}:${index + 1}: comment; say it with a name`);
+    const use = line.match(/^\s*-?\s*uses:\s*(\S+)\s*$/);
+    if (
+      file.startsWith(".github/workflows/") &&
+      use &&
+      !use[1].startsWith("./") &&
+      !/^[\w.-]+\/[\w.-]+@[0-9a-f]{40}$/.test(use[1])
+    )
+      broken.push(`${file}:${index + 1}: pin the action to a full commit SHA`);
   });
+}
+
+const EXACT_VERSION = /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.]+)?$/;
+const DEP_KEYS = [
+  "dependencies",
+  "devDependencies",
+  "optionalDependencies",
+  "peerDependencies",
+] as const;
+
+for (const file of files.filter(
+  (name) => name.endsWith("/package.json") || name === "package.json",
+)) {
+  const pkg = JSON.parse(readFileSync(join(root, file), "utf8")) as {
+    trustedDependencies?: unknown;
+  } & Record<string, Record<string, string> | undefined>;
+  if (!Array.isArray(pkg.trustedDependencies))
+    broken.push(
+      `${file}: trustedDependencies must name only packages whose install script is required`,
+    );
+  const slash = file.lastIndexOf("/");
+  const lock = slash === -1 ? "bun.lock" : `${file.slice(0, slash)}/bun.lock`;
+  if (!existsSync(join(root, lock)))
+    broken.push(`${lock}: the lockfile stays committed`);
+  for (const key of DEP_KEYS) {
+    const deps = pkg[key];
+    if (!deps) continue;
+    for (const [name, version] of Object.entries(deps)) {
+      if (typeof version !== "string" || !EXACT_VERSION.test(version))
+        broken.push(`${file}: ${name}@${version} is not an exact version`);
+    }
+  }
 }
 
 const read = (path: string) => readFileSync(join(root, path), "utf8");

@@ -8,9 +8,9 @@ Repeat until every rung in GOAL.md is at its frontier.
 4. **Fix it with a check that fails before and passes after.** Use the recorded input. Compare against the reference, not against a copy of this code. A new state in R4 is a fixture, not a test that restates the component. Do not edit `scripts/frontier` to make a number go up.
 5. **Gate.** `scripts/verify.sh` passes. Never silence a check or weaken a test: change the code until it passes.
 6. **Prove it went up.** Score again. If any measured rung went down, revert. For R7, follow the speed method in FRONTIER.md.
-7. **Record and push.** Append one line to FRONTIER.jsonl and update the table in FRONTIER.md. Commit with `type(scope): summary`. Name the rung, the old score, the new score and the cause. Then `git pull --rebase && scripts/verify.sh && git push` on your own branch.
+7. **Record and push.** Append one line to FRONTIER.jsonl and update the table in FRONTIER.md. Commit with `type(scope): summary`. Name the rung, the old score, the new score and the cause. Then `git pull --rebase && scripts/verify.sh && git push` to main.
 
-Do not push to main. The operator merges. A deploy is `gh workflow run deploy.yml`, by hand.
+A deploy is `gh workflow run deploy.yml`, by hand.
 
 Log a rejected attempt too, with `"accepted": false` and the numbers, so no one retries it.
 

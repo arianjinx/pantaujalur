@@ -4,10 +4,10 @@ The current score for each rung, then the evidence for every step, newest first.
 
 | Rung | Name         | Score                                                 | Frontier           | Commit   |
 | ---- | ------------ | ----------------------------------------------------- | ------------------ | -------- |
-| R0   | Gate         | yes                                                   | yes                | scaffold |
-| R1   | Geometry     | 1881/1881 (max error 0.0116 m offset, 0.0688 m along) | every probe        | scaffold |
-| R2   | Place search | 18/22                                                 | 22/22              | scaffold |
-| R3   | City budget  | 6/6                                                   | 6/6                | scaffold |
+| R0   | Gate         | yes                                                   | yes                | 8ef982e  |
+| R1   | Geometry     | 1881/1881 (max error 0.0116 m offset, 0.0688 m along) | every probe        | 8ef982e  |
+| R2   | Place search | 18/22                                                 | 22/22              | 8ef982e  |
+| R3   | City budget  | 6/6                                                   | 6/6                | 8ef982e  |
 | R4   | States       | 0/12                                                  | 12/12              | scaffold |
 | R5   | Flows        | unmeasured                                            | 3/3                | scaffold |
 | R6   | UI rules     | 58/77                                                 | every check        | scaffold |
@@ -27,6 +27,15 @@ A speed number counts only when measured this way:
 - Record the exact command, both commits, and the hardware.
 
 ## Evidence
+
+### 2026-11-25 swarm remeasure
+
+- Command: `scripts/verify.sh`, then `scripts/score --no-gate`. Commit `8ef982e`. Machine: `cursor linux 6.12.113+`, load 0.57.
+- R0: `scripts/verify.sh` exited 0 and printed `verify: green`. The score run used `--no-gate`, so its R0 field is `skipped` and is not the gate result.
+- R1: 1881/1881. `first_fail` empty. Max offset 0.011594200691916967 m, max along 0.06884625218481233 m.
+- R2: 18/22. `first_fail`: Stasiun Malang, first is "Jalan Stasiun Blimbing, Purwodadi, Kota Malang, Blimbing", 4196 m from Stasiun Malang on Jalan Trunojoyo, not Jalan Stasiun, and the label does not contain "Stasiun Malang".
+- R3: 6/6. `first_fail` empty.
+- Not remeasured: R4, R5, R6, R7, R8. R9 stays manual.
 
 ### 2026-11-25 scaffold baseline
 

@@ -1,13 +1,5 @@
 name: deploy
 
-# Runs only when someone starts it by hand. Without the repo secrets below, as in a fork, it skips.
-#
-#   CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID   required
-#   CCTV_RELAY_SECRET, RELAY_HOSTNAME, RELAY_ZONE  the CCTV relay (README.md, "Hosting on Cloudflare")
-#   APP_DOMAIN                                     optional custom domain; without it the app is on workers.dev
-#
-# Values that name your account or domains are secrets, not variables, so the public run logs mask them.
-
 on:
   workflow_dispatch:
     inputs:
@@ -43,8 +35,10 @@ jobs:
     env:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+      - name: actions/checkout@v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: oven-sh/setup-bun@v2.2.0
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version-file: package.json
       - run: bun install --frozen-lockfile
@@ -52,9 +46,6 @@ jobs:
       - run: bun run typecheck
       - run: bun run test
       - run: bun run build
-      # Every Alchemy stack on an account keeps its state in one alchemy-state-store Worker. A deploy whose Alchemy
-      # expects another store version moves the store for every stack, or is refused with HTTP 409, so it stops here
-      # unless the run was started by hand with upgrade_state_store.
       - name: Check the shared Alchemy state store version
         if: ${{ !inputs.upgrade_state_store }}
         env:
@@ -77,8 +68,6 @@ jobs:
             exit 1
           fi
           echo "State store v$have matches this repo's Alchemy."
-      # Install scripts, lint, tests and the build above run without the token. Alchemy runs vite build again inside
-      # this step, so Vite, its plugins and every module the build loads run with the token.
       - run: bunx alchemy deploy --stage prod --yes
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

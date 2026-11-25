@@ -245,7 +245,7 @@ async function readHome(page: Page, viewport: "phone" | "desktop") {
 
 export async function browser(root: string, all: boolean) {
   if (process.env.SCORE_UI !== "1") {
-    const skipped = { score: "unmeasured", how: HOW };
+    const skipped = { score: "unmeasured", first_fail: "", how: HOW };
     return { R4: skipped, R6: skipped };
   }
   const base = process.env.BASE_URL ?? "http://localhost:1337";
@@ -256,8 +256,8 @@ export async function browser(root: string, all: boolean) {
   if (up !== true) {
     const why = `SCORE_UI=1 but ${base} did not answer (${up instanceof Error ? up.message : "not ok"}). ${HOW}`;
     return {
-      R4: { score: "unmeasured", why },
-      R6: { score: "unmeasured", why },
+      R4: { score: "unmeasured", first_fail: "", why },
+      R6: { score: "unmeasured", first_fail: "", why },
     };
   }
 
