@@ -2,9 +2,9 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const root = join(import.meta.dir, "..");
-const SKIP = new Set(["alchemy.run.ts", "src/routeTree.gen.ts"]);
+const SKIP = new Set(["src/routeTree.gen.ts"]);
 const CODE = /\.(tsx?|jsx?|mjs|css)$/;
-const HASH = /(\.(sh|ya?ml)$)|(^\.githooks\/)/;
+const HASH = /(\.(sh|ya?ml|toml)$)|(^\.githooks\/)|(^\.agents\/setup$)/;
 const EM_DASH = "\u2014";
 const ALLOWED_MARKDOWN = new Set([
   "AGENTS.md",
@@ -27,7 +27,7 @@ const files = Bun.spawnSync(["git", "ls-files", "-co", "--exclude-standard"], {
 })
   .stdout.toString()
   .split("\n")
-  .filter((file) => file && !file.startsWith(".github/") && !SKIP.has(file))
+  .filter((file) => file && !SKIP.has(file))
   .filter((file) => existsSync(join(root, file)));
 
 const codeComment = (line: string) => {

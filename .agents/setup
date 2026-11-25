@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Readies a checkout for an agent in any harness: Amp runs it for a fresh orb, Cursor as its cloud install, and
-# Claude Code cloud from the SessionStart hook. Each may run it over disk a previous run prepared, so every step is
-# idempotent. It reads no secrets.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -41,7 +38,6 @@ install_bun() {
   fi
 }
 
-# Login shells on a cloud image skip ~/.bashrc, so Bun goes into /usr/local/bin, which is on the default PATH.
 dependencies() {
   local bin
   bin=$(pinned_bun) || { install_bun && bin=$(pinned_bun); } || {
