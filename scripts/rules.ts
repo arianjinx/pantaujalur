@@ -48,6 +48,10 @@ const hashComment = (line: string, index: number) => {
 
 const broken: string[] = [];
 for (const file of files) {
+  if (/^src\/domain\/.*\.test\.tsx?$/.test(file))
+    broken.push(
+      `${file}: scripts/frontier/geometry.ts is the check for the route geometry`,
+    );
   if (file.startsWith("docs/") && !ALLOWED_DOCS.has(file))
     broken.push(`${file}: no docs; the commit message is the record`);
   if (file.endsWith(".md") && !ALLOWED_MARKDOWN.has(file))
