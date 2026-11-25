@@ -67,6 +67,7 @@ export function direction(root: string, all: boolean) {
   if (!existsSync(file)) {
     return {
       score: "unmeasured",
+      first_fail: "",
       why: "testdata/cameras.json is not there. Record the city list on a network cctv.malangkota.go.id accepts, as { cameras: Camera[] }. The rung then counts, at the 100 m buffer, how many kept cameras whose name states a compass facing agree with the direction of travel within 45 degrees.",
     };
   }
@@ -106,6 +107,7 @@ export function direction(root: string, all: boolean) {
   if (total === 0) {
     return {
       score: "unmeasured",
+      first_fail: "",
       why: "testdata/cameras.json has no camera whose name states a facing and which the 100 m buffer keeps on a recorded trip",
     };
   }

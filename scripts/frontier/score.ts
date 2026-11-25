@@ -18,12 +18,12 @@ function git(args: string[]) {
 }
 
 function gate() {
-  if (args.has("--no-gate")) return { score: "skipped" };
+  if (args.has("--no-gate")) return { score: "skipped", first_fail: "" };
   const run = spawnSync("bash", ["scripts/verify.sh"], {
     cwd: root,
     encoding: "utf8",
   });
-  if (run.status === 0) return { score: "yes" };
+  if (run.status === 0) return { score: "yes", first_fail: "" };
   const tail =
     `${run.stdout}\n${run.stderr}`.trim().split("\n").filter(Boolean).at(-1) ??
     "";
@@ -34,6 +34,7 @@ function flows() {
   if (process.env.SCORE_FLOWS !== "1") {
     return {
       score: "unmeasured",
+      first_fail: "",
       why: "The three flows drive a live camera list. cctv.malangkota.go.id answers 403 from networks the city refuses, and this meter does not count a refused list as a product failure. On a network the city accepts, with bun run dev up, run SCORE_FLOWS=1 scripts/score.",
       how: "SCORE_FLOWS=1 bun run e2e, bun run e2e:wall and bun run e2e:places",
     };
@@ -93,6 +94,7 @@ console.log(
     R8: measured.R8,
     R9: {
       score: "manual",
+      first_fail: "",
       why: "The operator signs off on the route, the wall and the player, at phone and desktop size.",
     },
   }),

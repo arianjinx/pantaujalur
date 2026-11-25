@@ -26,7 +26,8 @@ function median(values: number[]) {
 }
 
 export function speed() {
-  if (process.env.SCORE_SPEED !== "1") return { score: "unmeasured", how: HOW };
+  if (process.env.SCORE_SPEED !== "1")
+    return { score: "unmeasured", first_fail: "", how: HOW };
   const base = process.env.BASE_URL ?? "http://localhost:1337";
   const [load1] = loadavg();
   const chrome = process.env.CHROME_PATH ?? "/usr/bin/google-chrome";
@@ -81,6 +82,7 @@ export function speed() {
   if (samples.length < 3) {
     return {
       score: "unmeasured",
+      first_fail: "",
       why: `wanted 3 Lighthouse runs, got ${samples.length}. ${errors[0] ?? ""}`.trim(),
       load1,
       samples,

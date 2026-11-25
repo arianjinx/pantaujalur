@@ -78,7 +78,47 @@ for (const file of files) {
       broken.push(`${file}:${index + 1}: comment; say it with a name`);
     if (hash && hashComment(line, index))
       broken.push(`${file}:${index + 1}: comment; say it with a name`);
+    const use = line.match(/^\s*-?\s*uses:\s*(\S+)\s*$/);
+    if (
+      file.startsWith(".github/workflows/") &&
+      use &&
+      !use[1].startsWith("./") &&
+      !/^[\w.-]+\/[\w.-]+@[0-9a-f]{40}$/.test(use[1])
+    )
+      broken.push(`${file}:${index + 1}: pin the action to a full commit SHA`);
   });
+}
+
+const EXACT_VERSION = /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.]+)?$/;
+const DEP_KEYS = [
+  "dependencies",
+  "devDependencies",
+  "optionalDependencies",
+  "peerDependencies",
+] as const;
+
+for (const file of files.filter(
+  (name) => name.endsWith("/package.json") || name === "package.json",
+)) {
+  const pkg = JSON.parse(readFileSync(join(root, file), "utf8")) as {
+    trustedDependencies?: unknown;
+  } & Record<string, Record<string, string> | undefined>;
+  if (!Array.isArray(pkg.trustedDependencies))
+    broken.push(
+      `${file}: trustedDependencies must name only packages whose install script is required`,
+    );
+  const slash = file.lastIndexOf("/");
+  const lock = slash === -1 ? "bun.lock" : `${file.slice(0, slash)}/bun.lock`;
+  if (!existsSync(join(root, lock)))
+    broken.push(`${lock}: the lockfile stays committed`);
+  for (const key of DEP_KEYS) {
+    const deps = pkg[key];
+    if (!deps) continue;
+    for (const [name, version] of Object.entries(deps)) {
+      if (typeof version !== "string" || !EXACT_VERSION.test(version))
+        broken.push(`${file}: ${name}@${version} is not an exact version`);
+    }
+  }
 }
 
 const read = (path: string) => readFileSync(join(root, path), "utf8");
