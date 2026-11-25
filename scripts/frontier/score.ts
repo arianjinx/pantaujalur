@@ -1,5 +1,11 @@
 import { spawnSync } from "node:child_process";
-import { hostname, loadavg, platform, release } from "node:os";
+import {
+  availableParallelism,
+  hostname,
+  loadavg,
+  platform,
+  release,
+} from "node:os";
 import { join } from "node:path";
 
 import { browser } from "./browser";
@@ -30,13 +36,50 @@ function gate() {
   return { score: "no", first_fail: tail.slice(0, 300) };
 }
 
-function flows() {
+const FLOWS_HOW =
+  "SCORE_FLOWS=1 with bun run dev on BASE_URL runs bun run e2e, bun run e2e:wall and bun run e2e:places";
+
+async function cityAnswers(base: string) {
+  try {
+    const response = await fetch(`${base}/api/cameras`, {
+      signal: AbortSignal.timeout(60_000),
+    });
+    if (response.ok) return "";
+    const body = (await response.text()).replace(/\s+/g, " ").trim();
+    return `GET ${base}/api/cameras answered ${response.status}: ${body.slice(0, 160)}`;
+  } catch (error) {
+    return `GET ${base}/api/cameras failed: ${error instanceof Error ? error.message : String(error)}`;
+  }
+}
+
+const SCRIPT_EXIT = /^error: script ".*" exited with code \d+$/;
+
+function failureLine(output: string) {
+  const lines = output
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line !== "" && !SCRIPT_EXIT.test(line));
+  const thrown = lines.find((line) => /^(\w*Error|error):/.test(line));
+  return (thrown ?? lines.at(-1) ?? "").slice(0, 300);
+}
+
+async function flows() {
   if (process.env.SCORE_FLOWS !== "1") {
     return {
       score: "unmeasured",
       first_fail: "",
       why: "The three flows drive a live camera list. cctv.malangkota.go.id answers 403 from networks the city refuses, and this meter does not count a refused list as a product failure. On a network the city accepts, with bun run dev up, run SCORE_FLOWS=1 scripts/score.",
-      how: "SCORE_FLOWS=1 bun run e2e, bun run e2e:wall and bun run e2e:places",
+      how: FLOWS_HOW,
+    };
+  }
+  const base = process.env.BASE_URL ?? "http://localhost:1337";
+  const refused = await cityAnswers(base);
+  if (refused !== "") {
+    return {
+      score: "unmeasured",
+      first_fail: "",
+      why: `${refused}. A camera list the city refuses is not a product failure, so the flows were not run.`,
+      how: FLOWS_HOW,
     };
   }
   const commands = ["e2e", "e2e:wall", "e2e:places"] as const;
@@ -47,13 +90,7 @@ function flows() {
       encoding: "utf8",
     });
     if (run.status !== 0) {
-      const tail =
-        `${run.stdout}\n${run.stderr}`
-          .trim()
-          .split("\n")
-          .filter(Boolean)
-          .at(-1) ?? "";
-      fails.push(`${command}: ${tail.slice(0, 200)}`);
+      fails.push(`${command}: ${failureLine(`${run.stdout}\n${run.stderr}`)}`);
     }
   }
   return {
@@ -67,6 +104,7 @@ function flows() {
 const commit = git(["rev-parse", "--short", "HEAD"]);
 const dirty = git(["status", "--porcelain"]) !== "";
 const [load1] = loadavg();
+const cores = availableParallelism();
 
 const measured = {
   R1: geometry(root, all),
@@ -74,7 +112,7 @@ const measured = {
   R3: budget(root, all),
   R8: direction(root, all),
   screen: await browser(root, all),
-  R5: flows(),
+  R5: await flows(),
   R7: speed(),
 };
 
@@ -83,6 +121,7 @@ console.log(
     commit: dirty ? `${commit}+dirty` : commit,
     machine: `${hostname()} ${platform()} ${release()}`,
     load1,
+    cores,
     R0: gate(),
     R1: measured.R1,
     R2: measured.R2,

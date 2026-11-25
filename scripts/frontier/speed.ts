@@ -1,10 +1,16 @@
 import { spawnSync } from "node:child_process";
 import { mkdtempSync, readFileSync } from "node:fs";
-import { loadavg, tmpdir } from "node:os";
+import { availableParallelism, loadavg, platform, tmpdir } from "node:os";
 import { join } from "node:path";
 
-const HOW =
-  "SCORE_SPEED=1 with bun run dev on BASE_URL. Three Lighthouse mobile runs, median of each category. Chrome is BROWSER_CHANNEL or google-chrome.";
+const LIGHTHOUSE = "lighthouse@13.6.0";
+const BUSY_SHARE = 0.8;
+const HOW = `SCORE_SPEED=1 with bun run dev on BASE_URL. Three ${LIGHTHOUSE} mobile runs, median of each category. Chrome is CHROME_PATH, else the platform's Google Chrome. Refused while the 1-minute load is over ${BUSY_SHARE * 100}% of the cores.`;
+
+const DEFAULT_CHROME =
+  platform() === "darwin"
+    ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    : "/usr/bin/google-chrome";
 
 type Sample = {
   performance: number;
@@ -29,8 +35,19 @@ export function speed() {
   if (process.env.SCORE_SPEED !== "1")
     return { score: "unmeasured", first_fail: "", how: HOW };
   const base = process.env.BASE_URL ?? "http://localhost:1337";
-  const [load1] = loadavg();
-  const chrome = process.env.CHROME_PATH ?? "/usr/bin/google-chrome";
+  const [load1 = 0] = loadavg();
+  const cores = availableParallelism();
+  if (load1 > cores * BUSY_SHARE) {
+    return {
+      score: "unmeasured",
+      first_fail: "",
+      why: `the 1-minute load is ${load1.toFixed(2)} on ${cores} cores, over ${BUSY_SHARE * 100}%. A busy machine reads as a slow page. Wait for it to settle.`,
+      load1,
+      cores,
+      how: HOW,
+    };
+  }
+  const chrome = process.env.CHROME_PATH ?? DEFAULT_CHROME;
   const dir = mkdtempSync(join(tmpdir(), "pantaujalur-lh-"));
   const samples: Sample[] = [];
   const errors: string[] = [];
@@ -40,7 +57,7 @@ export function speed() {
       "bunx",
       [
         "--bun",
-        "lighthouse",
+        LIGHTHOUSE,
         base,
         "--quiet",
         "--only-categories=performance,accessibility,best-practices,seo",
@@ -85,6 +102,7 @@ export function speed() {
       first_fail: "",
       why: `wanted 3 Lighthouse runs, got ${samples.length}. ${errors[0] ?? ""}`.trim(),
       load1,
+      cores,
       samples,
       how: HOW,
     };
@@ -107,7 +125,9 @@ export function speed() {
     pass: 4 - below.length,
     total: 4,
     median_of: 3,
+    lighthouse: LIGHTHOUSE,
     load1,
+    cores,
     samples,
     first_fail:
       below

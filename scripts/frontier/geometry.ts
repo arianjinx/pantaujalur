@@ -128,7 +128,7 @@ function segmentLength(a: LatLng, b: LatLng) {
   );
 }
 
-function reference(path: LatLng[], point: LatLng) {
+export function reference(path: LatLng[], point: LatLng) {
   let best: { offsetM: number; alongM: number } | null = null;
   let walked = 0;
   for (let i = 0; i < path.length - 1; i++) {

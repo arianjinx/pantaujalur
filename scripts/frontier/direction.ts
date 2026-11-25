@@ -3,6 +3,7 @@ import { join } from "node:path";
 
 import { camerasAlongRoute } from "../../src/domain/cameras-along-route";
 import type { Camera, LatLng, Route } from "../../src/domain/types";
+import { reference } from "./geometry";
 
 const COMPASS: [RegExp, number][] = [
   [/\bbarat laut\b/i, 315],
@@ -18,6 +19,7 @@ const COMPASS: [RegExp, number][] = [
 const EARTH_RADIUS_M = 6_371_008.8;
 const BUFFER_M = 100;
 const AGREE_DEG = 45;
+const TOLERANCE_M = 1;
 
 function haversine(a: LatLng, b: LatLng) {
   const lat1 = (a.lat * Math.PI) / 180;
@@ -68,7 +70,7 @@ export function direction(root: string, all: boolean) {
     return {
       score: "unmeasured",
       first_fail: "",
-      why: "testdata/cameras.json is not there. Record the city list on a network cctv.malangkota.go.id accepts, as { cameras: Camera[] }. The rung then counts, at the 100 m buffer, how many kept cameras whose name states a compass facing agree with the direction of travel within 45 degrees.",
+      why: "testdata/cameras.json is not there. Record GET /api/cameras on a network cctv.malangkota.go.id accepts, as { cameras: Camera[] }.",
     };
   }
   const cameras = (
@@ -84,36 +86,46 @@ export function direction(root: string, all: boolean) {
       }[];
     }
   ).trips;
+  const named = cameras.flatMap((camera) => {
+    const deg = facing(camera.name);
+    return deg === null ? [] : [{ camera, deg }];
+  });
   const fails: string[] = [];
   let total = 0;
+  let agreeing = 0;
   for (const trip of trips) {
     const route: Route = {
       path: trip.path,
       distanceM: trip.distance_m,
       durationS: trip.duration_s,
     };
-    for (const hit of camerasAlongRoute(route, cameras, BUFFER_M)) {
-      const named = facing(hit.camera.name);
-      if (named === null) continue;
+    const kept = new Set(
+      camerasAlongRoute(route, cameras, BUFFER_M).map((hit) => hit.camera.id),
+    );
+    for (const { camera, deg } of named) {
+      const near = reference(trip.path, camera.position);
+      if (near.offsetM > BUFFER_M - TOLERANCE_M) continue;
       total++;
-      const travel = travelBearing(trip.path, hit.alongM);
-      if (angleBetween(named, travel) > AGREE_DEG) {
-        fails.push(
-          `${trip.id}: ${hit.camera.name} faces ${named}°, the route there travels ${Math.round(travel)}°`,
-        );
-      }
+      const travel = travelBearing(trip.path, near.alongM);
+      const agrees = angleBetween(deg, travel) <= AGREE_DEG;
+      if (agrees) agreeing++;
+      if (agrees === kept.has(camera.id)) continue;
+      fails.push(
+        `${trip.id}: ${agrees ? "dropped" : "kept"} ${camera.name}, it faces ${deg}° and the route there travels ${Math.round(travel)}°`,
+      );
     }
   }
   if (total === 0) {
     return {
       score: "unmeasured",
       first_fail: "",
-      why: "testdata/cameras.json has no camera whose name states a facing and which the 100 m buffer keeps on a recorded trip",
+      why: "testdata/cameras.json has no camera whose name states a facing within 100 m of a recorded trip",
     };
   }
   return {
     pass: total - fails.length,
     total,
+    agreeing,
     first_fail: fails[0] ?? "",
     ...(all ? { fails } : {}),
   };

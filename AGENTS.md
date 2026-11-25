@@ -15,17 +15,22 @@ scripts/score
 `bun run dev` serves http://localhost:1337 with no Cloudflare account. A deploy
 is `gh workflow run deploy.yml`, by hand.
 
-## Work
+## Hill climb
 
-- Follow `LOOP.md` toward `GOAL.md`. The score is the only measure of progress.
+- Follow `LOOP.md` toward `GOAL.md`. `scripts/score` is the only measure of
+  progress, and `FRONTIER.jsonl` is the record. `scripts/frontier` is the meter:
+  never edit it to raise a number.
 - Own one folder. Never edit a folder another agent owns.
 - Work in your own worktree. End every slice with
   `git pull --rebase && scripts/verify.sh && git push` to main.
 - Keep slices small. End every session with nothing unpushed.
+- `.githooks/pre-push` runs `scripts/verify.sh` on the commit it pushes.
 - The commit message is the record: `type(scope): summary`, then why, with the
   commands and the numbers.
-- No plan, status or extra docs. No skills. No second instruction file.
+- No plan, status or extra docs: FRONTIER.md is the one status page. No skills.
+  No second instruction file.
 - Never silence a check. Fix the code, not the check.
+- A speed claim needs the interleaved measurement in FRONTIER.md.
 
 ## Code
 
