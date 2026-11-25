@@ -114,3 +114,8 @@ Bots gather context. Agents write code on a branch and run `bun run lint`,
 `bun run typecheck`, `bun run test` and `bun run build` before opening a pull
 request, plus `bun run e2e` against `bun run dev` for a change a user can see. A
 human approves every merge and anything public, including a deploy.
+
+## Cursor Cloud specific instructions
+
+When you run as a Cursor cloud agent, read `docs/cursor-cloud.md` first.
+It holds the install command, the verify command and the secrets notes.
