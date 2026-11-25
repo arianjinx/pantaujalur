@@ -9,7 +9,6 @@ const LNG0 = 112.63;
 const mPerDegLngAt = (lat: number) =>
   M_PER_DEG_LAT * Math.cos((lat * Math.PI) / 180);
 
-/** A point `northM` meters north and `eastM` meters east of (LAT0, LNG0). */
 function offset(northM: number, eastM: number): LatLng {
   const lat = LAT0 + northM / M_PER_DEG_LAT;
   return { lat, lng: LNG0 + eastM / mPerDegLngAt(lat) };

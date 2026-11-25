@@ -7,8 +7,6 @@ import {
   withCctvSession,
 } from "#/server/cctv-session";
 
-// A playlist is `{streamId}.m3u8`; its segments are relative names such as
-// `{streamId}_0p0870.ts`, which hls.js resolves back through this route.
 const STREAM_FILE = /^\d{1,40}(?:_[0-9p]{1,20})?\.(?:m3u8|ts)$/;
 
 export const Route = createFileRoute("/api/stream/$file")({
@@ -45,7 +43,7 @@ async function streamFile(file: string): Promise<Response> {
       (isPlaylist ? "application/vnd.apple.mpegurl" : "video/mp2t"),
     "Cache-Control": isPlaylist ? "no-cache" : "public, max-age=60",
   });
-  // When the city last wrote the file, which dates a stream that has ended.
+
   const lastModified = upstream.headers.get("Last-Modified");
   if (lastModified) headers.set("Last-Modified", lastModified);
   return new Response(upstream.body, { headers });

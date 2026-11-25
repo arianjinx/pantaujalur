@@ -31,7 +31,6 @@ type CctvMapProps = {
   onCameraClick: (camera: Camera) => void;
 };
 
-/** Leaflet touches `window` on import, so this module is loaded only in the browser. */
 export default function CctvMap(props: CctvMapProps) {
   const {
     cameras,

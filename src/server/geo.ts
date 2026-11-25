@@ -2,7 +2,6 @@ import { z } from "zod";
 
 import type { LatLng, Place, Route } from "#/domain/types";
 
-// Public demo servers: rate-limited and not for production use.
 const OSRM_URL = "https://router.project-osrm.org";
 const NOMINATIM_URL = "https://nominatim.openstreetmap.org";
 const USER_AGENT = "malang-cctv-route-poc/0.1";
@@ -83,7 +82,6 @@ export async function searchPlaces(text: string): Promise<Place[]> {
     }));
 }
 
-/** A short human label for a point, or null when Nominatim has none. */
 export async function describePoint(position: LatLng): Promise<string | null> {
   const body = await nominatim("reverse", {
     lat: String(position.lat),

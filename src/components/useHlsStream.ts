@@ -8,10 +8,6 @@ export function streamUrl(camera: Camera) {
   return `/api/stream/${camera.streamId}.m3u8`;
 }
 
-/**
- * Plays one camera's HLS stream through the app's proxy into `videoRef` while
- * the hook is mounted, and tears the player down on unmount.
- */
 export function useHlsStream(
   videoRef: RefObject<HTMLVideoElement | null>,
   camera: Camera,

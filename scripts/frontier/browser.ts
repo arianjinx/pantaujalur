@@ -21,8 +21,6 @@ function pack(checks: Check[], all: boolean) {
 
 async function readHome(page: Page, viewport: "phone" | "desktop") {
   return page.evaluate((which) => {
-    // Computed colors are sRGB or oklch (Tailwind 4). Both become linear RGB so
-    // the WCAG relative luminance is the same one Lighthouse uses.
     const linear = (value: string) => {
       const rgb = value.match(
         /rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)(?:[,/\s]+([\d.]+))?\s*\)/,

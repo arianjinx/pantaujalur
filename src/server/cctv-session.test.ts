@@ -47,7 +47,6 @@ afterAll(() => {
   globalThis.fetch = realFetch;
 });
 
-/** Accepts only requests carrying the session token `token`. */
 function acceptOnly(token: string) {
   return async (headers: Record<string, string>) =>
     headers.Cookie.includes(`NANCY_TOKEN_W=${token}`)

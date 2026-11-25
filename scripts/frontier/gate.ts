@@ -1,6 +1,11 @@
 import { spawnSync } from "node:child_process";
 
-// The handoff gate in AGENTS.md. Each step is the repo's own script.
+const rules = spawnSync("bun", ["scripts/rules.ts"], { stdio: "inherit" });
+if (rules.status !== 0) {
+  console.error("verify: rules failed");
+  process.exit(rules.status ?? 1);
+}
+
 const steps = ["lint", "typecheck", "test", "build"] as const;
 
 for (const step of steps) {

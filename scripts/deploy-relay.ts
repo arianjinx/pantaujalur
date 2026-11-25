@@ -1,15 +1,3 @@
-/**
- * Installs or updates the CCTV relay on a machine you reach over ssh (RELAY_SSH_HOST), with Docker and a connection
- * the city's CCTV server accepts: copies relay/, writes its .env, and runs the Compose project.
- * Rerun it at any time. Once `alchemy deploy` has created the pantaujalur-relay tunnel, the next run also starts
- * cloudflared with the tunnel's token.
- *
- *   RELAY_SSH_HOST=... CCTV_RELAY_SECRET=... CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_ID=... \
- *     bun scripts/deploy-relay.ts
- *
- * Secrets travel to the box on ssh's stdin, never on a command line, and are never printed.
- */
-
 const REMOTE_DIR = "pantaujalur-relay";
 const PROJECT = "pantaujalur-relay";
 const TUNNEL_NAME = "pantaujalur-relay";
@@ -46,7 +34,6 @@ async function cloudflare<T>(path: string): Promise<T> {
   return body.result;
 }
 
-/** The tunnel's connector token, or null while `alchemy deploy` has not created the tunnel yet. */
 async function tunnelToken(): Promise<string | null> {
   const tunnels = await cloudflare<{ id: string }[]>(
     `/cfd_tunnel?name=${TUNNEL_NAME}&is_deleted=false`,
@@ -108,7 +95,7 @@ await run(
   ],
   envFile,
 );
-// Without a tunnel, a cloudflared left from an earlier run would keep retrying a deleted tunnel, so remove it.
+
 const removeStaleConnector =
   token === null
     ? `docker compose -p ${PROJECT} --profile tunnel rm --stop --force cloudflared && `

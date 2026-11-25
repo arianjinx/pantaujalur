@@ -1,16 +1,5 @@
 import { join } from "node:path";
 
-/**
- * Drives the saved-places loop at phone size in a headless browser: plan a
- * trip, save its ends as "Home" and "Work", reload, then take the trip again
- * with one tap on the "Home → Work" chip.
- *
- *   bun dev                       # in another terminal (alchemy dev, workerd)
- *   bun run e2e:places            # BASE_URL defaults to http://localhost:1337
- *
- * Uses the installed Google Chrome by default; set BROWSER_CHANNEL=chromium to
- * use Playwright's bundled browser instead.
- */
 import { chromium, type Page } from "playwright";
 
 const BASE_URL = process.env.BASE_URL ?? "http://localhost:1337";
@@ -30,7 +19,7 @@ async function choosePlace(
   text: string,
 ) {
   await page.getByLabel(`Search ${field}`).fill(text);
-  // Nominatim can rank a street that merely contains the words first ("Jalan Stasiun ...").
+
   const firstResult = page
     .getByRole("listbox", { name: `${field} results` })
     .getByRole("option")

@@ -2,8 +2,6 @@
 cd "$(git rev-parse --show-toplevel)" || exit 1
 list=$(mktemp) || exit 1
 trap 'rm -f "$list"' EXIT
-# Skip symlinks such as .claude/skills: the formatter would follow them.
-# bash, not the dash shell this hook runs under, because read -d is bash.
 git diff --cached --name-only -z --diff-filter=ACMR | bash -c 'while IFS= read -r -d "" f; do [ -L "$f" ] || printf "%s\0" "$f"; done' >"$list"
 [ -s "$list" ] || exit 0
 partly=$(xargs -0 git diff --name-only -- <"$list")

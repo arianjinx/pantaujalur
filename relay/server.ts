@@ -1,17 +1,11 @@
-/**
- * Forwards the app's three kinds of CCTV request to the city's server from a
- * connection the city accepts. The city refuses Cloudflare's egress IPs, so
- * the Worker reaches it through this relay (README.md, "CCTV relay").
- */
-
 import { createHash, timingSafeEqual } from "node:crypto";
 
 const CITY_ORIGIN = "https://cctv.malangkota.go.id";
 const STREAM_PREFIX = "/cctv-stream/streams/";
-// The same pattern as STREAM_FILE in src/routes/api/stream/$file.ts. relay/server.test.ts fails when they differ.
+
 export const STREAM_FILE = /^\d{1,40}(?:_[0-9p]{1,20})?\.(?:m3u8|ts)$/;
 const FORWARDED_HEADERS = ["Cookie", "User-Agent", "Referer", "Content-Type"];
-// Last-Modified dates the last picture of a stream that has ended.
+
 const RETURNED_HEADERS = ["Content-Type", "Last-Modified"];
 const UPSTREAM_TIMEOUT_MS = 15_000;
 
@@ -97,7 +91,7 @@ if (import.meta.main) {
   }
   const server = Bun.serve({
     port: Number(process.env.PORT ?? 8080),
-    // Longer than the upstream timeout, so a slow upstream answers 504 instead of a dropped connection.
+
     idleTimeout: 30,
     fetch: createRelay(secret),
   });

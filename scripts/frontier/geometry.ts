@@ -81,7 +81,6 @@ function destination(
   return { lat: toDeg(lat2), lng: ((toDeg(lng2) + 540) % 360) - 180 };
 }
 
-/** Offset and along-track distance by a chord on the sphere, clamped to the segment. */
 function projectSegment(p: LatLng, a: LatLng, b: LatLng) {
   const point = ecef(p);
   const start = ecef(a);

@@ -66,7 +66,7 @@ function flows() {
 const commit = git(["rev-parse", "--short", "HEAD"]);
 const dirty = git(["status", "--porcelain"]) !== "";
 const [load1] = loadavg();
-// Browser and Lighthouse run before the gate, so a build does not heat the machine first.
+
 const measured = {
   R1: geometry(root, all),
   R2: await places(root, all),

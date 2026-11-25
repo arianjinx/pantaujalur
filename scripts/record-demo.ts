@@ -1,20 +1,3 @@
-/**
- * Records a walkthrough of the live app, then edits it with Remotion (video/)
- * into a square, captioned MP4 for social feeds: pick a trip, get the route
- * and its cameras, watch them all on the wall from start to destination, and
- * play one live. Starts from an empty browser profile, so the wall captures
- * every snapshot on camera. A camera that will not play is cut, not faked.
- *
- *   bun run dev                   # in another terminal
- *   bun run demo:record           # BASE_URL defaults to http://localhost:1337
- *
- * The footage is real: Chrome's screencast of the app at 2x. Alongside it,
- * recordings/timeline.json says when each caption starts, which spans are
- * waits on the network (played 12x), and what the camera zooms to.
- *
- * ORIGIN_QUERY, ORIGIN_MATCH, DESTINATION_QUERY and DESTINATION_MATCH pick the
- * trip; the *_MATCH values choose among the search results. Needs ffmpeg.
- */
 import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -32,10 +15,9 @@ const ROOT = join(import.meta.dir, "..");
 const RECORDINGS = join(ROOT, "recordings");
 const OUT_FILE = join(RECORDINGS, process.env.OUT_NAME ?? "demo.mp4");
 
-/** The app's window: the 1080x880 area under the caption band, at 1.25x zoom. */
 const VIEWPORT = { width: 864, height: 704 };
 const SCALE = 2;
-/** Near the station, for the automatic "my location" start. */
+
 const GPS = { latitude: -7.9775, longitude: 112.6372 };
 
 const timeline: Timeline = {
@@ -49,7 +31,6 @@ const timeline: Timeline = {
 let recordingStart = 0;
 const elapsedS = () => (Date.now() - recordingStart) / 1000;
 
-/** A cursor dot, since the screencast does not show the real pointer. */
 function cursorDot() {
   const install = () => {
     const cursor = document.createElement("div");
@@ -71,13 +52,11 @@ function cursorDot() {
   else addEventListener("DOMContentLoaded", install);
 }
 
-/** Shows `title` (and `detail`) in the band from now until the next caption. */
 function caption(title: string, detail?: string) {
   timeline.captions.push({ title, detail, at: elapsedS() });
   console.log(`${elapsedS().toFixed(1).padStart(6)} s  ${title}`);
 }
 
-/** Zooms the video onto the area the targets cover, or back out to the whole window. */
 async function focus(...targets: Locator[]) {
   let box: Box | null = null;
   for (const target of targets) {
@@ -99,7 +78,6 @@ async function focus(...targets: Locator[]) {
   timeline.focus.push({ at: elapsedS(), box });
 }
 
-/** Runs a wait on the network that the video fast-forwards. */
 async function fast<T>(work: () => Promise<T>): Promise<T> {
   const start = elapsedS();
   try {
@@ -109,7 +87,6 @@ async function fast<T>(work: () => Promise<T>): Promise<T> {
   }
 }
 
-/** Glides the cursor to the element and clicks it, so the video shows what was pressed. */
 async function press(page: Page, target: Locator) {
   await target.scrollIntoViewIfNeeded();
   const box = await target.boundingBox();
@@ -145,7 +122,6 @@ async function choosePlace(
   await press(page, (await wanted.count()) ? wanted : options.first());
 }
 
-/** Waits until a live video's clock moves, or gives up after `timeoutMs`. */
 async function waitForPlayback(page: Page, timeoutMs: number) {
   const video = page.getByTestId("camera-video");
   const deadline = Date.now() + timeoutMs;
@@ -180,7 +156,6 @@ async function wallSettled(page: Page, timeoutMs: number) {
     .catch(() => {});
 }
 
-/** Opens a camera's live player and waits for it to play; a camera that does not play is cut from the video. */
 async function watchLive(page: Page, liveButtons: Locator[]) {
   const player = page.getByRole("dialog", { name: /^Live camera/ });
   for (const button of liveButtons) {
@@ -201,7 +176,6 @@ async function watchLive(page: Page, liveButtons: Locator[]) {
   }
 }
 
-/** The active wall page's tiles: how many show a photo, and the streams still running. */
 function wallPage(page: Page) {
   return page
     .locator('[data-active="true"] [data-testid="wall-tile"]')
@@ -257,9 +231,6 @@ async function walkthrough(page: Page) {
   await page.getByTestId("camera-wall").waitFor();
   await page.waitForTimeout(1500);
 
-  // Page along the route toward the destination, then settle on the page with
-  // the most to see. The wall captures the page on screen first, so each page
-  // fills in while it is shown.
   caption(
     "Swipe toward your destination",
     "Nearest cameras first, farthest last",
@@ -287,7 +258,7 @@ async function walkthrough(page: Page) {
   await page.waitForTimeout(1500);
 
   caption("Tap one to watch it live", "Straight from the city's CCTV");
-  // The best page's running streams first, then the rest of the route's.
+
   const live = [
     ...new Set([
       ...(await wallPage(page)).live,
@@ -327,7 +298,6 @@ try {
   await context.addInitScript(cursorDot);
   const page = await context.newPage();
 
-  // Chrome's screencast sends a JPEG whenever the page repaints, stamped with its time.
   const shots: { file: string; at: number }[] = [];
   const writes: Promise<void>[] = [];
   const cdp = await context.newCDPSession(page);
@@ -353,7 +323,6 @@ try {
     await Promise.all(writes);
   }
 
-  // Each frame stays on screen until the next one: a constant 30 fps clip in recording time.
   const end = recordingStart + timeline.totalS * 1000;
   const list = shots.map((shot, i) => {
     const start = i === 0 ? recordingStart : shot.at;

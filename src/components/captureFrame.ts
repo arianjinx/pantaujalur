@@ -4,17 +4,15 @@ import type { StoredFrame } from "./frameStore";
 import { CameraOffline } from "./snapshotQueue";
 import { streamUrl } from "./useHlsStream";
 
-/** All attempts together; the city can take 13 s for a playlist and 6 s more for its segment. */
 const TIMEOUT_MS = 60_000;
-/** The waits before the second and third attempts. City streams drop out for seconds at a time. */
+
 const RETRY_DELAYS_MS = [2_000, 5_000];
 const PLAYLIST_TIMEOUT_MS = 15_000;
 const MAX_WIDTH = 640;
 const JPEG_QUALITY = 0.75;
-/** Shorter segments are the tail the encoder is still writing. */
+
 const MIN_SEGMENT_S = 1;
 
-/** hls.js does not retry inside one attempt; captureFrame retries the whole attempt. */
 const ONE_TRY = {
   default: {
     maxTimeToFirstByteMs: 15_000,
@@ -24,13 +22,6 @@ const ONE_TRY = {
   },
 };
 
-/**
- * A playlist of just the newest whole segment of a live `playlist`, with its
- * address resolved against `base`, marked as ended so hls.js loads that one
- * segment and never reloads the playlist. `ended` tells whether the camera's
- * stream has stopped, so the segment is its last picture rather than a current
- * one. Throws when the playlist lists no segment.
- */
 export function newestSegmentPlaylist(playlist: string, base: string) {
   let newest: { duration: number; uri: string } | null = null;
   let duration: number | null = null;
@@ -57,14 +48,6 @@ export function newestSegmentPlaylist(playlist: string, base: string) {
   return { playlist: single, ended: playlist.includes("#EXT-X-ENDLIST") };
 }
 
-/**
- * One still frame of a camera, as a JPEG at most 640 px wide. A camera whose
- * stream has ended gives its last picture, dated by `endedAt`. A failed
- * attempt is tried again twice, after 2 s and 5 s, because the city's streams
- * drop out and come back. Rejects with `CameraOffline` when the last attempt
- * found no stream, with another error when it failed in any other way or 60 s
- * passed, and with the signal's reason when aborted.
- */
 export async function captureFrame(
   camera: Camera,
   signal: AbortSignal,
@@ -96,11 +79,6 @@ function sleep(ms: number, signal: AbortSignal) {
   });
 }
 
-/**
- * Fetches the camera's playlist once, loads its newest segment into a
- * detached, muted video, draws the first decoded frame, and tears the player
- * down at once. Costs one playlist and one segment request.
- */
 async function captureOnce(
   camera: Camera,
   deadline: AbortSignal,
