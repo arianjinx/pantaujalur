@@ -15,6 +15,15 @@ const ALLOWED_MARKDOWN = new Set([
 ]);
 const DIRECTIVE =
   /^\s*(\/\/\/|\/\/\s*@(?:ts-|vite-|jsx)|\/\/\s*eslint-|\/\/\s*noinspection|\/\*\*?[\s*]*eslint-)/;
+const TEST_FILE = /\.(test|spec)\.(tsx?|jsx?|mjs)$/;
+const ALLOWED_TESTS = new Set([
+  "relay/server.test.ts",
+  "src/components/captureFrame.test.ts",
+  "src/components/snapshotQueue.test.ts",
+  "src/flow/route-flow-machine.test.ts",
+  "src/places/places-store.test.ts",
+  "src/server/cctv-session.test.ts",
+]);
 
 const files = Bun.spawnSync(["git", "ls-files", "-co", "--exclude-standard"], {
   cwd: root,
@@ -42,9 +51,9 @@ const hashComment = (line: string, index: number) => {
 
 const broken: string[] = [];
 for (const file of files) {
-  if (/^src\/domain\/.*\.test\.tsx?$/.test(file))
+  if (TEST_FILE.test(file) && !ALLOWED_TESTS.has(file))
     broken.push(
-      `${file}: scripts/frontier/geometry.ts is the check for the route geometry`,
+      `${file}: a new test file; keep it only when it compares to a reference, replays a recording, or pins a found bug`,
     );
   if (file.startsWith("docs/"))
     broken.push(`${file}: no docs; the commit message is the record`);
