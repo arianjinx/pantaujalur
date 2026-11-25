@@ -12,12 +12,6 @@ const ALLOWED_MARKDOWN = new Set([
   "GOAL.md",
   "LOOP.md",
   "FRONTIER.md",
-  "docs/cursor-cloud.md",
-]);
-const ALLOWED_DOCS = new Set([
-  "docs/cursor-cloud.md",
-  "docs/route.jpg",
-  "docs/wall.jpg",
 ]);
 const DIRECTIVE =
   /^\s*(\/\/\/|\/\/\s*@(?:ts-|vite-|jsx)|\/\/\s*eslint-|\/\/\s*noinspection|\/\*\*?[\s*]*eslint-)/;
@@ -52,7 +46,7 @@ for (const file of files) {
     broken.push(
       `${file}: scripts/frontier/geometry.ts is the check for the route geometry`,
     );
-  if (file.startsWith("docs/") && !ALLOWED_DOCS.has(file))
+  if (file.startsWith("docs/"))
     broken.push(`${file}: no docs; the commit message is the record`);
   if (file.endsWith(".md") && !ALLOWED_MARKDOWN.has(file))
     broken.push(`${file}: no docs; the commit message is the record`);

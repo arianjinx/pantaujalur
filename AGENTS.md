@@ -49,7 +49,3 @@ scripts/score          # every rung of GOAL.md
   token.
 - Ask the operator before a deploy, deleting a Cloudflare resource, or a force
   push.
-
-## Cursor Cloud
-
-When you run as a Cursor cloud agent, read `docs/cursor-cloud.md` first.

@@ -25,11 +25,11 @@ Climb in order R0, R1, R2, R3, R4, R5, R6, R8, R7, then R9. A rung above an unme
 - **R2.** Each anchor is a place Nominatim already returns for that query, or for the place's ordinary name. "Stasiun Malang" is in the same response as "Jalan Stasiun", just not first. README.md names that miss. The four that miss today can be reordered or aliased. The eighteen that already hit stay as the guard.
 - **R3.** The numbers are the ones in AGENTS.md and the queue. The current code already holds all six.
 - **R4.** Each state is already a branch in `src/flow/route-flow-machine.ts` or `src/routes/index.tsx`. The three e2e scripts already walk the happy path on a network the city accepts. A fixture opens the same branch without the city.
-- **R5.** The three scripts exist and are the flows a person takes. They pass on a network the city accepts. `docs/cursor-cloud.md` says this network is not one of those.
+- **R5.** The three scripts exist and are the flows a person takes. They pass on a network the city accepts. This machine is not one of those: the city answers HTTP 403.
 - **R6.** 44 px is the tap-target size in the UI ladder, and 4.5:1 is WCAG 2.2 AA. Both are bars shipping sites already meet. The home screen is the one that loads with no trip.
 - **R7.** Lighthouse calls 90 performance "good". 100 on the other three does not depend on the machine the way performance does. A quiet page can hold them. The method for a later gain is in FRONTIER.md.
 - **R8.** The city's own camera names state a facing ("Arah Utara" and the rest). The rule is that a kept camera faces the way the person is driving, within 45°. README.md says the app matches by position only. The rung waits until a camera list is recorded.
-- **R9.** The screenshots in `docs/route.jpg` and `docs/wall.jpg` are the current look. The operator is the answer key.
+- **R9.** The operator is the answer key for the route, the wall and the player.
 
 ## How each rung is measured
 
