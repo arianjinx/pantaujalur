@@ -1,0 +1,50 @@
+[
+  {
+    "id": "first-visit",
+    "text": "Not set"
+  },
+  {
+    "id": "locating",
+    "text": "Finding your location"
+  },
+  {
+    "id": "location-denied",
+    "text": "Location permission was denied."
+  },
+  {
+    "id": "search-results",
+    "text": "Stasiun Malang"
+  },
+  {
+    "id": "route-pending",
+    "text": "Finding the fastest route"
+  },
+  {
+    "id": "route-error",
+    "text": "No driving route"
+  },
+  {
+    "id": "route-with-cameras",
+    "text": "Watch all cameras"
+  },
+  {
+    "id": "wall",
+    "text": "All cameras on the route"
+  },
+  {
+    "id": "route-empty",
+    "text": "No public cameras"
+  },
+  {
+    "id": "cameras-error",
+    "text": "Could not load the city camera list."
+  },
+  {
+    "id": "player",
+    "text": "Live camera"
+  },
+  {
+    "id": "saved-trip",
+    "text": "Home → Work"
+  }
+]

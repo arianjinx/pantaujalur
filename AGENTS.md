@@ -33,6 +33,25 @@ deployed Worker reaches the city through the relay in `relay/`.
 - Ask the operator before you deploy, delete a Cloudflare resource, or force
   push.
 
+## Hill climb
+
+Many agents work on this at once. Every rule here keeps main green.
+
+- Follow LOOP.md. The score in GOAL.md is the only measure of progress, and
+  FRONTIER.jsonl is the record.
+- Own one folder. Never edit a folder another agent owns; ask the lead instead.
+- Never silence a check or weaken a test to get green. Fix the code, not the
+  check.
+- Work in your own worktree. End every slice with
+  `git pull --rebase && scripts/verify.sh && git push` on your own branch. Do
+  not push to main. A push to main deploys.
+- Keep slices small and push often. End every session with nothing unpushed.
+- The commit message is the record: `type(scope): summary`, then why, with the
+  commands and the numbers.
+- Tests compare against the reference or real inputs. Don't add a test that
+  only restates the code.
+- Speed claims need the interleaved measurement in FRONTIER.md.
+
 ## Commands
 
 - `bun run dev` serves the app with Vite, server code on workerd, at
