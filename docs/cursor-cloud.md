@@ -42,8 +42,8 @@ Deploy and `bun run relay:deploy` need `CLOUDFLARE_API_TOKEN`,
 `CLOUDFLARE_ACCOUNT_ID`, `CCTV_RELAY_SECRET`, `RELAY_HOSTNAME` and
 `RELAY_ZONE`. `APP_DOMAIN` is optional. `bun run relay:deploy` also needs
 `RELAY_SSH_HOST`. [README.md](../README.md) ("Hosting on Cloudflare") lists
-what each one is. Leave deploy to a person. A push to `main` deploys when
-those secrets exist.
+what each one is. Leave deploy to a person. They start
+`.github/workflows/deploy.yml` by hand when those secrets exist.
 
 `video/` has its own install, and only `bun run demo:record` needs it.
 `relay/Dockerfile` belongs on the relay machine.

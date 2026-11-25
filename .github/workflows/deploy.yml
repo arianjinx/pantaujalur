@@ -1,6 +1,6 @@
 name: deploy
 
-# Deploys every push to main to your Cloudflare account. Without the repo secrets below, as in a fork, it skips.
+# Runs only when someone starts it by hand. Without the repo secrets below, as in a fork, it skips.
 #
 #   CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID   required
 #   CCTV_RELAY_SECRET, RELAY_HOSTNAME, RELAY_ZONE  the CCTV relay (README.md, "Hosting on Cloudflare")
@@ -9,8 +9,6 @@ name: deploy
 # Values that name your account or domains are secrets, not variables, so the public run logs mask them.
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
     inputs:
       upgrade_state_store:

@@ -76,7 +76,7 @@ The relay (`relay/server.ts`) is a Bun server of about 100 lines. It answers onl
 
 1. Make a Cloudflare API token with Workers Scripts: Edit, Secrets Store: Edit and Cloudflare Tunnel: Edit on the account, and Zone: Read and DNS: Edit on the zone for the relay hostname (and the app's domain, if you use one).
 2. Make a relay secret: `openssl rand -hex 32`.
-3. Set these repo secrets for the `deploy` workflow, which deploys every push to `main`:
+3. Set these repo secrets for the `deploy` workflow, which runs only when someone starts it by hand (`gh workflow run deploy.yml`):
 
    | Secret                  | Value                                                                       |
    | ----------------------- | --------------------------------------------------------------------------- |

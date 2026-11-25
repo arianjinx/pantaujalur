@@ -18,7 +18,7 @@ scripts/score          # every rung of GOAL.md
 - Own one folder. Never edit a folder another agent owns.
 - Work in your own worktree. End every slice with
   `git pull --rebase && scripts/verify.sh && git push` on your branch. Do not
-  push to main. A push to main deploys.
+  push to main. A deploy is `gh workflow run deploy.yml`, by hand.
 - Small slices. End every session with nothing unpushed.
 - The commit message is the record: `type(scope): summary`, then why, with the
   commands and the numbers.

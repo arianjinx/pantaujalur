@@ -57,7 +57,7 @@ Read a reference to see what right looks like. Never copy code from another proj
 
 ## Out of scope
 
-- Deploying, deleting a Cloudflare resource, and the relay machine. The operator does those. A push to main deploys.
+- Deploying, deleting a Cloudflare resource, and the relay machine. The operator does those. A deploy is `gh workflow run deploy.yml`, by hand.
 - Replacing OSRM or Nominatim with a private server.
 - A live player on every wall tile. One live player stays. A player per tile would hold a stream open per camera.
 - Becoming an official client of the city.

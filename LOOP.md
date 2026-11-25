@@ -10,7 +10,7 @@ Repeat until every rung in GOAL.md is at its frontier.
 6. **Prove it went up.** Score again. If any measured rung went down, revert. For R7, follow the speed method in FRONTIER.md.
 7. **Record and push.** Append one line to FRONTIER.jsonl and update the table in FRONTIER.md. Commit with `type(scope): summary`. Name the rung, the old score, the new score and the cause. Then `git pull --rebase && scripts/verify.sh && git push` on your own branch.
 
-Do not push to main. A push to main deploys. The operator merges.
+Do not push to main. The operator merges. A deploy is `gh workflow run deploy.yml`, by hand.
 
 Log a rejected attempt too, with `"accepted": false` and the numbers, so no one retries it.
 
