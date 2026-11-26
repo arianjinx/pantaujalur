@@ -1,0 +1,77 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      upgrade_state_store:
+        description: Let this deploy move the account's shared Alchemy state store to this repo's Alchemy version
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.secrets.outputs.enabled }}
+    steps:
+      - id: secrets
+        env:
+          HAS_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
+        run: |
+          echo "enabled=$HAS_TOKEN" >> "$GITHUB_OUTPUT"
+          [ "$HAS_TOKEN" = true ] || echo "::notice::No Cloudflare secrets, so nothing deploys."
+
+  deploy:
+    needs: gate
+    if: needs.gate.outputs.enabled == 'true'
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - name: actions/checkout@v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: oven-sh/setup-bun@v2.2.0
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version-file: package.json
+      - run: bun install --frozen-lockfile
+      - run: bun run lint
+      - run: bun run typecheck
+      - run: bun run test
+      - run: bun run build
+      - name: Check the shared Alchemy state store version
+        if: ${{ !inputs.upgrade_state_store }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          want=$(sed -nE 's/^export const STATE_STORE_VERSION = ([0-9]+).*/\1/p' node_modules/@alchemy.run/cloudflare/src/StateStore/Api.ts)
+          [ -n "$want" ] || { echo "::error::Cannot read STATE_STORE_VERSION from @alchemy.run/cloudflare."; exit 1; }
+          code=$(curl -sS -o store.json -w '%{http_code}' -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/scripts/alchemy-state-store/settings")
+          if [ "$code" = 404 ]; then echo "No state store yet; this deploy creates it at v$want."; exit 0; fi
+          [ "$code" = 200 ] || { echo "::error::Reading the state store returned HTTP $code."; exit 1; }
+          have=$(jq -r '.result.bindings[] | select(.name == "ALCHEMY_STATE_STORE_VERSION") | .text' store.json)
+          rm store.json
+          if [ "$want" -lt "$have" ]; then
+            echo "::error::This repo's Alchemy expects state store v$want, but the account's store is v$have. Pin the Alchemy and Effect versions your other stacks use."
+            exit 1
+          fi
+          if [ "$want" -gt "$have" ]; then
+            echo "::error::This repo's Alchemy would move the account's state store from v$have to v$want, and every stack on an older Alchemy would then fail. Move them all to this release, then run this workflow by hand with upgrade_state_store."
+            exit 1
+          fi
+          echo "State store v$have matches this repo's Alchemy."
+      - run: bunx alchemy deploy --stage prod --yes
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CCTV_RELAY_SECRET: ${{ secrets.CCTV_RELAY_SECRET }}
+          APP_DOMAIN: ${{ secrets.APP_DOMAIN }}
+          RELAY_HOSTNAME: ${{ secrets.RELAY_HOSTNAME }}
+          RELAY_ZONE: ${{ secrets.RELAY_ZONE }}

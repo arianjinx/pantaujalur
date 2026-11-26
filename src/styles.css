@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  @apply bg-white text-slate-900 antialiased;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+@layer components {
+  .btn {
+    @apply rounded-md border border-slate-300 bg-white px-2 py-1 text-xs font-medium text-slate-700 hover:bg-slate-50;
+  }
+  .wall-btn {
+    @apply h-8 rounded-md border border-white/15 bg-white/5 text-xs font-medium text-slate-100 hover:bg-white/15 disabled:opacity-30 disabled:hover:bg-white/5;
+  }
+  .btn-active {
+    @apply border-blue-500 bg-blue-50 text-blue-700;
+  }
+}

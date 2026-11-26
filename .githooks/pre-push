@@ -1,0 +1,16 @@
+#!/bin/sh
+cd "$(git rev-parse --show-toplevel)" || exit 1
+zero=0000000000000000000000000000000000000000
+while read -r _ sha _ _; do
+  [ "$sha" = "$zero" ] && continue
+  if [ "$sha" != "$(git rev-parse HEAD)" ]; then
+    printf 'pre-push: %s is not the checked-out commit, so the gate cannot run on it. Check it out and push again.\n' "$sha" >&2
+    exit 1
+  fi
+  if [ -n "$(git status --porcelain)" ]; then
+    printf 'pre-push: the tree has uncommitted changes, so the gate would not test %s. Commit or stash them and push again.\n' "$sha" >&2
+    exit 1
+  fi
+  scripts/verify.sh </dev/null || exit 1
+done
+exit 0

@@ -1,0 +1,20 @@
+{
+  "name": "pantaujalur-video",
+  "private": true,
+  "type": "module",
+  "trustedDependencies": [],
+  "scripts": {
+    "studio": "remotion studio src/index.ts --public-dir ../recordings",
+    "render": "remotion render src/index.ts Demo ../recordings/demo.mp4 --public-dir ../recordings"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.544",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.544"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}

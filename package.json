@@ -1,0 +1,62 @@
+{
+  "name": "pantaujalur",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "trustedDependencies": [
+    "workerd"
+  ],
+  "packageManager": "bun@1.4.4",
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks || true",
+    "dev": "vite dev --port 1337",
+    "format": "bun run lint:fix && bun fmt",
+    "lint": "bun run lint:code && bun fmt --no-script --check",
+    "lint:code": "bun x bun@1.4.4-canary.20261114.1 lint --no-script --max-warnings 0",
+    "lint:fix": "bun x bun@1.4.4-canary.20261114.1 lint --no-script --fix",
+    "build": "vite build",
+    "test": "bun test src scripts relay",
+    "typecheck": "bun check -b",
+    "e2e": "bun scripts/e2e.ts",
+    "e2e:wall": "bun scripts/e2e-wall.ts",
+    "e2e:places": "bun scripts/e2e-places.ts",
+    "deploy": "alchemy deploy --stage prod",
+    "demo:record": "bun scripts/record-demo.ts",
+    "relay:deploy": "bun scripts/deploy-relay.ts"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "5.108.0",
+    "@tanstack/react-router": "1.170.46",
+    "@tanstack/react-router-ssr-query": "1.167.3",
+    "@tanstack/react-start": "1.169.5",
+    "@xstate/react": "6.1.0",
+    "hls.js": "1.7.4",
+    "leaflet": "1.9.4",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-leaflet": "5.0.0",
+    "xstate": "5.33.4",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@alchemy.run/cloudflare": "2.0.0-beta.87",
+    "@effect/platform-bun": "4.1.4",
+    "@effect/platform-node": "4.1.4",
+    "@tailwindcss/vite": "4.3.5",
+    "@types/bun": "1.4.4",
+    "@types/leaflet": "1.9.22",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "alchemy": "2.0.0-beta.87",
+    "effect": "4.1.4",
+    "playwright": "1.65.1",
+    "tailwindcss": "4.3.5",
+    "typescript": "7.0.2",
+    "vite": "8.3.8"
+  }
+}

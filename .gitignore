@@ -1,0 +1,16 @@
+.DS_Store
+node_modules/
+.env
+.env.*
+!.env.example
+.dev.vars
+.claude/settings.local.json
+.claude/worktrees/
+dist/
+.wrangler/
+.alchemy/
+.tanstack/
+*.tsbuildinfo
+.playwright-cli/
+screenshot*.png
+recordings/

@@ -1,0 +1,2767 @@
+{
+  "recorded": "2026-11-25",
+  "source": "GET /api/cameras from bun run dev, which reads cctv.malangkota.go.id",
+  "cameras": [
+    {
+      "id": "dc90c632-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Letjen S. Parman Arah Utara",
+      "streamId": "637253114452609264665590",
+      "address": "GKJW Waru,, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9516399570327,
+        "lng": 112.63919951939
+      }
+    },
+    {
+      "id": "dc90c792-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Borobudur Arah Barat",
+      "streamId": "307023650278212238808482",
+      "address": "Jl. A. Yani No.17, RW.02, Blimbing, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9416950782559,
+        "lng": 112.64203512082
+      }
+    },
+    {
+      "id": "dc90c95c-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Panji Suroso Arah Utara",
+      "streamId": "884548119530974853338399",
+      "address": "Jl. Raden Panji Suroso No.8g, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9322357759493,
+        "lng": 112.64993749254
+      }
+    },
+    {
+      "id": "dc90d437-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raden Intan Arah Timur",
+      "streamId": "712057197220164117651869",
+      "address": "Jl. Raden Intan No.1, Arjosari, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9331417417516,
+        "lng": 112.65815011001
+      }
+    },
+    {
+      "id": "dc90d802-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Terusan Sulfat Arah Timur",
+      "streamId": "408048032842553451896390",
+      "address": "Jl. Terusan Sulfat No.2, RT.01, Pandanwangi, Kec. Blimbing, Kota Malang, Jawa Timur, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9630748957441,
+        "lng": 112.65486782729
+      }
+    },
+    {
+      "id": "dc90da60-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. L.A Sucipto Arah Timur (Rel Kereta)",
+      "streamId": "383058139820804059897454",
+      "address": "Jl. Laksda Adi Sucipto No.36a, Blimbing, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9415939481937,
+        "lng": 112.64432260627
+      }
+    },
+    {
+      "id": "dc90e65f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. A. Yani Arah Selatan (Fly Over)",
+      "streamId": "957992467319427676437983",
+      "address": "KPRI Yustisia Pengadilan Negeri Malang, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9294328515218,
+        "lng": 112.64884897849
+      }
+    },
+    {
+      "id": "dc90e80d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. A Yani Arah Utara (Masjid Sabilillah)",
+      "streamId": "719653317344542196173839",
+      "address": "Jl. A. Yani No.19, Blimbing, Kec. Blimbing, Kota Malang, Jawa Timur 65125, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9415921968143,
+        "lng": 112.64225097144
+      }
+    },
+    {
+      "id": "dc90efdf-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ahmad Yani Arah Utara",
+      "streamId": "178242276523301631131466",
+      "address": "Jl. A. Yani No.37, Blimbing, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9406434237077,
+        "lng": 112.64263210443
+      }
+    },
+    {
+      "id": "dc90fd6f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raden Panji Suroso Arah Selatan",
+      "streamId": "654598878424524457231701",
+      "address": "Jl. Raden Panji Suroso No.21, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9355883653782,
+        "lng": 112.64971840569
+      }
+    },
+    {
+      "id": "dc910175-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. SP Sudarmo Arah Selatan",
+      "streamId": "436037012487980953940187",
+      "address": "Jl. Letnan Jenderal Sunandar Priyo Sudarmo No.31c, Keduyo, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9572207868104,
+        "lng": 112.64401245585
+      }
+    },
+    {
+      "id": "dc9101e0-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raya Balearjosari Arah Utara",
+      "streamId": "984300820927127330245429",
+      "address": "Unnamed Road, Balearjosari, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9252397352771,
+        "lng": 112.650938367
+      }
+    },
+    {
+      "id": "dc9102df-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Panji Suroso Arah Selatan",
+      "streamId": "323299835038577603023529",
+      "address": "Jl. Raden Panji Suroso No.8g, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9323745503225,
+        "lng": 112.64989777426
+      }
+    },
+    {
+      "id": "dc910b73-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Terusan Sulfat Arah Barat",
+      "streamId": "212852265924619178576872",
+      "address": "Jl. Terusan Sulfat No.69, Pandanwangi, Kec. Blimbing, Kota Malang, Jawa Timur, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9648242672158,
+        "lng": 112.65724367439
+      }
+    },
+    {
+      "id": "dc910d0b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raden Intan Arah Barat",
+      "streamId": "053338675520352467621994",
+      "address": "Jl. Raden Intan No.5, RT.02, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9301999522752,
+        "lng": 112.65062387599
+      }
+    },
+    {
+      "id": "dc911cb4-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Juanda Arah Timur",
+      "streamId": "121335965337329637078039",
+      "address": "Jl. Ir. H. Juanda No.1b, Jodipan, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9832375841373,
+        "lng": 112.63715869748
+      }
+    },
+    {
+      "id": "dc912545-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Panji Suroso Arah Timur",
+      "streamId": "196782209615539550198936",
+      "address": "Jl. Raden Panji Suroso No.8g, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9322898596193,
+        "lng": 112.64992025405
+      }
+    },
+    {
+      "id": "dc9126c2-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. A Yani Utara",
+      "streamId": "195874189915723862555674",
+      "address": "Taman kendedes, Jl. A. Yani No.252, Purwodadi, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9254333849433,
+        "lng": 112.65102476912
+      }
+    },
+    {
+      "id": "dc913103-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Kampung Tridi",
+      "streamId": "756753165339510713064459",
+      "address": "Kampung Tridi",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.982161852701667,
+        "lng": 112.63808362627057
+      }
+    },
+    {
+      "id": "dc91337a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Sudirman Arah Utara",
+      "streamId": "366629122294580263258917",
+      "address": "Jl. Panglima Sudirman No.27, Kesatrian, Kec. Blimbing, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9736465799843,
+        "lng": 112.63850530227
+      }
+    },
+    {
+      "id": "dc91367b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. A. Yani Arah Utara",
+      "streamId": "300544351200121565371840",
+      "address": "Jl. Jend. Ahmad Yani Utara No.21, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9292582728922,
+        "lng": 112.6487715069
+      }
+    },
+    {
+      "id": "dc915201-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tumenggung Suryo Arah Utara",
+      "streamId": "444403449139429455057068",
+      "address": "Jl. R. Tumenggung Suryo No.18-2, Bunulrejo, Kec. Blimbing, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9668594204155,
+        "lng": 112.63858632769
+      }
+    },
+    {
+      "id": "dc915c08-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ahmad Yani Arah Selatan",
+      "streamId": "348389393952249311802450",
+      "address": "Jl. A. Yani No.62, RW.02, Blimbing, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9408167597241,
+        "lng": 112.64265873793
+      }
+    },
+    {
+      "id": "dc91699f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Letjen S. Parman Arah Selatan",
+      "streamId": "810133524862588268334710",
+      "address": "Jl. Ciliwung No.1b, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur 65122, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.951925116872,
+        "lng": 112.63914091657
+      }
+    },
+    {
+      "id": "dc917bcb-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Martadinata Arah Selatan",
+      "streamId": "006065046819333616502324",
+      "address": "Jl. Martadinata No.1, Jodipan, Kec. Blimbing, Kota Malang, Jawa Timur 65118, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9872651424444,
+        "lng": 112.63563623857
+      }
+    },
+    {
+      "id": "dc917f6a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. L.A Sucipto Arah Timur",
+      "streamId": "506397672406115725994991",
+      "address": "Jl. A. Yani No.62, RW.02, Blimbing, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9407759934185,
+        "lng": 112.6427713907
+      }
+    },
+    {
+      "id": "dc917fda-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raden Panji Suroso Arah Utara",
+      "streamId": "563924488881364781254566",
+      "address": "Jl. Raden Panji Suroso No.59a, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9435549315168,
+        "lng": 112.648303373
+      }
+    },
+    {
+      "id": "dc9180c4-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Terusan Sulfat Arah Timur",
+      "streamId": "778411640624267613516944",
+      "address": "Jl. Terusan Sulfat No.69, Pandanwangi, Kec. Blimbing, Kota Malang, Jawa Timur, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9649247039489,
+        "lng": 112.65728096499
+      }
+    },
+    {
+      "id": "dd4042d7-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Gatot Subroto Arah Selatan",
+      "streamId": "239025669818857831915521",
+      "address": "Indiana Guna Aneka Warna, Kesatrian, Kec. Blimbing, Kota Malang, Jawa Timur, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9809990571082,
+        "lng": 112.63789356981
+      }
+    },
+    {
+      "id": "dd404394-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Laksda Adi Sucipto Arah Timur",
+      "streamId": "340493797437204668929658",
+      "address": "Jl. Laksda Adi Sucipto No.161, Blimbing, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.943790038499,
+        "lng": 112.64836138797
+      }
+    },
+    {
+      "id": "dd404569-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Gatot Subroto Arah Selatan",
+      "streamId": "192101052696608982929523",
+      "address": "Jl. Gatot Subroto No.38, Jodipan, Kec. Blimbing, Kota Malang, Jawa Timur 65118, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9832088702797,
+        "lng": 112.63701272616
+      }
+    },
+    {
+      "id": "dd40482f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Simpang Sulfat Arah Utara",
+      "streamId": "823145150519459797757495",
+      "address": "Jl. Simpang Sulfat Jl. Sulfat No.1, Pandanwangi, Kec. Blimbing, Kota Malang, Jawa Timur 65122, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9629932799338,
+        "lng": 112.6548386024
+      }
+    },
+    {
+      "id": "dd404e39-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Urip Sumoharjo Arah Timur",
+      "streamId": "490601680936121642601185",
+      "address": "PT AGF General Insurance Cabang Malang, Jl. Panglima Sudirman No.27, Kesatrian, Kec. Blimbing, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9734726714543,
+        "lng": 112.63840644718
+      }
+    },
+    {
+      "id": "dd4053f3-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raden Intan Arah Timur",
+      "streamId": "925153886443577207350912",
+      "address": "Jl. Jend. Ahmad Yani Utara No.21, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9291574562534,
+        "lng": 112.64881969448
+      }
+    },
+    {
+      "id": "dd40545e-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl .Tumenggung Suryo Arah Utara",
+      "streamId": "966506717989378844885521",
+      "address": "Jl. Raden Tumenggung Suryo No.70, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur 65122, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9610105904316,
+        "lng": 112.64198109359
+      }
+    },
+    {
+      "id": "dd405c2f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kesatrian Arah Selatan",
+      "streamId": "031608321985243356752404",
+      "address": "Jl. Simpang Kesatrian No.6, Keduyo, Kesatrian, Kec. Blimbing, Kota Malang, Jawa Timur 65121, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.977528818545,
+        "lng": 112.64345728334
+      }
+    },
+    {
+      "id": "dd40618c-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Urip Sumoharjo Arah Barat",
+      "streamId": "498383745389554459491639",
+      "address": "Jl. Simpang Kesatrian No.6, Keduyo, Kesatrian, Kec. Blimbing, Kota Malang, Jawa Timur 65121, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9774681732751,
+        "lng": 112.64342693784
+      }
+    },
+    {
+      "id": "dd40625b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. A Yani Arah Selatan (Masjid Sabilillah)",
+      "streamId": "982131430615781858979987",
+      "address": "Jl. A. Yani No.26f, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9419060164408,
+        "lng": 112.64210819678
+      }
+    },
+    {
+      "id": "dd4067bf-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raden Intan Arah Barat",
+      "streamId": "902490552268458858290479",
+      "address": "Jl. Raden Intan No.7, Arjosari, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9330458923099,
+        "lng": 112.65808259375
+      }
+    },
+    {
+      "id": "dd406afc-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Zainal Zakse Arah Barat",
+      "streamId": "420501415743258073902708",
+      "address": "Jl. Zaenal Zakse No.89, Jodipan, Kec. Blimbing, Kota Malang, Jawa Timur 65136, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9887092508954,
+        "lng": 112.63863498137
+      }
+    },
+    {
+      "id": "dd406cd8-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Zainal Zakse Arah Timur",
+      "streamId": "505886570472987236280044",
+      "address": "Jl. Zaenal Zakse No.5, Jodipan, Kec. Blimbing, Kota Malang, Jawa Timur 65137, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9871937968553,
+        "lng": 112.63592515072
+      }
+    },
+    {
+      "id": "dd4070c4-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Juanda Arah Utara",
+      "streamId": "247723564512685003488446",
+      "address": "Jl. Muharto No.1, Jodipan, Kec. Blimbing, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9887376059222,
+        "lng": 112.63890588448
+      }
+    },
+    {
+      "id": "dd407509-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Mayjen Wiyono Arah Timur",
+      "streamId": "973041049647521784083717",
+      "address": "Jl. Kesatrian No.2, Kesatrian, Kec. Blimbing, Kota Malang, Jawa Timur 65123, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9775254589273,
+        "lng": 112.6435220588
+      }
+    },
+    {
+      "id": "dd407884-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Terusan Sulfat Arah Timur",
+      "streamId": "753337323046986013041375",
+      "address": "Jl. Terusan Sulfat No.5, Pandanwangi, Kec. Blimbing, Kota Malang, Jawa Timur 65122, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9656329828642,
+        "lng": 112.6575678448
+      }
+    },
+    {
+      "id": "dd407d34-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Panji Suroso Arah Selatan",
+      "streamId": "466452347587002114136805",
+      "address": "JL. R. Panji Suroso No.18, Malang, East Java 65125, Polowijen, Blimbing, Malang City, East Java 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9303282640499,
+        "lng": 112.65073911879
+      }
+    },
+    {
+      "id": "dd407ea8-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Gatot Subroto Arah Utara (Jembatan Brantas)",
+      "streamId": "717880005188495257691864",
+      "address": "Jl. Gatot Subroto No.1, Jodipan, Kec. Blimbing, Kota Malang, Jawa Timur 65118, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9829624402492,
+        "lng": 112.63707992976
+      }
+    },
+    {
+      "id": "dd4085e2-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Untung Suropati Arah Timur",
+      "streamId": "427283423567089689597287",
+      "address": "Jl. Panglima Sudirman No.30, Kesatrian, Kec. Blimbing, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9809071060389,
+        "lng": 112.63792468473
+      }
+    },
+    {
+      "id": "dd4086e7-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raden Panji Suroso Arah Utara",
+      "streamId": "044906552951351361548373",
+      "address": "Jl. Blimbing Indah Megah No.1, Purwodadi, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9361586934758,
+        "lng": 112.65037504027
+      }
+    },
+    {
+      "id": "dd40947c-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Laksda Adi Sucipto Arah Barat",
+      "streamId": "272315206096758266726516",
+      "address": "Jl. Laksda Adi Sucipto No.151, Blimbing, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9436808088967,
+        "lng": 112.64812513013
+      }
+    },
+    {
+      "id": "dd40959a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kesatrian Arah Utara",
+      "streamId": "786150212613240322734192",
+      "address": "Jl. Simpang Kesatrian No.6, Keduyo, Kesatrian, Kec. Blimbing, Kota Malang, Jawa Timur 65121, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9774600837325,
+        "lng": 112.64349334693
+      }
+    },
+    {
+      "id": "dd40964b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Muharto Arah Timur",
+      "streamId": "023076357712194374375085",
+      "address": "Jl. Muharto No.1, Jodipan, Kec. Blimbing, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9889135431247,
+        "lng": 112.63888729389
+      }
+    },
+    {
+      "id": "dd409d01-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl .Tumenggung Suryo Arah Selatan",
+      "streamId": "795110064442531890711535",
+      "address": "Jl. Raden Tumenggung Suryo No.70, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur 65122, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9610427987875,
+        "lng": 112.64196317727
+      }
+    },
+    {
+      "id": "dd409d5a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. LA Sucipto Arah Barat (Perbatasan)",
+      "streamId": "537255318919087826651532",
+      "address": "Jl. Raya Wendit Barat No.458, Pandanwangi, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "BLIMBING",
+      "position": {
+        "lat": -7.9501648738256,
+        "lng": 112.66417854753
+      }
+    },
+    {
+      "id": "dc90c117-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Merdeka Utara Arah Utara",
+      "streamId": "375341952336011589690586",
+      "address": "Jl. Merdeka Timur, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur 65119",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.981779115765,
+        "lng": 112.63174579237
+      }
+    },
+    {
+      "id": "dc90c8ed-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl Pasar Besar Arah Timur",
+      "streamId": "791662500424223576621102",
+      "address": "Jl. Pasar Besar No.78, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65118, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9859859938322,
+        "lng": 112.6334058263
+      }
+    },
+    {
+      "id": "dc90ca53-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Veteran Arah Barat",
+      "streamId": "838413871917489102204055",
+      "address": "Jl. Bandung No.42, Penanggungan, Kec. Klojen, Kota Malang, Jawa Timur 65113, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9599377065654,
+        "lng": 112.62158622143
+      }
+    },
+    {
+      "id": "dc90ccd5-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Arif Margono Arah Utara",
+      "streamId": "652269633484216664565215",
+      "address": "Jl. Arif Margono No.58, Kasin, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9866500451534,
+        "lng": 112.62348234253
+      }
+    },
+    {
+      "id": "dc90cd47-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Semeru Arah Barat",
+      "streamId": "717958972035700755246088",
+      "address": "Permata Bank Bromo, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9759253749755,
+        "lng": 112.62685908502
+      }
+    },
+    {
+      "id": "dc90cf9b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kawi Arah Timur (BRI Kawi)",
+      "streamId": "269060901340905226381917",
+      "address": "Jl. Kawi No.7, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9799339704206,
+        "lng": 112.62621703132
+      }
+    },
+    {
+      "id": "dc90d0fd-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ijen Arah Utara",
+      "streamId": "467561291886570342820693",
+      "address": "Jl. Kawi No.46, Gading Kasri, Kec. Klojen, Kota Malang, Jawa Timur 65116, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9755911663497,
+        "lng": 112.62072907383
+      }
+    },
+    {
+      "id": "dc90d2c2-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Letjend Sutoyo Arah Selatan (Hotel Savana)",
+      "streamId": "435572404308262635105603",
+      "address": "Jl. Letjen Sutoyo No.27c, RW.3, Rampal Celaket, Kec. Klojen, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.962092861193,
+        "lng": 112.636167138
+      }
+    },
+    {
+      "id": "dc90d5d0-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Nusakambangan Arah Barat",
+      "streamId": "212039658036127116733044",
+      "address": "Jl. Nusakambangan No.44, Kasin, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9878276102681,
+        "lng": 112.62577336634
+      }
+    },
+    {
+      "id": "dc90d6cd-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Patimura Arah Barat",
+      "streamId": "008689729209182017615333",
+      "address": "JL. Trunojoyo No. 46, Malang - East Java, Klojen, Malang City, East Java 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9734210532331,
+        "lng": 112.63662250924
+      }
+    },
+    {
+      "id": "dc90d9c7-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Merdeka Barat Arah Utara",
+      "streamId": "662201042760075959506830",
+      "address": "Jl. Kauman No.6, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9830090364441,
+        "lng": 112.62999084052
+      }
+    },
+    {
+      "id": "dc90e199-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Aris Munandar Arah Timur",
+      "streamId": "002327922068835068551525",
+      "address": "Jl. Zainul Arifin No.1, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9817282523094,
+        "lng": 112.63488263025
+      }
+    },
+    {
+      "id": "dc90e4e0-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Zainul Arifin Arah Utara",
+      "streamId": "394839611609021690258370",
+      "address": "Jl. Zainul Arifin No.59, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9842511637337,
+        "lng": 112.63400107763
+      }
+    },
+    {
+      "id": "dc90e7a2-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Pahlawan Trip",
+      "streamId": "603889351830833340753818",
+      "address": "3, Jl. Pahlawan Trip No.2, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65112, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9684717137907,
+        "lng": 112.62314575185
+      }
+    },
+    {
+      "id": "dc90e9f0-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Merdeka Timur Arah Selatan",
+      "streamId": "293434869573645632741268",
+      "address": "Jl. Merdeka Timur No.2a, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.981990281737,
+        "lng": 112.63166709143
+      }
+    },
+    {
+      "id": "dc90ea97-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Yulius Usman Arah Timur",
+      "streamId": "530280435954205770660031",
+      "address": "Jl. Yulius Usman No.32, Kasin, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9859976732094,
+        "lng": 112.62661966646
+      }
+    },
+    {
+      "id": "dc90f188-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Syarif Al Qodri Arah Selatan",
+      "streamId": "333495472392613611434090",
+      "address": "Jl. Syarif Al-Qodri No.28, Kasin, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9847601051597,
+        "lng": 112.62879684933
+      }
+    },
+    {
+      "id": "dc90f2d7-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Semeru Arah Timur",
+      "streamId": "253598743355115924306355",
+      "address": "Permata Bank Bromo, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9760132257155,
+        "lng": 112.62704336163
+      }
+    },
+    {
+      "id": "dc9100ad-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kawi Arah barat (SMPN6)",
+      "streamId": "067883214706611879049144",
+      "address": "3, Jl. Kawi No.22 A, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9791369717037,
+        "lng": 112.62512178637
+      }
+    },
+    {
+      "id": "dc910486-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl Basuki Rachmad Kayutangan Zebra Cross",
+      "streamId": "383467698805698590809269",
+      "address": "Jl. Basuki Rachmad",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9789212698058,
+        "lng": 112.62944868195
+      }
+    },
+    {
+      "id": "dc910dec-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. W.R. Supratman Arah Barat",
+      "streamId": "465602083379458835437909",
+      "address": "Jl. Wage Rudolf Supratman No.12, Rampal Celaket, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9665753600178,
+        "lng": 112.6381462263
+      }
+    },
+    {
+      "id": "dc910f3d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ijen Arah Selatan (Simpang Balapan)",
+      "streamId": "383651772119550945722301",
+      "address": "Jl. Simpang Balapan No.1, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9654473106679,
+        "lng": 112.62526334093
+      }
+    },
+    {
+      "id": "dc9110c3-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Nusakambangan Arah Timur",
+      "streamId": "259213973885550105439889",
+      "address": "Jl. Nusakambangan No.2, Kasin, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9865637188768,
+        "lng": 112.62355612285
+      }
+    },
+    {
+      "id": "dc911beb-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Patimura Arah Selatan",
+      "streamId": "643592251459005888214586",
+      "address": "Jl. Patimura IV No.268, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9713053456857,
+        "lng": 112.63329163058
+      }
+    },
+    {
+      "id": "dc911d24-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Langsep Arah Selatan",
+      "streamId": "573357726087672833075775",
+      "address": "Jl. Dieng No.27d, Bareng, Kec. Klojen, Kota Malang, Jawa Timur 65116, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9735138945672,
+        "lng": 112.6130609291
+      }
+    },
+    {
+      "id": "dc9129c9-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Arif Margono Arah Selatan",
+      "streamId": "713846259452297607019995",
+      "address": "Jl. Yulius Usman No.55, Kasin, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9851823940611,
+        "lng": 112.62470431944
+      }
+    },
+    {
+      "id": "dc912b43-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kawi Arah Barat",
+      "streamId": "494044159463642643864378",
+      "address": "Jl. Bareng Kartini 3D No.194, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65116, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9781031395978,
+        "lng": 112.62377097938
+      }
+    },
+    {
+      "id": "dc913172-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. KH. Hasyim Ashari Arah Selatan",
+      "streamId": "171664895247859983097279",
+      "address": "Gg. VI No.20, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9826879471469,
+        "lng": 112.62682418555
+      }
+    },
+    {
+      "id": "dc913517-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tugu Arah Selatan (Balaikota)",
+      "streamId": "188896189032493229715252",
+      "address": "Jl. Tugu No.1A, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9773249658189,
+        "lng": 112.63465412321
+      }
+    },
+    {
+      "id": "dc913936-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl.  Merdeka Barat",
+      "streamId": "818599107354393628794315",
+      "address": "Jl. Kauman No.6, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9831737398119,
+        "lng": 112.62991857046
+      }
+    },
+    {
+      "id": "dc9139a4-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Pasar Besar Arah Timur",
+      "streamId": "787400068366441690070099",
+      "address": "Jl. Pasar Besar No.12, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65118, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9852556187818,
+        "lng": 112.63110894774
+      }
+    },
+    {
+      "id": "dc9148ec-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Jaksa Agung Suprapto Arah Timur",
+      "streamId": "660120947895309721081787",
+      "address": "Jl. Jaksa Agung Suprapto No.72AB, Rampal Celaket, Kec. Klojen, Kota Malang, Jawa Timur 65112, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9647753636826,
+        "lng": 112.63479507623
+      }
+    },
+    {
+      "id": "dc914b5c-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Yulius Usman Arah Timur",
+      "streamId": "620853484047521997472024",
+      "address": "Jl. Yulius Usman No.55, Kasin, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9851784507742,
+        "lng": 112.62475294416
+      }
+    },
+    {
+      "id": "dc914e48-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Agus Salim Arah Timur",
+      "streamId": "117940938424194503584011",
+      "address": "Jl. Agus Salim No.6, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9836514537034,
+        "lng": 112.63132011235
+      }
+    },
+    {
+      "id": "dc9156d1-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Patimura Arah Barat",
+      "streamId": "846669458386847680283620",
+      "address": "Jl. Patimura No.22, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9731615836321,
+        "lng": 112.63455004652
+      }
+    },
+    {
+      "id": "dc91599b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Patimura Arah Barat",
+      "streamId": "844727028021085216938269",
+      "address": "Jl. Patimura No.1 A, RW.3, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9713392134144,
+        "lng": 112.63320330628
+      }
+    },
+    {
+      "id": "dc915a91-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Semeru Arah Timur (Perpustakaan)",
+      "streamId": "421607974337796002196100",
+      "address": "Jl. Besar Ijen No.24, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9724481766569,
+        "lng": 112.62197542391
+      }
+    },
+    {
+      "id": "dc915d35-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ijen Arah Utara (Poltekes)",
+      "streamId": "098343692068108583411220",
+      "address": "Politeknik Kesehatan Kemenkes Malang, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9655728222683,
+        "lng": 112.62486253928
+      }
+    },
+    {
+      "id": "dc916053-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Arif Margono Arah Selatan",
+      "streamId": "789762621921935268666704",
+      "address": "Jl. Arif Margono No.31D, Kasin, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9841459293288,
+        "lng": 112.62611115799
+      }
+    },
+    {
+      "id": "dc9163b7-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Terusan Ijen Arah Selatan",
+      "streamId": "495229592063339988032865",
+      "address": "Jl. Kawi No.46, Gading Kasri, Kec. Klojen, Kota Malang, Jawa Timur 65116, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.975682460697,
+        "lng": 112.62043425845
+      }
+    },
+    {
+      "id": "dc916849-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Jaksa Agung Suprapto Arah Utara",
+      "streamId": "092075042505129095657722",
+      "address": "Jl. Jaksa Agung Suprapto Dalam Rw. 06 No.11, RT.06, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65112, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.972844347692,
+        "lng": 112.63074021452
+      }
+    },
+    {
+      "id": "dc916a0e-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Basuki Rahmat Arah Selatan",
+      "streamId": "876263708687156206364361",
+      "address": "Jl. Polowijen II No.314, Polowijen, Kec. Blimbing, Kota Malang, Jawa Timur 65126, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9744003771114,
+        "lng": 112.62979392116
+      }
+    },
+    {
+      "id": "dc916b57-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Trunojoyo Arah Selatan",
+      "streamId": "027277786580967639165024",
+      "address": "Depan, Malang, Jl. Trunojoyo, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9777776777458,
+        "lng": 112.63687422811
+      }
+    },
+    {
+      "id": "dc916c32-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Bromo Arah Utara (GKI Bromo)",
+      "streamId": "664697529898892981084889",
+      "address": "Jl. Bromo No.14-4, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9790722501546,
+        "lng": 112.62526556398
+      }
+    },
+    {
+      "id": "dc916dd9-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Panglima Sudirman Arah Selatan",
+      "streamId": "281336549789753967841481",
+      "address": "Halte WR Supratman, Rampal Celaket, Kec. Klojen, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9671540052596,
+        "lng": 112.63825343409
+      }
+    },
+    {
+      "id": "dc916f9a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Basuki Rahmat Arah Selatan",
+      "streamId": "771615331018457682499213",
+      "address": "Jl. Jenderal Basuki Rahmat No.64A, RW.3, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9765568193952,
+        "lng": 112.62938479567
+      }
+    },
+    {
+      "id": "dc91700b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ijen Arah Selatan",
+      "streamId": "742158442433359267079827",
+      "address": "3, Apotek Kimia Farma, Jl. Besar Ijen No.88, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9635130965252,
+        "lng": 112.62538075902
+      }
+    },
+    {
+      "id": "dc91707c-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Aris Munandar Arah Barat",
+      "streamId": "491236279805146068523382",
+      "address": "Jl. Aries Munandar No.30, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9816351157523,
+        "lng": 112.63466394904
+      }
+    },
+    {
+      "id": "dc917234-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ijen Arah Utara",
+      "streamId": "408386140723144623861301",
+      "address": "JL Ijen, No 90-92, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9687423955713,
+        "lng": 112.623686703
+      }
+    },
+    {
+      "id": "dc9175af-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Veteran Arah Selatan",
+      "streamId": "440008799417875731945423",
+      "address": "Jl. Tangerang No.25, Penanggungan, Kec. Klojen, Kota Malang, Jawa Timur 65113, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9598377716445,
+        "lng": 112.62178774821
+      }
+    },
+    {
+      "id": "dc91768c-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ade Irma Suryani Arah Timur",
+      "streamId": "096052317426605718543303",
+      "address": "Jl. Ade Irma Suryani No.32, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65123, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.984652924575,
+        "lng": 112.62884529204
+      }
+    },
+    {
+      "id": "dc9176fa-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. KH Ahmad Dahlan Arah Timur",
+      "streamId": "422383028253759413095916",
+      "address": "Jl. KH Ahmad Dahlan No.2 no.568, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65118, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9844351061273,
+        "lng": 112.63407770918
+      }
+    },
+    {
+      "id": "dc9177d8-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kawi Arah Timur",
+      "streamId": "642085663280892020139410",
+      "address": "Jl. Kawi No.46, Gading Kasri, Kec. Klojen, Kota Malang, Jawa Timur 65116, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9757838519385,
+        "lng": 112.62065559703
+      }
+    },
+    {
+      "id": "dc917846-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Husni Tamrin Arah Utara",
+      "streamId": "824468526355652946351265",
+      "address": "Jl. Patimura No.22, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9731576817215,
+        "lng": 112.63460322804
+      }
+    },
+    {
+      "id": "dc917b5b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Jendral Sudirman Arah Selatan (smpn 5)",
+      "streamId": "054856199643889577039217",
+      "address": "Jl. Panglima Sudirman Utara No.38, Rampal Celaket, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9675634227276,
+        "lng": 112.6383922785
+      }
+    },
+    {
+      "id": "dc91836a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Wahidin Arah Utara",
+      "streamId": "028590945630518341489747",
+      "address": "Jl. Wahidin Arah Utara",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9691442912965,
+        "lng": 112.63630916385
+      }
+    },
+    {
+      "id": "dc9186fc-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Gatot Subroto Arah Utara",
+      "streamId": "938035466891117643541014",
+      "address": "Jl. Pasar Besar No.167, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65118, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9870238760987,
+        "lng": 112.63572782514
+      }
+    },
+    {
+      "id": "dd403b6a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kauman Arah Timur",
+      "streamId": "913339812782937126202419",
+      "address": "Jl. K.H. Hasyim Ashari No.9a, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9825136778617,
+        "lng": 112.62700689146
+      }
+    },
+    {
+      "id": "dd40409d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kahuripan Arah Timur",
+      "streamId": "994477999826297213214297",
+      "address": "Jl. Jenderal Basuki Rahmat No.64A, RW.3, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9764020923109,
+        "lng": 112.62954323459
+      }
+    },
+    {
+      "id": "dd404263-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kawi Arah Barat",
+      "streamId": "060929711024394280433963",
+      "address": "Jl. Kawi Arah Barat",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9808202773976085,
+        "lng": 112.62762728831831
+      }
+    },
+    {
+      "id": "dd404cd8-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Trunojoyo Arah Barat",
+      "streamId": "188475135081668166134552",
+      "address": "Jl. Embong Brantas No.1, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9808355434006,
+        "lng": 112.6378441011
+      }
+    },
+    {
+      "id": "dd404d43-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Galungung Arah Selatan",
+      "streamId": "889779720689036295934998",
+      "address": "Jl. Galunggung No.58g, Gading Kasri, Kec. Klojen, Kota Malang, Jawa Timur 65115, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9674016151997,
+        "lng": 112.61350948649
+      }
+    },
+    {
+      "id": "dd404ead-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Merbabu Arah Selatan",
+      "streamId": "653722151300593309331609",
+      "address": "Jl. Panggung No.2A, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9658629817514,
+        "lng": 112.62536890787
+      }
+    },
+    {
+      "id": "dd404f1a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Bandung Arah Barat (Bundaran UKS)",
+      "streamId": "699355759296848496652742",
+      "address": "Jl. Bandung No.1, Penanggungan, Kec. Klojen, Kota Malang, Jawa Timur 65113, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9622672931418,
+        "lng": 112.62564722251
+      }
+    },
+    {
+      "id": "dd404f81-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Arjuno Arah Utara (BRI Kawi)",
+      "streamId": "599118267175295987908194",
+      "address": "Jl. Kawi No.7, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9798029805368,
+        "lng": 112.62619448083
+      }
+    },
+    {
+      "id": "dd4054c8-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Sutan Syahrir Arah Selatan",
+      "streamId": "112214116527259160582301",
+      "address": "Jl. Pasar Besar No.6, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9853327934448,
+        "lng": 112.63091800772
+      }
+    },
+    {
+      "id": "dd405531-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Hasyim Ashari Arah Selatan",
+      "streamId": "584894580391537462827774",
+      "address": "Jl. Hasyim Ashari Arah Selatan",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.98100091568454,
+        "lng": 112.62764875379338
+      }
+    },
+    {
+      "id": "dd405821-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Sulawesi Arah Selatan",
+      "streamId": "346702335161875943863648",
+      "address": "Jl. Sulawesi No.1, Kasin, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9861297618618,
+        "lng": 112.62655917045
+      }
+    },
+    {
+      "id": "dd405958-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Basuki Rahmat arah utara",
+      "streamId": "291214161756678285690451",
+      "address": "Jl. Jenderal Basuki Rahmat No.6e, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9802024549855,
+        "lng": 112.63039082456
+      }
+    },
+    {
+      "id": "dd4059bf-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ijen Arah Utara",
+      "streamId": "627129209468594400740829",
+      "address": "Jl. Besar Ijen No.30a, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9720342789587,
+        "lng": 112.62187618007
+      }
+    },
+    {
+      "id": "dd405b61-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Jenderal Sudirman Arah Barat",
+      "streamId": "855876619782149417527265",
+      "address": "Halte WR Supratman, Rampal Celaket, Kec. Klojen, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9668162894629,
+        "lng": 112.63841239235
+      }
+    },
+    {
+      "id": "dd405d72-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. KH. Hasyim Ashari Arah Utara",
+      "streamId": "406217477871280304673887",
+      "address": "Jl. K.H. Hasyim Ashari No.16, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9822871253877,
+        "lng": 112.62695060708
+      }
+    },
+    {
+      "id": "dd405e3f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Cokroaminoto Arah Utara",
+      "streamId": "462406715974251335062174",
+      "address": "Jl. Patimura No.69-71, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9733948897679,
+        "lng": 112.6366761213
+      }
+    },
+    {
+      "id": "dd405f7c-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Dieng Arah Timur",
+      "streamId": "547359693237078797537666",
+      "address": "Jl. Galunggung No.2, Gading Kasri, Kec. Klojen, Kota Malang, Jawa Timur 65146, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9732906622822,
+        "lng": 112.61329216201
+      }
+    },
+    {
+      "id": "dd40604d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ijen Arah Selatan",
+      "streamId": "735506210316890709562691",
+      "address": "Jl. Buring No.60, RW.3, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65112, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9687934770834,
+        "lng": 112.62392151894
+      }
+    },
+    {
+      "id": "dd40611f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "JL. Merdeka Utara Arah Utara",
+      "streamId": "472503741586852378929425",
+      "address": "Jl. Jenderal Basuki Rahmat No.1, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9815751975434,
+        "lng": 112.63042387909
+      }
+    },
+    {
+      "id": "dd4062bb-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Taman Ijen 2",
+      "streamId": "611606309979396608294034",
+      "address": "Jl. Besar Ijen",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9665759290361,
+        "lng": 112.62426270159
+      }
+    },
+    {
+      "id": "dd40632c-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Yulius Usman Arah Barat",
+      "streamId": "920796867173871680340694",
+      "address": "Ruko Sulawesi Indah, Jalan Sulawesi Blok 2A, Jl. Yulius Usman No. 29C, Kasin, Klojen, Kasin, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9859869889643,
+        "lng": 112.62656234937
+      }
+    },
+    {
+      "id": "dd406398-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Agus Salim Arah Barat",
+      "streamId": "222512201418345708685754",
+      "address": "Jl. Agus Salim No.25, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9843361760881,
+        "lng": 112.63379264662
+      }
+    },
+    {
+      "id": "dd4063ff-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Panglima Sudirman Arah Utara",
+      "streamId": "320035756896441723894425",
+      "address": "Jl. Patimura No.111, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9734076388565,
+        "lng": 112.63848787099
+      }
+    },
+    {
+      "id": "dd406680-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Jaksa Agung Suprapto Arah Selatan",
+      "streamId": "655224432137058620115166",
+      "address": "Jl. Jaksa Agung Suprapto No.19b, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65112, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9726039540491,
+        "lng": 112.63081703466
+      }
+    },
+    {
+      "id": "dd4066eb-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl Retawu Arah Museum",
+      "streamId": "996051630808365936867998",
+      "address": "Jl Retawu I",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9717736667782,
+        "lng": 112.62144370125
+      }
+    },
+    {
+      "id": "dd406757-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Zainul Arifin Arah Selatan",
+      "streamId": "888598335546629776669925",
+      "address": "Jl. Zainul Arifin No.63, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9845694615764,
+        "lng": 112.63389029793
+      }
+    },
+    {
+      "id": "dd40695b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Galunggung Arah Utara",
+      "streamId": "879779063216883395653396",
+      "address": "Jl. Galunggung No.76c, Gading Kasri, Kec. Klojen, Kota Malang, Jawa Timur 65115, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9671798845705,
+        "lng": 112.6135961468
+      }
+    },
+    {
+      "id": "dd406a91-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl Veteran Depan Matos",
+      "streamId": "203191103351222911095423",
+      "address": "Jl Veteran I",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9574683260931,
+        "lng": 112.61883999679
+      }
+    },
+    {
+      "id": "dd407496-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Semeru Arah Barat",
+      "streamId": "776763144322125195609829",
+      "address": "Jl. Semeru No.2, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65183, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9764125575545,
+        "lng": 112.62916901708
+      }
+    },
+    {
+      "id": "dd4075de-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl Kyai Tamin Arah Timur",
+      "streamId": "373262875962388363723269",
+      "address": "JL. Kapt. P. Tendean 1D No. 108, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9873753596968,
+        "lng": 112.63033321498
+      }
+    },
+    {
+      "id": "dd4076b8-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kawi Arah Timur.",
+      "streamId": "192932202274819493009134",
+      "address": "Jalan kawi bawah 4 no 3A, Kauman, Klojen, Malang City, East Java 65116, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9782704417049,
+        "lng": 112.62397772459
+      }
+    },
+    {
+      "id": "dd407715-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Basuki Rahmat Arah Utara",
+      "streamId": "134679292061611148844449",
+      "address": "Jl. Semeru No.4, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9762154935754,
+        "lng": 112.62937765799
+      }
+    },
+    {
+      "id": "dd4078e7-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. AR. Hakim Arah Timur",
+      "streamId": "079331433202834680650395",
+      "address": "Jl. AR. Hakim Arah Timur",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.980841541881919,
+        "lng": 112.62731615991213
+      }
+    },
+    {
+      "id": "dd407a5a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Majapahit Arah Utara",
+      "streamId": "116009283303235824630445",
+      "address": "3, Jl. MGR Sugiyopranoto No.3A, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9802423098069,
+        "lng": 112.63089616965
+      }
+    },
+    {
+      "id": "dd407b0d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tugu Arah Utara",
+      "streamId": "621626709539809832237018",
+      "address": "Hotel Tugu, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9768770504848,
+        "lng": 112.63349791746
+      }
+    },
+    {
+      "id": "dd407bbf-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Brigjend Slamet Riadi Arah Barat",
+      "streamId": "654189372598870108548003",
+      "address": "Jl. Brigjend Slamet Riadi No.2a, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9742567692522,
+        "lng": 112.62976551479
+      }
+    },
+    {
+      "id": "dd407d8e-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kawi Arah Barat (BRI Kawi)",
+      "streamId": "244729190133053856685781",
+      "address": "Cabang Biro Perencanaan Dan Pengembangan Perusahaan, Kauman, Kec. Klojen, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9798254151343,
+        "lng": 112.62608608785
+      }
+    },
+    {
+      "id": "dd407f72-0892-11f1-a5f4-bc2411b5911e",
+      "name": "JL. Ijen Arah Utara",
+      "streamId": "268660637162985239935545",
+      "address": "Jl. Ijen No.89, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65113, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9633115011586,
+        "lng": 112.62540840759
+      }
+    },
+    {
+      "id": "dd407fd0-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Basuki Rahmat Arah Selatan",
+      "streamId": "825109914933198114646936",
+      "address": "Jl. Jenderal Basuki Rahmat No.4, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9806017505387,
+        "lng": 112.63055525549
+      }
+    },
+    {
+      "id": "dd4080df-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Agus Salim Arah Timur",
+      "streamId": "217486301753431654065609",
+      "address": "Jl. Agus Salim No.6, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9835125563269,
+        "lng": 112.63137031522
+      }
+    },
+    {
+      "id": "dd408410-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Trunojoyo Arah Utara",
+      "streamId": "853226045901551050379815",
+      "address": "Jl. Trunojoyo No.81, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9773796247967,
+        "lng": 112.63682801673
+      }
+    },
+    {
+      "id": "dd408468-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Galunggung Arah Utara",
+      "streamId": "710655546702615517203062",
+      "address": "Jl. Galunggung No.74, Gading Kasri, Kec. Klojen, Kota Malang, Jawa Timur 65115, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9669408157606,
+        "lng": 112.61355573485
+      }
+    },
+    {
+      "id": "dd4084c2-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Sudirman Arah Selatan",
+      "streamId": "024271174990073130193626",
+      "address": "Jl. Patimura No.111, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9735734527294,
+        "lng": 112.63851073613
+      }
+    },
+    {
+      "id": "dd40851e-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kawi Arah Timur (GKI Bromo)",
+      "streamId": "433161038569412405938175",
+      "address": "Jl. Kawi No.11, RW.3, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65116, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.97929323909,
+        "lng": 112.62533821228
+      }
+    },
+    {
+      "id": "dd408585-0892-11f1-a5f4-bc2411b5911e",
+      "name": "JL. Ade Irma Suryani Arah Timur",
+      "streamId": "585001585243656697946585",
+      "address": "Jalan Tumapel No.142, Kauman, Klojen, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9841023208587,
+        "lng": 112.62626487433
+      }
+    },
+    {
+      "id": "dd409144-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. WR. Supratman Arah Selatan",
+      "streamId": "540407055746756125950976",
+      "address": "Jl. Jaksa Agung Suprapto No.72b, Rampal Celaket, Kec. Klojen, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9645622164363,
+        "lng": 112.6350697533
+      }
+    },
+    {
+      "id": "dd409268-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Pasar Besar Arah Barat",
+      "streamId": "623797234825519031426274",
+      "address": "Jl. Pasar Besar No.163, Sukoharjo, Kec. Klojen, Kota Malang, Jawa Timur 65118, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9869815091865,
+        "lng": 112.6354541434
+      }
+    },
+    {
+      "id": "dd40930f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tugu Arah Selatan",
+      "streamId": "938791837334761355142482",
+      "address": "Hotel Tugu, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9770357920207,
+        "lng": 112.63345641439
+      }
+    },
+    {
+      "id": "dd4093c6-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. SW Pranoto Arah Utara",
+      "streamId": "629217349359529662387028",
+      "address": "Jl. Ade Irma Suryani No.3, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9851811207356,
+        "lng": 112.63094513485
+      }
+    },
+    {
+      "id": "dd409422-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Jaksa Agung Suprapto Arah Utara",
+      "streamId": "395810883923327543094739",
+      "address": "Jl. Brigjend Slamet Riadi No.2a, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.974189093092,
+        "lng": 112.6298633605
+      }
+    },
+    {
+      "id": "dd40975d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tugu Arah Utara",
+      "streamId": "012071430581878807503129",
+      "address": "Jl. Tugu No.1, Kiduldalem, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9770874644213,
+        "lng": 112.63467063147
+      }
+    },
+    {
+      "id": "dd4097c1-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kawi Arah Barat",
+      "streamId": "322877538584592778525433",
+      "address": "Jl. Kawi No.46, Gading Kasri, Kec. Klojen, Kota Malang, Jawa Timur 65116, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9756429406335,
+        "lng": 112.62061926357
+      }
+    },
+    {
+      "id": "dd409873-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Bromo Arah Utara",
+      "streamId": "898902535875476482823426",
+      "address": "Jl. Bromo No.29, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9758821152916,
+        "lng": 112.62675137498
+      }
+    },
+    {
+      "id": "dd4098d2-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Galunggung Arah Utara",
+      "streamId": "564510132783646943412082",
+      "address": "Jl. Dieng No.32, Gading Kasri, Kec. Klojen, Kota Malang, Jawa Timur 65115, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9729859379202,
+        "lng": 112.6131400908
+      }
+    },
+    {
+      "id": "dd409988-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Patimura Arah Timur",
+      "streamId": "057943232109594939574526",
+      "address": "Jl. Patimura No.22, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9731927582015,
+        "lng": 112.63461349074
+      }
+    },
+    {
+      "id": "dd409bee-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ade Irma Suryani Arah Barat",
+      "streamId": "340486331612923975414024",
+      "address": "Jl. Kyai H. Wahid Hasyim No.30, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9846157376916,
+        "lng": 112.62875066297
+      }
+    },
+    {
+      "id": "dd409ca5-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kertanegara Arah Barat",
+      "streamId": "231554183770498281450318",
+      "address": "Jl. Trunojoyo No.80a, Klojen, Kec. Klojen, Kota Malang, Jawa Timur 65111, Indonesia",
+      "district": "KLOJEN",
+      "position": {
+        "lat": -7.9775599677685,
+        "lng": 112.6366878558
+      }
+    },
+    {
+      "id": "1cec17b4-5333-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Danau Bratan Arah Timur",
+      "streamId": "511560590871402984783229",
+      "address": "Jl. Danau Bratan Arah Timur",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.975619743812436,
+        "lng": 112.6617547053065
+      }
+    },
+    {
+      "id": "bc846306-5335-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Danau Bratan Arah Barat",
+      "streamId": "392886608131064314613341",
+      "address": "Jl. Danau Bratan Arah Barat",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.975502868155886,
+        "lng": 112.66156695067546
+      }
+    },
+    {
+      "id": "dc90c501-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kyai Parseh Jaya Arah Utara",
+      "streamId": "791264717746791807536169",
+      "address": "Jl. Gadang Bumiayu No.8, RT.04/RW.05, Bumiayu, Kec. Kedungkandang, Kota Malang, Jawa Timur 65135, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -8.0245590074592,
+        "lng": 112.63351631963
+      }
+    },
+    {
+      "id": "dc90cec0-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Terusan Sulfat Arah Barat",
+      "streamId": "051869339713065045968859",
+      "address": "Mangliyawan Jl. Kapi Woro No.44, Keduyo, Mangliawan, Kec. Pakis, Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9662925808599,
+        "lng": 112.65969447066
+      }
+    },
+    {
+      "id": "dc90de43-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ki Ageng Gribig Arah Selatan",
+      "streamId": "919248977431029784415723",
+      "address": "Jl. Raya Ki Ageng Gribig No.11, Madyopuro, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9745092328817,
+        "lng": 112.67245976856
+      }
+    },
+    {
+      "id": "dc90e366-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Mayjen Sungkono Arah Selatan (Gor Ken Arok)",
+      "streamId": "246296455949996661977887",
+      "address": "Jalan Mayjend Sungkono (Depan Gor Ken Arok), Bumiayu, Kedungkandang,, Buring, Kec. Kedungkandang, Kota Malang, Jawa Timur 65135, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -8.0133238335934,
+        "lng": 112.64353480274
+      }
+    },
+    {
+      "id": "dc90fe89-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Rajasa Arah Barat",
+      "streamId": "390518457780656230115714",
+      "address": "Jl. Rajasa No.2012, Bumiayu, Kec. Kedungkandang, Kota Malang, Jawa Timur 65135, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -8.0265864675627,
+        "lng": 112.64285225973
+      }
+    },
+    {
+      "id": "dc91024f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Terusan Sulfat Arah Barat",
+      "streamId": "255437547268502386905563",
+      "address": "01, Jl. Terusan Sulfat No.3, Sawojajar, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9652876918478,
+        "lng": 112.6574405095
+      }
+    },
+    {
+      "id": "dc911f36-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Muharto Arah Barat",
+      "streamId": "284039786620080380014346",
+      "address": "Jl. Muharto No.26, Kedungkandang, Kec. Kedungkandang, Kota Malang, Jawa Timur 65137, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9939098777072,
+        "lng": 112.64768527232
+      }
+    },
+    {
+      "id": "dc913bdc-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raya Cemorokandang Arah Timur",
+      "streamId": "143725395052441804689699",
+      "address": "Jl. Raya Madyopuro No.1, Cemorokandang, Kec. Kedungkandang, Kota Malang, Jawa Timur 65138, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9796596345044,
+        "lng": 112.68398991818
+      }
+    },
+    {
+      "id": "dc9168c1-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kebalen Wetan Arah Timur",
+      "streamId": "839830267892971466247721",
+      "address": "Jl. Kolonel Sugiono No.1, Mergosono, Kec. Kedungkandang, Kota Malang, Jawa Timur 65118, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9939005881375,
+        "lng": 112.63364104707
+      }
+    },
+    {
+      "id": "dc91692f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ranugrati Arah Barat",
+      "streamId": "007769084157082641425855",
+      "address": "Jl. Ranugrati No.39d, Sawojajar, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9808962888885,
+        "lng": 112.65356039733
+      }
+    },
+    {
+      "id": "dc916ae8-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Mayjen Sungkono Arah Selatan",
+      "streamId": "872337836594410225468546",
+      "address": "Jl. Mayjen Sungkono No.13b, RT.04/RW.05, Wonokoyo, Kec. Kedungkandang, Kota Malang, Jawa Timur 65135, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -8.0266821298389,
+        "lng": 112.64285641359
+      }
+    },
+    {
+      "id": "dc916eb9-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Danau Kerinci Arah Utara",
+      "streamId": "892431741317523091394671",
+      "address": "C2/F17, Jl. Danau Kerinci Raya, Keduyo, Sawojajar, Pakis, Malang City, East Java 65154, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9712337609891,
+        "lng": 112.66411783584
+      }
+    },
+    {
+      "id": "dc917311-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Danau Toba Arah Barat",
+      "streamId": "037075518670899465560926",
+      "address": "Jl. Danau Kerinci Raya No.1, Lesanpuro, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9790869759775,
+        "lng": 112.65953897435
+      }
+    },
+    {
+      "id": "dc9173f6-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Mayjend Sungkono Arah Utara (Block Office)",
+      "streamId": "648109998063016154575665",
+      "address": "depan perkantoran terpadu, pertigaan, Jl. Mayjen Sungkono, Wonokoyo, Kec. Kedungkandang, Kota Malang, Jawa Timur 65132, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -8.0324356945612,
+        "lng": 112.64265223647
+      }
+    },
+    {
+      "id": "dc917ef3-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Danau Toba Arah Timur",
+      "streamId": "799063606348608223030193",
+      "address": "Jl. Danau Kerinci Raya, Perumahan Sawojajar, Lesanpuro, Kedungkandang, Malang City, East Java 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.979106297252,
+        "lng": 112.65968375923
+      }
+    },
+    {
+      "id": "dc91804f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Danau Kerinci Arah Utara",
+      "streamId": "931466165340267193793620",
+      "address": "Jl. Danau Kerinci Raya No.1, Lesanpuro, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.978996655219,
+        "lng": 112.65965216595
+      }
+    },
+    {
+      "id": "dd404037-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Martadinata Arah Utara",
+      "streamId": "359461418488526462162650",
+      "address": "Jl. Kolonel Sugiono No.1, Mergosono, Kec. Kedungkandang, Kota Malang, Jawa Timur 65118, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9938247531935,
+        "lng": 112.63356035779
+      }
+    },
+    {
+      "id": "dd405c98-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Mayjen Sungkono Arah Selatan (Jembatan)",
+      "streamId": "424989231290086461229636",
+      "address": "Jl. Raya Ki Ageng Gribig No.31, Kedungkandang, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9939030466594,
+        "lng": 112.64780478967
+      }
+    },
+    {
+      "id": "dd40653a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Mayjend Sungkono Arah Utara (Gor Ken Arok)",
+      "streamId": "247069575513558870999554",
+      "address": "Jl. Mayjen Sungkono No.17, Buring, Kec. Kedungkandang, Kota Malang, Jawa Timur 65136, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -8.0132643690914,
+        "lng": 112.64353469034
+      }
+    },
+    {
+      "id": "dd4069c3-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kebalen Wetan Arah Selatan",
+      "streamId": "453382724774773485227390",
+      "address": "Jl. Kebalen Wetan No.01, Kotalama, Kec. Kedungkandang, Kota Malang, Jawa Timur 65136, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.989048761795,
+        "lng": 112.63872368841
+      }
+    },
+    {
+      "id": "dd406c04-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Danau Kerinci Arah Selatan",
+      "streamId": "148960239776637882670743",
+      "address": "Jl. Danau Yamur No.1, Sawojajar, Kedungkandang, Malang, Keduyo, Sawojajar, Kec. Kedungkandang, Malang, Jawa Timur 65154, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9712384586829,
+        "lng": 112.66398784702
+      }
+    },
+    {
+      "id": "dd4072f9-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raya Cemorokandang Arah Barat",
+      "streamId": "748163626141039645450448",
+      "address": "Jl. Raya Cemorokandang No.7, Cemorokandang, Kec. Kedungkandang, Kota Malang, Jawa Timur 65138, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9794081568667,
+        "lng": 112.68341922528
+      }
+    },
+    {
+      "id": "dd407432-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Rajasa Arah Barat",
+      "streamId": "256581523014055687826746",
+      "address": "Jl. Rajasa No.8, Bumiayu, Kec. Kedungkandang, Kota Malang, Jawa Timur 65135, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -8.0244734918604,
+        "lng": 112.63356716214
+      }
+    },
+    {
+      "id": "dd407829-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ki Ageng Gribig Arah Utara",
+      "streamId": "817521846151282907919064",
+      "address": "Jl. Raya Ki Ageng Gribig No.19, Madyopuro, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9742168153195,
+        "lng": 112.67259470513
+      }
+    },
+    {
+      "id": "dd4079ff-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Ki Ageng Gribig Arah Selatan",
+      "streamId": "748385964560314122807188",
+      "address": "Jalan Danau Toba Blok.E 9 No.16, Sawojajar, Kedungkandang, Lesanpuro, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9808859838311,
+        "lng": 112.66261624078
+      }
+    },
+    {
+      "id": "dd4094e5-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. LA Sucipto Arah Timur (Perbatasan)",
+      "streamId": "886421518518743577298499",
+      "address": "Jl. Raya Wendit Barat No.1, Lowoksoro, Mangliawan, Kec. Pakis, Kota Malang, Jawa Timur 65154, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9502961908227,
+        "lng": 112.66467304435
+      }
+    },
+    {
+      "id": "dd40953e-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Danau Toba Arah Timur",
+      "streamId": "004708955419442040752767",
+      "address": "Jl. Simpang Ranugrati No.5d, Lesanpuro, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9809960182299,
+        "lng": 112.65377079464
+      }
+    },
+    {
+      "id": "dd40981c-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Mayjend Sungkono Arah Selatan (Block Office)",
+      "streamId": "341249267574702296399925",
+      "address": "Tlogowaru, Tlogowaru, Kec. Kedungkandang, Kota Malang, Jawa Timur, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -8.0326239922323,
+        "lng": 112.64262576999
+      }
+    },
+    {
+      "id": "dd40992f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Gribig Arah Utara (Jembatan)",
+      "streamId": "397487832387359645963672",
+      "address": "Jl. Mayjen Sungkono No.38, Kedungkandang, Kec. Kedungkandang, Kota Malang, Jawa Timur 65136, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9940003315615,
+        "lng": 112.64773556238
+      }
+    },
+    {
+      "id": "dd409a93-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Danau Toba Arah Barat",
+      "streamId": "133105391563125665089003",
+      "address": "Jl. Raya Ki Ageng Gribig No.mor 2, Madyopuro, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139, Indonesia",
+      "district": "KEDUNGKANDANG",
+      "position": {
+        "lat": -7.9807161688601,
+        "lng": 112.66270762353
+      }
+    },
+    {
+      "id": "dc90c9ce-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Satsuit Tubun Arah Timur",
+      "streamId": "336686011348989661063244",
+      "address": "Jl. Nasional 23 No.24, Kebonsari, Kec. Sukun, Kota Malang, Jawa Timur 65149, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0200841637518,
+        "lng": 112.61910327085
+      }
+    },
+    {
+      "id": "dc91085f-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Gadang Pasar Arah Timur",
+      "streamId": "292570058740218968707392",
+      "address": "XJGH+V49 TAMAN GADANG, Jl. Gadang Bumiayu, Gadang, Kec. Sukun, Kota Malang, Jawa Timur 65149, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0227794419722,
+        "lng": 112.62773707736
+      }
+    },
+    {
+      "id": "dc914d1e-0892-11f1-a5f4-bc2411b5911e",
+      "name": "JL. Ir. Rais Arah Timur",
+      "streamId": "215572611631850575823115",
+      "address": "Jl. I.R. Rais No.569, Tanjungrejo, Kec. Sukun, Kota Malang, Jawa Timur 65116, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -7.9835246189301,
+        "lng": 112.61444523284
+      }
+    },
+    {
+      "id": "dc9155a1-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. S. Supriyadi (Arah Klaytan III)",
+      "streamId": "045410553225288501472916",
+      "address": "Jl.S.Supriadi No.41a, Bandungrejosari, Kec. Sukun, Kota Malang, Jawa Timur 65148, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0058564271663,
+        "lng": 112.6184631227
+      }
+    },
+    {
+      "id": "dc915e83-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kol Sugiono Arah Selatan",
+      "streamId": "519874872010984433957942",
+      "address": "Jl. Kolonel Sugiono No.229, Gadang, Kec. Sukun, Kota Malang, Jawa Timur 65148, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0039351751878,
+        "lng": 112.63040588491
+      }
+    },
+    {
+      "id": "dc9170e9-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. S. Supriadi Arah Utara",
+      "streamId": "721240097001535400904802",
+      "address": "Jl. Klayatan III No.23, Bandungrejosari, Kec. Sukun, Kota Malang, Jawa Timur 65148, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0059712835952,
+        "lng": 112.6182287727
+      }
+    },
+    {
+      "id": "dc917991-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. S. Supriyadi Arah Selatan (Klaytan III)",
+      "streamId": "906088015550297661590404",
+      "address": "Jl.S.Supriadi No.39, Sukun, Kec. Sukun, Kota Malang, Jawa Timur 65147, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0061651949277,
+        "lng": 112.61858669291
+      }
+    },
+    {
+      "id": "dc91844a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Halmahera Arah Selatan",
+      "streamId": "836708782306919156448722",
+      "address": "Jl. Halmahera No.56, Ciptomulyo, Kec. Sukun, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -7.992390350705,
+        "lng": 112.62829070372
+      }
+    },
+    {
+      "id": "dc9184b6-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raya Gadang Arah Selatan",
+      "streamId": "772701504430563728087236",
+      "address": "Jl. Satsui Tubun No.25, Gadang, Kec. Sukun, Kota Malang, Jawa Timur 65149, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0230311937224,
+        "lng": 112.62758801291
+      }
+    },
+    {
+      "id": "dd403ed8-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. S. Supriadi Arah Selatan",
+      "streamId": "077782103576869531500342",
+      "address": "Jl. S. Supriadi No.151, Kebonsari, Kec. Sukun, Kota Malang, Jawa Timur 65149, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0203105855512,
+        "lng": 112.61900958212
+      }
+    },
+    {
+      "id": "dd404336-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. S. Supriadi Arah Utara",
+      "streamId": "215178419587511478247119",
+      "address": "Jl. S. Supriadi No.15-24, Kebonsari, Kec. Sukun, Kota Malang, Jawa Timur 65149, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0202448789982,
+        "lng": 112.61916730166
+      }
+    },
+    {
+      "id": "dd4056dd-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Mergan Lori Arah Selatan",
+      "streamId": "473307088033186544380122",
+      "address": "Jl. I.R. Rais No.570, Tanjungrejo, Kec. Sukun, Kota Malang, Jawa Timur 65146, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -7.9835682572161,
+        "lng": 112.61429173535
+      }
+    },
+    {
+      "id": "dd405af9-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Janti Barat Arah Timur",
+      "streamId": "171077206204474544672476",
+      "address": "Jl. S. Supriadi No.46, Bandungrejosari, Kec. Sukun, Kota Malang, Jawa Timur 65147, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0004348388294,
+        "lng": 112.61820046456
+      }
+    },
+    {
+      "id": "dd405dda-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Halmahera Arah Selatan",
+      "streamId": "858976621501627801724527",
+      "address": "Jl. Halmahera No.9, Ciptomulyo, Kec. Sukun, Kota Malang, Jawa Timur 65117, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -7.9912448241828,
+        "lng": 112.6287927154
+      }
+    },
+    {
+      "id": "dd407c7d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Jupri Arah Barat",
+      "streamId": "425250660135490708615779",
+      "address": "Jl. Jupri No.621, Tanjungrejo, Kec. Sukun, Kota Malang, Jawa Timur 65147, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -7.9835724656652,
+        "lng": 112.6141778857
+      }
+    },
+    {
+      "id": "dd407ded-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Terusan Dieng Arah Barat",
+      "streamId": "077636403437244032401245",
+      "address": "UNMER Malang Park, Jl. Terusan Dieng, Pisang Candi, Sukun, Malang City, East Java 65146, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -7.9732569575768,
+        "lng": 112.61281063468
+      }
+    },
+    {
+      "id": "dd408194-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Raya Langsep Arah Utara",
+      "streamId": "448993781462444492103703",
+      "address": "Jl. I.R. Rais No.569, Tanjungrejo, Kec. Sukun, Kota Malang, Jawa Timur 65116, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -7.9834186723348,
+        "lng": 112.61437460039
+      }
+    },
+    {
+      "id": "dd40835d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kolonel Sugiono Arah Utara",
+      "streamId": "983215248854190957425299",
+      "address": "Jl. Kolonel Sugiono No.229, Gadang, Kec. Sukun, Kota Malang, Jawa Timur 65148, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0039793407998,
+        "lng": 112.63039603679
+      }
+    },
+    {
+      "id": "dd409b8d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. S. Supriadi Arah Utara",
+      "streamId": "456402990956810340846657",
+      "address": "Jl. S. Supriadi No.46, Bandungrejosari, Kec. Sukun, Kota Malang, Jawa Timur 65147, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -8.0003828080402,
+        "lng": 112.61814488693
+      }
+    },
+    {
+      "id": "dd409db5-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tidar Arah Barat",
+      "streamId": "697348239578014654770613",
+      "address": "Jl. Raya Tidar No.1c, Gading Kasri, Kec. Klojen, Kota Malang, Jawa Timur 65149, Indonesia",
+      "district": "SUKUN",
+      "position": {
+        "lat": -7.967129678414,
+        "lng": 112.61342987975
+      }
+    },
+    {
+      "id": "dc90cf2d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tlogomas Arah Barat",
+      "streamId": "572534477246123479166921",
+      "address": "Jl. Raya Tlogomas No.14a, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9239952304502,
+        "lng": 112.59879614928
+      }
+    },
+    {
+      "id": "dc90d79b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Gajayana Arah Selatan (Sardo)",
+      "streamId": "385150101635081489243344",
+      "address": "Jl. Gajayana No.25, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9472848993973,
+        "lng": 112.60882818468
+      }
+    },
+    {
+      "id": "dc90edcd-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Melati Arah Selatan",
+      "streamId": "006104464277312024187785",
+      "address": "Jl. Melati No.1, RW.02, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9515234941649,
+        "lng": 112.63163609006
+      }
+    },
+    {
+      "id": "dc90eed3-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Sarangan Arah Timur",
+      "streamId": "997694327434970434059156",
+      "address": "02, Jl. Mawar No.1C, Lowokwaru, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9589822903855,
+        "lng": 112.63118669617
+      }
+    },
+    {
+      "id": "dc90fccc-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Soekarno Hatta Arah Utara",
+      "streamId": "490076087057536757601215",
+      "address": "Jl. Soekarno Hatta No.50, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9421960881843,
+        "lng": 112.62167294894
+      }
+    },
+    {
+      "id": "dc9106ef-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Soekarno Hatta Arah Utara",
+      "streamId": "003687850006099691498995",
+      "address": "Jembatan, Jl. Soekarno Hatta, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9492444183822,
+        "lng": 112.61582183111
+      }
+    },
+    {
+      "id": "dc912e4d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Bendungan Sutami Arah Selatan",
+      "streamId": "386132036661026320418844",
+      "address": "Jl. Bendungan Sutami No.1, Sumbersari, Kec. Lowokwaru, Kota Malang, Jawa Timur 65115, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9567833460861,
+        "lng": 112.61293111321
+      }
+    },
+    {
+      "id": "dc9141d5-0892-11f1-a5f4-bc2411b5911e",
+      "name": "JL. Veteran Arah Timur",
+      "streamId": "636589114401733445781917",
+      "address": "Jl. Veteran No.37, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9565403203483,
+        "lng": 112.61300124641
+      }
+    },
+    {
+      "id": "dc91457e-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl MT Haryono Arah Barat",
+      "streamId": "446907421280943044413749",
+      "address": "Jl. MT. Haryono No.73, Dinoyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9432724138806,
+        "lng": 112.61047403325
+      }
+    },
+    {
+      "id": "dc9146e4-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tlogomas Arah Barat",
+      "streamId": "318197263503692449077822",
+      "address": "Jl. Tlogomas No.61, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9331659845176,
+        "lng": 112.60341637719
+      }
+    },
+    {
+      "id": "dc916a79-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jembatan TunggulMas",
+      "streamId": "522539750301519499247770",
+      "address": "Jl. Raya Tlogomas",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9260975033872,
+        "lng": 112.60198299892
+      }
+    },
+    {
+      "id": "dc9172a1-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Sarangan Arah Barat",
+      "streamId": "608341519678952535574036",
+      "address": "Jl. Letjen Sutoyo No.25, Lowokwaru, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9617709052327,
+        "lng": 112.63610953633
+      }
+    },
+    {
+      "id": "dc917767-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kalpataru Arah Barat",
+      "streamId": "553368650971977610920123",
+      "address": "Jl. Kalpataru No.20, RW.02, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9507950091217,
+        "lng": 112.6314669223
+      }
+    },
+    {
+      "id": "dc917a09-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tlogomas Arah Timur",
+      "streamId": "963661947392775741127849",
+      "address": "Jl. Raya Tlogomas No.49, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9206147193538,
+        "lng": 112.5944402632
+      }
+    },
+    {
+      "id": "dc917a79-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl Tlogomas Arah Timur",
+      "streamId": "180731272173025410229793",
+      "address": "Jl. Raya Tlogomas No.83, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9242160621092,
+        "lng": 112.5991563917
+      }
+    },
+    {
+      "id": "dc91828e-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Candi Panggung Arah selatan",
+      "streamId": "895502928116887610228060",
+      "address": "Jl. Simpang Akordeon No.1b, Tunggulwulung, Kec. Lowokwaru, Kota Malang, Jawa Timur 65143, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9331367806487,
+        "lng": 112.61330513623
+      }
+    },
+    {
+      "id": "dc91859a-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Sigura-Gura Arah Barat",
+      "streamId": "967823448439028638648911",
+      "address": "Jl. Bendungan Sutami No.1, Sumbersari, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9567892735972,
+        "lng": 112.61274532687
+      }
+    },
+    {
+      "id": "dd403e54-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Gajayana Arah Utara (Sardo)",
+      "streamId": "455597782591873967365987",
+      "address": "Jl. Gajayana No.Kav. 14, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9469843339316,
+        "lng": 112.60889705726
+      }
+    },
+    {
+      "id": "dd404201-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Soekarno Hatta Arah Selatan",
+      "streamId": "889793263483161081015834",
+      "address": "Jl. Terusan Sudimoro No.2, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65142, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9367338416675,
+        "lng": 112.62656451163
+      }
+    },
+    {
+      "id": "dd40445b-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Panjaitan Arah Timur",
+      "streamId": "673512185163543498056968",
+      "address": "Jl. MT. Haryono No.12, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65113, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9500002979033,
+        "lng": 112.61555390881
+      }
+    },
+    {
+      "id": "dd4049de-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tlogomas Arah Barat",
+      "streamId": "764851199443964636246450",
+      "address": "Jl. Raya Tlogomas No.53, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9204336552247,
+        "lng": 112.59424422085
+      }
+    },
+    {
+      "id": "dd404dca-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Gajayana Arah Selatan",
+      "streamId": "715337494726392556880466",
+      "address": "Jl. Gajayana No.12, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9470124795052,
+        "lng": 112.60870793038
+      }
+    },
+    {
+      "id": "dd405602-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Pertigaan Tunggulmas",
+      "streamId": "097779292771471341955457",
+      "address": "Jl. Raya Tlogomas",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9263343108193,
+        "lng": 112.60173586196
+      }
+    },
+    {
+      "id": "dd405bc7-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Letjend Sutoyo Arah Utara",
+      "streamId": "274808309434970115761531",
+      "address": "Jl. Letjen Sutoyo No.3b, Lowokwaru, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9642636501319,
+        "lng": 112.635084682
+      }
+    },
+    {
+      "id": "dd4060b3-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Borobudur Arah Timur",
+      "streamId": "807179387709306202506877",
+      "address": "Jl. Sudimoro No.67, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65142, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9390908860831,
+        "lng": 112.63316259019
+      }
+    },
+    {
+      "id": "dd4061f4-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. MT. Haryono Arah Barat",
+      "streamId": "373865942595202639251772",
+      "address": "Jl. MT. Haryono No.35, Dinoyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9496715479629,
+        "lng": 112.61520040957
+      }
+    },
+    {
+      "id": "dd406a2d-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Tlogomas Arah Timur",
+      "streamId": "704720868465795037095760",
+      "address": "Jl. Tlogomas No.61s, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9334268650853,
+        "lng": 112.60360962848
+      }
+    },
+    {
+      "id": "dd406b68-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Soekarno Hatta Arah Timur",
+      "streamId": "184398221253246434285173",
+      "address": "Ruko Center Point, Jl. Soekarno Hatta No.6, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65142, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.937129662437,
+        "lng": 112.62615645963
+      }
+    },
+    {
+      "id": "dd407360-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Cengger Ayam Arah Utara",
+      "streamId": "289833992881029327755836",
+      "address": "Jl. Kalpataru No.16, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9506892197304,
+        "lng": 112.6316346668
+      }
+    },
+    {
+      "id": "dd409209-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Sumber Sari Arah Utara",
+      "streamId": "639466428930627267991858",
+      "address": "Jl. Veteran No.310, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9565649765027,
+        "lng": 112.6127142895
+      }
+    },
+    {
+      "id": "dd409701-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Soekarno Hatta Arah Selatan",
+      "streamId": "227920422769509645238654",
+      "address": "Jl. Soekarno Hatta No.45b, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9424349556736,
+        "lng": 112.621711381
+      }
+    },
+    {
+      "id": "dd409e79-0892-11f1-a5f4-bc2411b5911e",
+      "name": "Jl. Kedawung Arah Timur",
+      "streamId": "032716732487147302736608",
+      "address": "Jl. Kalpataru No.94, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, Indonesia",
+      "district": "LOWOKWARU",
+      "position": {
+        "lat": -7.9508745054178,
+        "lng": 112.63172470939
+      }
+    }
+  ]
+}

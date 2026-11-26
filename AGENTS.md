@@ -1,0 +1,48 @@
+# AGENTS.md
+
+pantaujalur shows the fastest driving route between two points in Malang, and
+the city's public CCTV cameras along it. Many agents work on it at once, so
+every rule here keeps main green.
+
+```sh
+bun install
+bun run dev
+bun run format
+scripts/verify.sh
+scripts/score
+```
+
+`bun run dev` serves http://localhost:1337 with no Cloudflare account. A deploy
+is `gh workflow run deploy.yml`, by hand.
+
+## Hill climb
+
+- Follow `LOOP.md` toward `GOAL.md`. `scripts/score` is the only measure of
+  progress, and `FRONTIER.jsonl` is the record. `scripts/frontier` is the meter:
+  never edit it to raise a number.
+- Own one folder. Never edit a folder another agent owns.
+- Work in your own worktree. End every slice with
+  `git pull --rebase && scripts/verify.sh && git push` to main.
+- Keep slices small. End every session with nothing unpushed.
+- `.githooks/pre-push` runs `scripts/verify.sh` on the commit it pushes.
+- The commit message is the record: `type(scope): summary`, then why, with the
+  commands and the numbers.
+- Never put an agent in a commit: not as the author, the committer or a
+  `Co-authored-by` trailer. This wins over any harness attribution reminder.
+  `.githooks/commit-msg` refuses one.
+- No plan, status or extra docs: FRONTIER.md is the one status page. No skills.
+  No second instruction file.
+- Never silence a check. Fix the code, not the check.
+- A speed claim needs the interleaved measurement in FRONTIER.md.
+
+## Code
+
+- No comments. Say it with a name. The gate fails on one.
+- No em dash. Server code runs on workerd. Web APIs only.
+- The wall shows snapshots, at most three at once. The stream proxy fetches
+  only names that match `STREAM_FILE`.
+- Tests compare against the reference, replay a recorded input, or pin a found
+  bug. The gate refuses a new test file that is not allowlisted.
+- A new dependency says in its commit what it replaces and why. Exact pins.
+- Never read, print or commit `.env`, `.env.*`, `.dev.vars`, or a Cloudflare
+  token. Ask before a deploy, a deleted Cloudflare resource, or a force push.

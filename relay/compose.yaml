@@ -1,0 +1,23 @@
+name: pantaujalur-relay
+
+services:
+  relay:
+    build: .
+    image: pantaujalur-relay:${RELAY_VERSION:?RELAY_VERSION is missing from .env}
+    restart: unless-stopped
+    environment:
+      CCTV_RELAY_SECRET: ${CCTV_RELAY_SECRET:?CCTV_RELAY_SECRET is missing from .env}
+    ports:
+      - "127.0.0.1:8787:8080"
+    mem_limit: 128m
+
+  cloudflared:
+    image: cloudflare/cloudflared:2026.11.0@sha256:b94b96edf2c9c4360f8879c8580cfaa99077f19c849ec595ca2f711b27d4f344
+    profiles: [tunnel]
+    command: tunnel --no-autoupdate run
+    restart: unless-stopped
+    environment:
+      TUNNEL_TOKEN: ${TUNNEL_TOKEN:-}
+    depends_on:
+      - relay
+    mem_limit: 128m
