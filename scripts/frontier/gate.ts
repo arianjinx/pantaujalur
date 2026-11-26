@@ -6,7 +6,7 @@ if (rules.status !== 0) {
   process.exit(rules.status ?? 1);
 }
 
-const steps = ["lint", "typecheck", "test", "build"] as const;
+const steps = ["supply", "lint", "typecheck", "test", "build"] as const;
 
 for (const step of steps) {
   const run = spawnSync("bun", ["run", step], { stdio: "inherit" });

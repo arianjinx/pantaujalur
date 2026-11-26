@@ -368,6 +368,7 @@ try {
 run(
   [
     "bunx",
+    "--no-install",
     "remotion",
     "render",
     "src/index.ts",

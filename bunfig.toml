@@ -9,3 +9,7 @@ ignorePatterns = ["src/routeTree.gen.ts"]
 
 [lint.rules]
 "@typescript-eslint/no-non-null-assertion" = "error"
+
+[install]
+exact = true
+minimumReleaseAge = 259200

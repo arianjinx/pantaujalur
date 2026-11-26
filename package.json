@@ -3,9 +3,7 @@
   "private": true,
   "license": "MIT",
   "type": "module",
-  "trustedDependencies": [
-    "workerd"
-  ],
+  "trustedDependencies": [],
   "packageManager": "bun@1.4.4",
   "imports": {
     "#/*": "./src/*"
@@ -14,6 +12,7 @@
     "prepare": "git config core.hooksPath .githooks || true",
     "dev": "vite dev --port 1337",
     "format": "bun run lint:fix && bun fmt",
+    "supply": "bun scripts/frontier/supply.ts",
     "lint": "bun run lint:code && bun fmt --no-script --check",
     "lint:code": "bun x bun@1.4.4-canary.20261114.1 lint --no-script --max-warnings 0",
     "lint:fix": "bun x bun@1.4.4-canary.20261114.1 lint --no-script --fix",
