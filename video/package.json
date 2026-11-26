@@ -8,10 +8,10 @@
     "render": "remotion render src/index.ts Demo ../recordings/demo.mp4 --public-dir ../recordings"
   },
   "dependencies": {
-    "@remotion/cli": "4.0.544",
+    "@remotion/cli": "4.0.545",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "remotion": "4.0.544"
+    "remotion": "4.0.545"
   },
   "devDependencies": {
     "@types/react": "19.3.0",
